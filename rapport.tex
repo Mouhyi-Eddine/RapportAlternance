@@ -4,9 +4,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-
 \usepackage{amsfonts,amsmath,amssymb}
 \usepackage{float}
+\usepackage{graphicx}
 
 \title{\textbf{Rapport d'alternance Master 2 Ingénierie logicielle\\ }}
 \author{\textbf{MOUTARAJJI} Mouhyi-Eddine\
@@ -14,7 +14,10 @@
 \begin{document}
 \date{}
 
-
+\begin{figure}
+\centering
+\includegraphics[width=1.1\textwidth]{diagrammes/logoisticfr_0.png}
+\end{figure}
 
 
 \maketitle
@@ -33,12 +36,29 @@
 
 Le rectorat de l'académie de Rennes est une circonscription administrative propre à
 l’Éducation Nationale.\\
-Elle regroupe 4 directions des services départementaux de l'Education Nationale : Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des services départementaux de l'éducation nationale est placée sous la responsabilité d'un inspecteur d'académie, directeur académique des services de l'Éducation nationale.\\\\
+Elle regroupe 4 directions des services départementaux de l'Éducation Nationale : 
+Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des services départementaux de l'éducation nationale est placée sous la responsabilité d'un inspecteur d'académie, directeur académique des services de l'Éducation nationale.\\\\
 Son rôle au sein de ces départements est de gérer les personnels, les élèves, les moyens financiers, les examens... de tous les établissements scolaires, depuis la maternelle jusqu'au lycée.\\\\
 
-\subsection{Direction des systèmes d'information et d'innovation – DSII}
+\subsection{L'architecture des projets}
 
- La DSII (Direction des systèmes d'information et d'innovation) fait partie des services communs de l’Académie de Rennes dont les activités couvrent les systèmes d’information et le numérique pour la pédagogie, le pilotage et la gestion.\\\\
- 
+Au sein du rectorat, les développeurs travaillent sur plusieurs types d'application (métier, outils ...). Ces applications sont constituées de deux modules: 
+
+Un module Back-end : Le Back-End, c’est la partie du code qui est exécutée par le serveur, il s’agît d'un serveur fournissant une API gérant la persistance des données et la logique de l'application.La majorité des applications du rectorat sont développées en framework Spring-boot et en langage Java et il existe quelques applications développées en langage Kotlin dont l'application Apptour.
+
+L'architecture des projets du rectorat est unique dans tous les projets afin  de faciliter la prise en main de ces derniers et avoir le même point de vue au sein du l'équipe.
+
+Le back-end des applications se décomposent de plusieurs couches: 
+
+une couche Repository/DAO: Repositories sont des interfaces héritant de l'interface Repository. L'objectif de ces interfaces consiste à rendre la création de la couche d'accès aux données (requêtes SELECT, UPDATE...) plus rapide.
+
+une couche Service: Elle permet de séparer les opérations effectuées par le contrôleur et celles qui concernent le modèle des données. Toute action devrait passer par cette couche.
+
+Une couche Contrôller: Il s'agit de l'Api qui permet de répondre à toutes les requêtes envoyées par le client. 
+
+\begin{center}
+ \includegraphics[width=1.2\textwidth]{diagrammes/ArchitectureProjet.png} 
+\end{center}
+Un module Front-end :
 
 \end{document}
