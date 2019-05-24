@@ -31,21 +31,21 @@
 
 
 
-\section{Rectorat de l’académie de Rennes} 
-
-\subsection{Présentation}
+\section{Contexte général}
+\subsection{Rectorat de l’académie de Rennes}
 
 Le rectorat de l'académie de Rennes est une circonscription administrative propre à
 l’Éducation Nationale.\\
 Elle regroupe 4 directions des services départementaux de l'Éducation Nationale : 
-Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des services départementaux de l'éducation nationale est placée sous la responsabilité d'un inspecteur d'académie, directeur académique des services de l'Éducation nationale.\\\\
-Son rôle au sein de ces départements est de gérer les personnels, les élèves, les moyens financiers, les examens... de tous les établissements scolaires, depuis la maternelle jusqu'au lycée.\\\\
+Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des services départementaux de l'éducation nationale est placée sous la responsabilité d'un inspecteur d'académie, directeur académique des services de l'Éducation nationale.Son rôle au sein de ces départements est de gérer les personnels, les élèves, les moyens financiers, les examens... de tous les établissements scolaires, depuis la maternelle jusqu'au lycée.
 
-\section{L'architecture des projets}
+\subsection{Organisation}
+
+\subsection{Architecture des projets}
 
 Au sein du rectorat Rennes, la majorité de l'équipe d'informatique  développent des applications web. Il existe plusieurs types d'application (métiers,outils...). Ces applications sont constituées de deux modules. 
 
-\subsection{Back-end}
+\subsubsection{Back-end}
 
 Le Back-End, c’est la partie du code qui est exécutée par le serveur, il s’agît d'un serveur fournissant une API gérant la persistance des données et la logique de l'application.La majorité des applications du rectorat sont développées en framework Spring-boot et en langage Java et il existe quelques applications développées en langage Kotlin dont l'application Apptour.
 
@@ -65,36 +65,48 @@ Une couche Contrôller: Il s'agit de l'Api qui permet de répondre à toutes les
   		\caption{Arichtecture Back-end d'une application web}
 	\end{figure}
 
-\subsection{Front-end}
+\subsubsection{Front-end}
 Le Front-end est la partie visible par les utilisateurs des applications web. Elle comprend l'interface graphique par laquelle nos utilisateurs vont interagir avec 
 le reste du système (Back-end).
 
 
 Le Front-end des applications web du rectorats sont développées en plusieurs langages. La plupart de ces applications  sont codées avec le triplet HTML,CSS \& JavaScript. Tandis que ces derniers mois, l'équipe informatique commence à intégrer le langage React.js  afin de monter en compétences et découvrir des nouveaux langages plus récents. 
 
-\subsubsection{HTML}
+\textbf{HTML:} HTML est une technologie et un standard qui permet d'afficher le contenu d'une application sur le web. Le langage reprend la syntaxe de XML,c'est-à-dire, une imbrication de balise/élément/tag les uns dans les autres.
 
-HTML est une technologie et un standard qui permet d'afficher le contenu d'une application sur le web. Le langage reprend la syntaxe de XML,c'est-à-dire, une imbrication de balise/élément/tag les uns dans les autres.
+\textbf{CSS:} CSS, est une technologie complémentaire à HTML, c'est elle qui va permettre d'ajouter des couleurs, des ombres, de mettre en forme le texte, de positionner les blocs, etc. Elle sert à mettre en forme une page web. 
 
-\subsubsection{CSS}
+\textbf{JavaScript:} JavaScript, au contraire de HTML et CSS, n'est pas un langage de présentation mais de programmation, qui plus est, objet orienté prototype. Il permet de rendre plus dynamique une application web grâce à la manipulation de l'API DOM (Document Object Model) et de l'AJAX (Asynchronous JavaScript And XML).
 
-CSS, est une technologie complémentaire à HTML, c'est elle qui va permettre d'ajouter des couleurs, des ombres, de mettre en forme le texte, de positionner les blocs, etc. Elle sert à mettre en forme une page web. 
-
-\subsubsection{JavaScript}
-
-JavaScript, au contraire de HTML et CSS, n'est pas un langage de présentation mais de programmation, qui plus est, objet orienté prototype. Il permet de rendre plus dynamique une application web grâce à la manipulation de l'API DOM (Document Object Model) et de l'AJAX (Asynchronous JavaScript And XML).
-
-\subsubsection{React}
-
-Le défaut de JavaScript, mais qui est aussi sa force, est sa grande flexibilité (typage dynamique, première ordre, point virgule optionnel...). On peut donc arriver très facilement à un code illisible et non maintenable. Pour couronner le tout, la DOM est
-plutôt quelque chose de difficile à tester. Le framework React apporte beaucoup de solutions à ces problèmes, avec sa façon de manipuler la DOM (via un moteur de template), l'utilisation de TypeScript (une amélioration du JavaScript par Microsoft.De plus, il est très facile de générer un environnement React pour
-un projet. C'est pour ces raisons que l'équipe informatique du rectorat commence à prendre en main ce Langage et l’intégrer dans les nouveaux projets et les nouvelles applications web. 
+\textbf{React:} Le défaut de JavaScript, mais qui est aussi sa force, est sa grande flexibilité (typage dynamique, première ordre, point virgule optionnel...). On peut donc arriver très facilement à un code illisible et non maintenable. Le framework React apporte beaucoup de solutions à ces problèmes, avec sa façon de manipuler la DOM (via un moteur de template), l'utilisation de TypeScript (une amélioration du JavaScript par Microsoft.De plus, il est très facile de générer un environnement React pour un projet. C'est pour ces raisons que l'équipe informatique du rectorat commence à prendre en main ce Langage et l’intégrer dans les nouveaux projets et les nouvelles applications web. 
 
 \begin{figure}[H]
 	\centering
  		\fbox{\includegraphics[width=1.2\textwidth]{diagrammes/schema-serveur.png}} 
   		\caption{Application Web classique}
 	\end{figure}
- 
+
+\subsection{Méthodes de travail}
+\subsubsection{Méthodologie agile}
+
+Les équipes informatiques du rectorat fonctionnent en méthodologie agile, chaque équipe effectue un Daily afin que chaque personne puisse présenter sur quoi elle a travaillé la veille et sur quoi elle compte continuer le jour même. Dans mon cas, j'étais le seul développeur dans mon projet, je faisais un Daily tout les jours avec mes maîtres d'alternances pour que je puisse dire sur quoi je travaillais et leurs poser des questions en cas de blocages. 
+
+\subsubsection{Communication}
+
+Pour communiquer, l'équipe informatique utilise l'outil de messagerie instantané RocketChat. Il permet de créer différents
+channels pour chaque équipe, des channels de veille ont été également crées pour de la veille technologies.
+
+Nous utilisons aussi l'outil Calendar (un outil développer par Oracl) qui permet d’organiser les réunions.  
+
+\subsubsection{Dockerisation}
+
+Le logiciel Docker permet de créer, déployer et exécuter des conteneurs de manière efficace. Un conteneur enveloppe l’application d’un logiciel dans une boîte invisible avec tout ce dont il a besoin pour s’exécuter. Cela comprend le
+système d’exploitation, le code de l’application, le runtime, les outils système et les librairies. Les conteneurs Docker sont construits à partir des images Docker.
+
+Ils sont légers, portables et permettent aux développeurs de créer, déployer et exécuter efficacement des applications distribuées. En outre, ils permettent à une application d’être empaquetée et déplacée facilement, augmentant ainsi la simplicité d’une infrastructure.
+
+\subsubsection{Versionning}
+
+L'équipe informatique utilise git sur la plateforme gitlab hébergé par la Forge comme gestionnaire de version. 
 
 \end{document}
