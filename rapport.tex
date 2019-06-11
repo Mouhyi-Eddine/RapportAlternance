@@ -43,7 +43,7 @@ Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des se
 
 \subsection{Architecture des projets}
 
-Au sein du rectorat Rennes, la majorité de l'équipe d'informatique  développent des applications web. Il existe plusieurs types d'application (métiers,outils...). Ces applications sont constituées de deux modules. 
+Au sein du rectorat Rennes, la majorité de l'équipe d'informatique  développent des applications web. Il existe plusieurs types d'application (métiers,outils...). Ces applications sont constituées de deux modules, Back-end \&  Front-end.
 
 \subsubsection{Back-end}
 
@@ -107,6 +107,34 @@ Ils sont légers, portables et permettent aux développeurs de créer, déployer
 
 \subsubsection{Versionning}
 
-L'équipe informatique utilise git sur la plateforme gitlab hébergé par la Forge comme gestionnaire de version. 
+L'équipe informatique utilise Git sur la plateforme Gitlab hébergé par la Forge comme gestionnaire de version. 
+
+
+\section{Objectifs et missions de l'alternance}
+
+\subsection{Objectif du projet}
+
+Au sein du rectorat, le pôle DINAMO se charge de réaliser les applications web métiers et autres. L'équipe informatique utilise différentes façons pour documenter leur applications. La plupart du temps elle utilise une documentation écrite (Manuel Utilisateur), une chose qui ne rend pas facile aux utilisateurs d’interagir avec l'application et comprendre la documentation. 
+
+
+C'est pour cette raison que Monsieur JOSSO Clément,le porte honneur du projet(PO), a voulu mettre en œuvre une documentation interactive dans l'application métier Solycee afin de permettre aux utilisateurs de l'application de se auto-documenter et interagir directement avec la page web. Nous avons utilisé un outil nommé BootstrapTour pour réaliser cette documentation. 
+
+Le but final du projet est de permettre aux administrateurs d'être autonomes et de pouvoir rajouter ou modifier les tours ainsi que leurs  étapes dans leurs applications. Nous avons donc crée un web service(AppTour) où sont sauvegardé tous les tours et leurs étapes.
+
+\subsection{Solycee}
+
+Solycee est une application métier créée par le rectorat et destinée à la gestion des offres et demandes de stages. Elle permet aux collèges et aux lycées d'inscrire leurs élèves aux mini-stages proposés par les lycées.  
+
+L'application serveur est réalisé en Java avec l'utilisation des composants du framework Spring.L'interface est codé avec le triplet HTML,CSS \& Javascript en intégrant du Thymeleaf pour le traitement des vues.  
+
+\subsection{AppTour}     
+
+\subsection{Aspect technique}
+\subsubsection{BootstarpTour : Une visite guidée interactive}
+ 
+Bootstrap tour est une petite librairie JavaScript permettant de présenter de façon assez simple l’application, l’avantage, comme pour toutes les librairies en fait, c’est qu’il y a déjà des bouts de fonctionnalités toutes faites, ce qui évite de réinventer la roue. Bootstrap tour est une implémentation qui sert à créer une visite guidée pour une application 
+
+
+
 
 \end{document}
