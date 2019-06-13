@@ -8,6 +8,8 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{newunicodechar}
+
 
 \title{\textbf{Rapport d'alternance Master 2 Ingénierie logicielle\\ }}
 \author{\textbf{MOUTARAJJI} Mouhyi-Eddine\
@@ -117,7 +119,7 @@ L'équipe informatique utilise Git sur la plateforme Gitlab hébergé par la For
 Au sein du rectorat, le pôle DINAMO se charge de réaliser les applications web métiers et autres. L'équipe informatique utilise différentes façons pour documenter leur applications. La plupart du temps elle utilise une documentation écrite (Manuel Utilisateur), une chose qui ne rend pas facile aux utilisateurs d’interagir avec l'application et comprendre la documentation. 
 
 
-C'est pour cette raison que Monsieur JOSSO Clément,le porte honneur du projet(PO), a voulu mettre en œuvre une documentation interactive dans l'application métier Solycee afin de permettre aux utilisateurs de l'application de se auto-documenter et interagir directement avec la page web. Nous avons utilisé un outil nommé BootstrapTour pour réaliser cette documentation. 
+C'est pour cette raison que Monsieur JOSSO Clément,le product Owner du projet(PO), a voulu mettre en œuvre une documentation interactive dans l'application métier Solycee afin de permettre aux utilisateurs de l'application de se auto-documenter et interagir directement avec la page web. Nous avons utilisé un outil nommé BootstrapTour pour réaliser cette documentation. 
 
 Le but final du projet est de permettre aux administrateurs d'être autonomes et de pouvoir rajouter ou modifier les tours ainsi que leurs  étapes dans leurs applications. Nous avons donc crée un web service(AppTour) où sont sauvegardé tous les tours et leurs étapes.
 
@@ -127,13 +129,59 @@ Solycee est une application métier créée par le rectorat et destinée à la g
 
 L'application serveur est réalisé en Java avec l'utilisation des composants du framework Spring.L'interface est codé avec le triplet HTML,CSS \& Javascript en intégrant du Thymeleaf pour le traitement des vues.  
 
+\subsubsection{Aspect technique}
+
+Le projet est implémenté selon le patron de conception MVC et réalisé avec plusieurs technologies, la plupart de ces dernières sont open-source.L'application est implémenté avec un back-end et un Front-end.
+
+Le back-end a été implémenté avec le framework Spring et le langage Java. Le coté interface (Front-end) a été réalisé avec le moteurs de templâte Thymeleaf. 
+
+Voici maintenant une présentation plus précises sur les principaux outils utilisés:
+
+\textbf{Spring:}  Spring est un framework libre pour construire et définir l'infrastructure d'une application java dont il facilite le développement et les tests.
+
+\begin{itemize}
+	\item \textbf{Spring MVC} : Spring MVC est un framwork qui permet d’implémenter des applications selon le design pattern MVC. Donc, comme tous autre MVC framework, Spring MVC se base sur le principe décrit par le schéma ci-dessous :
+	
+
+\begin{figure}[H]
+	\centering
+ 		\fbox{\includegraphics[width=1.2\textwidth]{diagrammes/mvc.jpg}} 
+  		\caption{Schéma du patron de conception MVC}
+	\end{figure}
+	
+	\item \textbf{Spring Security }: Spring Security est un Framework de sécurité léger qui fournit une authentification et un support d’autorisation afin de sécuriser les applications Spring.
+\end{itemize} 
+
+\textbf{Maven:} Maven est un outil de construction de projets (build) open source développé par la fondation Apache, initialement pour les besoins du projet Jakarta Turbine. Il permet de faciliter et d'automatiser certaines tâches de la gestion d'un projet Java.
+
+\textbf{Thymeleaf:} Thymeleaf est un  Java XML/XHTML/HTML5 Template Engine qui peut travailler à la fois dans des environnements Web (Servlet) et celui de non Web. Il est mieux adapté pour diffuser XHTML/HTML5 sur View (View Layer) des applications Web basées sur MVC. Mais il peut traiter n'importe quel fichier XML même dans les environnements hors ligne. Il fournit une intégration complète de Spring Framework. 
+
+\subsubsection{Travail réalisé}
+
+Dans le projet Solycee, j'ai principalement travaillé sur la partie Front-end. j'ai réalisé plusieurs tâches soit en rajoutant des nouvelles vue et des nouveaux composants dans les pages web et/ou en rajoutant des nouvelles fonctionnalités sur les composants existant. Voici une présentation plus précises de toutes les tâches réalisées: 
+\begin{itemize}
+\item Rajout d'une modal pour prévenir les utilisateurs de la  présence d'un bouton aide pour déclencher la documentation interactif.
+
+\begin{figure}[H]
+	\centering
+ 		\fbox{\includegraphics[width=1.2\textwidth]{diagrammes/aide_modal.png}} 
+  		\caption{Image page d'accueil Solycee}
+	\end{figure}
+   
+\item Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton sur toutes les pages web de l'application. En appuyant dessus ça déclenche les popup avec les tours (Element, Title \& content)  
+
+\begin{figure}[H]
+	\centering
+ 		\fbox{\includegraphics[width=1.2\textwidth]{diagrammes/exemple_Tour.png}} 
+  		\caption{Exemple d'une étape de Bootstrap Tour}
+	\end{figure}
+\end{itemize} 
+
 \subsection{AppTour}     
 
-\subsection{Aspect technique}
-\subsubsection{BootstarpTour : Une visite guidée interactive}
+\subsection{Bootstrap Tour : Une visite guidée interactive}
  
-Bootstrap tour est une petite librairie JavaScript permettant de présenter de façon assez simple l’application, l’avantage, comme pour toutes les librairies en fait, c’est qu’il y a déjà des bouts de fonctionnalités toutes faites, ce qui évite de réinventer la roue. Bootstrap tour est une implémentation qui sert à créer une visite guidée pour une application 
-
+Bootstrap tour est une petite librairie JavaScript permettant de présenter de façon assez simple l’application, l’avantage, comme pour toutes les librairies en fait, c’est qu’il y a déjà des bouts de fonctionnalités toutes faites, ce qui évite de réimplémenter le code. Bootstrap tour est une implémentation qui sert à créer une visite guidée pour une application. 
 
 
 
