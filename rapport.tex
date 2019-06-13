@@ -43,9 +43,10 @@ Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des se
 
 \subsection{Organisation}
 
+(TODO)
 \subsection{Architecture des projets}
 
-Au sein du rectorat Rennes, la majorité de l'équipe d'informatique  développent des applications web. Il existe plusieurs types d'application (métiers,outils...). Ces applications sont constituées de deux modules, Back-end \&  Front-end.
+Au sein du rectorat Rennes, la majorité de l'équipe d'informatique  développe des applications web. Il existe plusieurs types d'application (métiers,outils...). Ces applications sont constituées de deux modules, Back-end \&  Front-end.
 
 \subsubsection{Back-end}
 
@@ -53,13 +54,13 @@ Le Back-End, c’est la partie du code qui est exécutée par le serveur, il s�
 
 L'architecture des projets du rectorat est unique dans tous les projets afin  de faciliter la prise en main de ces derniers et avoir le même point de vue au sein du l'équipe.
 
-Le back-end des applications se décomposent de plusieurs couches: 
+Le Back-end des applications se décompose de plusieurs couches: 
 
 une couche Repository/DAO: Repositories sont des interfaces héritant de l'interface Repository. L'objectif de ces interfaces consiste à rendre la création de la couche d'accès aux données (requêtes SELECT, UPDATE...) plus rapide.
 
 une couche Service: Elle permet de séparer les opérations effectuées par le contrôleur et celles qui concernent le modèle des données. Toute action devrait passer par cette couche.
 
-Une couche Contrôller: Il s'agit de l'Api qui permet de répondre à toutes les requêtes envoyées par le client. 
+Une couche Contrôller: Il s'agit de l'API qui permet de répondre à toutes les requêtes envoyées par le client. 
 
 \begin{figure}[H]
 	\centering
@@ -95,10 +96,10 @@ Les équipes informatiques du rectorat fonctionnent en méthodologie agile, chaq
 
 \subsubsection{Communication}
 
-Pour communiquer, l'équipe informatique utilise l'outil de messagerie instantané RocketChat. Il permet de créer différents
+Pour communiquer, l'équipe informatique utilise l'outil de messagerie instantané Rocket.Chat. Il permet de créer différents
 channels pour chaque équipe, des channels de veille ont été également crées pour de la veille technologies.
 
-Nous utilisons aussi l'outil Calendar (un outil développer par Oracl) qui permet d’organiser les réunions.  
+Nous utilisons aussi l'outil Calendar (un outil développer par Oracle) qui permet d’organiser les réunions.  
 
 \subsubsection{Dockerisation}
 
@@ -109,7 +110,7 @@ Ils sont légers, portables et permettent aux développeurs de créer, déployer
 
 \subsubsection{Versionning}
 
-L'équipe informatique utilise Git sur la plateforme Gitlab hébergé par la Forge comme gestionnaire de version. 
+L'équipe informatique utilise Git sur la plateforme Gitlab hébergé par la Forge comme gestionnaire de versions. 
 
 
 \section{Objectifs et missions de l'alternance}
@@ -135,7 +136,7 @@ Le projet est implémenté selon le patron de conception MVC et réalisé avec p
 
 Le back-end a été implémenté avec le framework Spring et le langage Java. Le coté interface (Front-end) a été réalisé avec le moteurs de templâte Thymeleaf. 
 
-Voici maintenant une présentation plus précises sur les principaux outils utilisés:
+Voici maintenant une présentation plus précise sur les principaux outils utilisés:
 
 \textbf{Spring:}  Spring est un framework libre pour construire et définir l'infrastructure d'une application java dont il facilite le développement et les tests.
 
@@ -158,9 +159,10 @@ Voici maintenant une présentation plus précises sur les principaux outils util
 
 \subsubsection{Travail réalisé}
 
-Dans le projet Solycee, j'ai principalement travaillé sur la partie Front-end. j'ai réalisé plusieurs tâches soit en rajoutant des nouvelles vue et des nouveaux composants dans les pages web et/ou en rajoutant des nouvelles fonctionnalités sur les composants existant. Voici une présentation plus précises de toutes les tâches réalisées: 
+Dans le projet Solycee, j'ai principalement travaillé sur la partie Front-end. J'ai réalisé plusieurs tâches soit en rajoutant des nouvelles vue et des nouveaux composants dans les pages web et/ou en rajoutant des nouvelles fonctionnalités sur les composants existant. Voici une présentation plus précises de toutes les tâches réalisées: 
+
 \begin{itemize}
-\item Rajout d'une modal pour prévenir les utilisateurs de la  présence d'un bouton aide pour déclencher la documentation interactif.
+\item Rajout d'une modale pour prévenir les utilisateurs de la  présence d'un bouton aide pour déclencher la documentation interactif.
 
 \begin{figure}[H]
 	\centering
@@ -168,15 +170,39 @@ Dans le projet Solycee, j'ai principalement travaillé sur la partie Front-end. 
   		\caption{Image page d'accueil Solycee}
 	\end{figure}
    
-\item Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton sur toutes les pages web de l'application. En appuyant dessus ça déclenche les popup avec les tours (Element, Title \& content)  
+\item Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} sur toutes les pages web de l'application. En appuyant dessus ça déclenche les pop-ups avec les tours (Element, Title \& content). dans le cas où il n'existe pas de tour, le bouton affiché est gris et titré par une phrase "Aide non disponible pour cette page" \includegraphics[width=7mm,scale=0.5]{diagrammes/Bouton_aideNonDispo.png}  
 
 \begin{figure}[H]
 	\centering
  		\fbox{\includegraphics[width=1.2\textwidth]{diagrammes/exemple_Tour.png}} 
   		\caption{Exemple d'une étape de Bootstrap Tour}
 	\end{figure}
-\end{itemize} 
 
+\item Récupérer le tour d'un page web avec ses étapes: Pour chaque page web de solycee, l'application récupère le tour de cette dernière avec ses étapes en lançant une requête à l'API AppTour. Cette requête (FindTourWithLibelleAplicationAndIdHtmlPage) renvois un json avec toutes les étapes en cas de la présence du tour dans la base. En cas où le tour n'existe pas et la réponse de la requête est 404 (Not found), nous mettons le bouton d'aide en gris et il devient non cliquable. 
+
+\begin{figure}[H]
+	\centering
+ 		\fbox{\includegraphics[width=1.2\textwidth]{diagrammes/aideNonDispo.png}} 
+  		\caption{Pas de tour disponible dans ce page Web }
+	\end{figure}
+    
+
+\item Mode édition pour les Administrateurs : En appuyant sur le bouton  \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png}, les administrateurs  de l'application passent en mode édition. Il s'agit d'un mode avec la même interface mais les composants et les boutons de cette interface ne réagissent plus de la même façon(Le fonctionnement de ces composant se désactive). En appuyant sur un des composant de la page, il y a une modale qui s'affiche pour permettre aux admins de rajouter des étapes de leur tour dans cette page Web.  Nous affichons aussi une champs sur l'interface Web pour afin de prévenir les admins qu'ils ont passé en mode édition.
+
+ \begin{figure}[H]
+	\centering
+ 		\fbox{\includegraphics[width=1.2\textwidth]{diagrammes/mode_edition.png}} 
+  		\caption{Page d'accueil en mode édition}
+	\end{figure}
+
+\item Rajouter ou modifier les étapes : En appuyant sur les composant de la page web 
+
+
+
+
+
+\end{itemize}
+\newpage
 \subsection{AppTour}     
 
 \subsection{Bootstrap Tour : Une visite guidée interactive}
