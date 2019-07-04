@@ -9,8 +9,10 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{newunicodechar}
-\usepackage[left=3cm, right=3cm, top=2cm]{geometry}
-
+\usepackage[export]{adjustbox}
+\usepackage[a4paper]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
 
 \title{\textbf{Rapport d'alternance Master 2 Ingénierie logicielle\\ }}
@@ -20,9 +22,10 @@
 \date{}
 
 \begin{figure}
-\centering
-\includegraphics[width=1.1\textwidth]{diagrammes/logoisticfr_0.png}
+\includegraphics[width=0.5\textwidth,left]{diagrammes/logo_Rectorat.jpg}
+\includegraphics[width=0.5\textwidth,right]{diagrammes/logoisticfr_0.png}
 \end{figure}
+
 
 
 \maketitle
@@ -35,16 +38,16 @@
 
 \section{Introduction}
 
-J'ai réalisé mon alternance de Master 2 Ingénierie logicielle au sein du rectorat de l'académie de rennes du 09 septembre 2018 au 30 août 2019. J'ai intégré le service informatique et plus précisément le pôle DINAMO sous la responsabilité  de Annabel BOURDÉ et Gaël SALÛN. Ce service s'occupe généralement de développer et maintenir des applications web national utilisées par les chefs des établissement, les élèves  ou leurs parents et aussi des applications métiers dédier aux employées du rectorat.\newline
+J'ai réalisé mon alternance de Master 2 Ingénierie logiciel au sein du rectorat de l'académie de rennes du 09 septembre 2018 au 30 août 2019. J'ai intégré le service informatique et plus précisément le pôle DINAMO sous la responsabilité  de Annabel BOURDÉ et Gaël SALAÜN. Ce service s'occupe généralement de développer et maintenir des applications web national utilisées par les chefs des établissement, les élèves  ou leurs parents et aussi des applications métiers dédier aux employées du rectorat.\newline
 
    
 Durant mon alternance, j'ai eu pour principale mission d'intégrer un outil de documentation interactive dans les applications du rectorat en implémentant une API de service pour gérer cette documentation et en rajoutant une interface graphique qui aide les utilisateurs à utiliser cette API, j'ai donc eu la chance de pouvoir développer aussi bien sur le back-end que sur le front-end.\newline
 
 
-C'était un première expérience en tant qu'apprenti dans une entreprise, cela m'a permet d'acquérir des nouvelles méthodes de travail comme l'agilité et de plus j'ai pu travaillé sur des des concepts innovants ainsi qu'utiliser des technologies et outils actuels.\newline
+C'était une première expérience en tant qu'apprenti dans une entreprise, cela m'a permet d'acquérir des nouvelles méthodes de travail comme l'agilité et de plus j'ai pu travaillé sur des des concepts innovants ainsi qu'utiliser des technologies et outils actuels.\newline
 
 
-Dans un premier temps, j'établirai un bref historique du service informatique du rectorat en présentant les multiples pôles qui existent et son organisation. Puis je présenterai plus en détails les objectifs de mon alternance ainsi que les méthodologies de gestion de projet que j'ai suivi et les outils que j'ai utilisé. Enfin j'expliquerai les travaux réalisés dans ma mission et je conclurai avec un bilan de mon alternance.
+Dans un premier temps, j'établirai un bref historique du service informatique du rectorat en présentant les multiples pôles qui existent et son organisation. Puis je présenterai plus en détails les objectifs de mon alternance ainsi que les méthodologies de gestion de projet que j'ai suivies et les outils que j'ai utilisés. Enfin j'expliquerai les travaux réalisés dans ma mission et je conclurai avec un bilan de mon alternance.
 
 \newpage
 
@@ -54,9 +57,8 @@ Dans un premier temps, j'établirai un bref historique du service informatique d
 \section{Contexte général}
 \subsection{Rectorat de l’académie de Rennes}
 
-Le rectorat de l'académie de Rennes est une circonscription administrative propre à
-l’Éducation Nationale.\\
-Elle regroupe 4 directions des services départementaux de l'Éducation Nationale : 
+Le rectorat de l'académie de Rennes est une circonscription administrative propre à l’éducation nationale.\\
+Elle regroupe 4 directions des services départementaux de l'éducation nationale : 
 Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des services départementaux de l'éducation nationale est placée sous la responsabilité d'un inspecteur d'académie, directeur académique des services de l'Éducation nationale.Son rôle au sein de ces départements est de gérer les personnels, les élèves, les moyens financiers, les examens... de tous les établissements scolaires, depuis la maternelle jusqu'au lycée.
 
 \subsection{Organisation}
@@ -89,8 +91,7 @@ Une couche Contrôller: Il s'agit de l'API qui permet de répondre à toutes les
 	\end{figure}
 
 \subsubsection{Front-end}
-Le Front-end est la partie visible par les utilisateurs des applications web. Elle comprend l'interface graphique par laquelle nos utilisateurs vont interagir avec 
-le reste du système (Back-end).
+Le Front-end est la partie visible par les utilisateurs des applications web. Elle comprend l'interface graphique par laquelle nos utilisateurs vont interagir avec le reste du système (Back-end).
 
 
 Le Front-end des applications web du rectorats sont développées en plusieurs langages. La plupart de ces applications  sont codées avec le triplet HTML,CSS \& JavaScript. Tandis que ces derniers mois, l'équipe informatique commence à intégrer le langage React.js  afin de monter en compétences et découvrir des nouveaux langages plus récents. 
@@ -123,8 +124,7 @@ Nous utilisons aussi l'outil Calendar (un outil développer par Oracle) qui perm
 
 \subsubsection{Dockerisation}
 
-Le logiciel Docker permet de créer, déployer et exécuter des conteneurs de manière efficace. Un conteneur enveloppe l’application d’un logiciel dans une boîte invisible avec tout ce dont il a besoin pour s’exécuter. Cela comprend le
-système d’exploitation, le code de l’application, le runtime, les outils système et les librairies. Les conteneurs Docker sont construits à partir des images Docker.
+Le logiciel Docker permet de créer, déployer et exécuter des conteneurs de manière efficace. Un conteneur enveloppe l’application d’un logiciel dans une boîte invisible avec tout ce dont il a besoin pour s’exécuter. Cela comprend le système d’exploitation, le code de l’application, le runtime, les outils système et les librairies. Les conteneurs Docker sont construits à partir des images Docker.
 
 Ils sont légers, portables et permettent aux développeurs de créer, déployer et exécuter efficacement des applications distribuées. En outre, ils permettent à une application d’être empaquetée et déplacée facilement, augmentant ainsi la simplicité d’une infrastructure.
 
@@ -140,7 +140,7 @@ L'équipe informatique utilise Git sur la plateforme Gitlab hébergé par la For
 Au sein du rectorat, le pôle DINAMO se charge de réaliser les applications web métiers et autres. L'équipe informatique utilise différentes façons pour documenter leur applications. La plupart du temps elle utilise une documentation écrite (Manuel Utilisateur), une chose qui ne rend pas facile aux utilisateurs d’interagir avec l'application et comprendre la documentation. 
 
 
-C'est pour cette raison que Monsieur JOSSO Clément,le product Owner du projet(PO), a voulu mettre en œuvre une documentation interactive dans l'application métier Solycee afin de permettre aux utilisateurs de l'application de se auto-documenter et interagir directement avec la page web. Nous avons utilisé un outil nommé BootstrapTour pour réaliser cette documentation. 
+C'est pour cette raison que Monsieur JOSSO Clément,le product Owner du projet(PO), a voulu mettre en œuvre une documentation interactive dans l'application métier Solycee afin de permettre à ces  utilisateurs de se auto-documenter et interagir directement avec la page web. Nous avons utilisé un outil nommé BootstrapTour pour réaliser cette documentation. 
 
 Le but final du projet est de permettre aux administrateurs d'être autonomes et de pouvoir rajouter ou modifier les tours ainsi que leurs  étapes dans leurs applications. Nous avons donc crée un web service(AppTour) où sont sauvegardé tous les tours et leurs étapes.
 
@@ -152,7 +152,7 @@ Le bénéfice de l'utilisation de Bootstrap tour est immédiat pour les utilisat
 
 \subsection{Solycee}
 
-Solycee est une application métier créée par le rectorat et destinée à la gestion des offres et demandes de stages. Elle permet aux collèges et aux lycées d'inscrire leurs élèves aux mini-stages proposés par les lycées.  
+Solycee est une application métier créée par le rectorat et destinée à la gestion des offres et demandes de stages. Elle permet aux collèges et aux lycées d'inscrire leurs élèves dans des mini-stages proposés par les lycées.  
 
 L'application serveur est réalisé en Java avec l'utilisation des composants du framework Spring.L'interface est codé avec le triplet HTML,CSS \& Javascript en intégrant du Thymeleaf pour le traitement des vues.  
 
@@ -187,7 +187,7 @@ Voici maintenant une présentation plus précise sur les principaux outils utili
 
 Dans le projet Solycee, j'ai principalement travaillé sur la partie Front-end. J'ai réalisé plusieurs tâches soit en rajoutant des nouvelles vue et des nouveaux composants dans les pages web et/ou en rajoutant des nouvelles fonctionnalités sur les composants existant.
 
-Le projet a été développé avant mon arrivé au rectorat. Avant de commencer à réaliser les tâches demandées, il était nécessaire de procéder un travail  de lecture du code implémenté et de la compréhension de ce dernier en posant des multiples questions à mes maîtres d'alternances. Il m'a fallut aussi comprendre l'architecture du projet ainsi que les technologies utilisées. 
+Le projet a été développé par l'équipe Dinamo. Avant de commencer à réaliser les tâches demandées, il était nécessaire de procéder un travail  de lecture du code implémenté et de la compréhension de ce dernier en posant des multiples questions à mes maîtres d'alternances. Il m'a fallut aussi comprendre l'architecture du projet ainsi que les technologies utilisées. 
 
 Une fois que le code était compréhensible et j'ai acquis toutes les informations importantes sur le projet, j'ai commencé à réalisé les tâches demandées.  Voici une présentation plus précises de toutes les tâches réalisées:   
 
@@ -201,9 +201,9 @@ Une fois que le code était compréhensible et j'ai acquis toutes les informatio
   		\caption{Image page d'accueil Solycee}
 	\end{figure}
 	
-Pour que ça soit pas dérangeant pour les utilisateurs qui ont eu l'info et ils ont déjà vu la modale, j'ai fait en sorte que ça s'affiche qu'une seule fois pour eux. 
+Pour que ça soit pas dérangeant pour les utilisateurs qu'ils ont déjà vu la modale et qui ont eu l'info, j'ai fait en sorte que ça s'affiche qu'une seule fois pour eux. 
    
-\item Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} sur toutes les pages web de l'application. En appuyant dessus ça déclenche les pop-ups  de Bootstrap tour (Les étapes du tour sur la page web), une étape se représente avec 3 champs: Element (élément cliqué, Titre (titre de l'étape) \& Content (Description de l'étape). Dans le cas où il n'existe pas de tour sur la page web, le bouton affiché est gris et titré par une phrase "Aide non disponible pour cette page" \includegraphics[width=7mm,scale=0.5]{diagrammes/Bouton_aideNonDispo.png}  
+\item Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} sur toutes les pages web de l'application. En appuyant dessus ça déclenche les pop-ups  de Bootstrap tour (Les étapes du tour sur la page web), une étape se représente avec 3 champs: Element (l'id d'élément cliqué, Titre (titre de l'étape) \& Content (Description de l'étape). Dans le cas où il n'existe pas de tour sur la page web, le bouton affiché est gris et titré par une phrase "Aide non disponible pour cette page" \includegraphics[width=7mm,scale=0.5]{diagrammes/Bouton_aideNonDispo.png}  
 
 \begin{figure}[H]
 	\centering
@@ -228,7 +228,7 @@ Pour que ça soit pas dérangeant pour les utilisateurs qui ont eu l'info et ils
   		\caption{Page d'accueil en mode édition}
 	\end{figure}
 
-\item Permettre seuls aux administrateurs de voir le bouton qui permet de passer en mode édition. En se connectant à l'application, nous récupérons le nom complet de l'utilisateur connecté et nous envoyons une requête à l'API AppTour pour voir si l'utilisateur est administrateur. Si la requête renvoie le json de l’utilisateur nous affichons le bouton, dans le cas inverse le bouton sera pas affiché. \newline 
+\item Permettre seuls aux administrateurs de voir le bouton qui permet de passer en mode édition. En se connectant à l'application, nous récupérons le nom complet de l'utilisateur connecté et nous envoyons une requête à l'API AppTour pour voir si l'utilisateur est administrateur. Si la requête renvoie le json de l’utilisateur nous affichons le bouton, dans le cas inverse le bouton ne sera pas affiché. \newline 
 
 \item Rajouter ou modifier les étapes :Quand les administrateurs se mettent en mode édition et en appuyant sur les composant de la page web(Boutons, liens ou autres), une modale s'affiche afin de permettre aux administrateurs de rajouter une étape du tour dans le cas où aucune étape existe pour le composant appuyé ou modifier l'étape si elle existe. 
 La récupération de l'étape de chaque composant se fait par un appel à l'API AppTour (FindStepByElementandIdTour), dans le cas où l'étape existe, nous remplissons les champs de la modale avec les données récupérées par la requêtes(Title \& content). Dans le cas inverse, nous laissons les champs vide afin que les administrateurs remplissent les données qui veulent stocker dans la base AppTour.
@@ -311,15 +311,28 @@ Il existe une classe TourService: Dans cette classe, j'ai réalisé plusieurs m�
 Il existe aussi une classe StepService : Dans cette classe, j'ai réalisé plusieurs méthodes qui permettent à stocker ou récupérer des Step de la base données : 
 \begin{itemize}
 
-\item  findStepByElementandIdTour : Elle permet à récupérer un Step en passant en paramètre l'élément rechercher et l'identifiant du tour.
+\item  findStepByElementandIdTour : Elle permet de récupérer un Step en passant en paramètre l'élément rechercher et l'identifiant du tour.
 
 \item saveStep : Elle permet à stocker un Step dans la base de données.
 
 \item findOrdreMax : Elle permet de lister tout les step d'un tour par ordre croissant.  
 \end{itemize}
-
-
-
 \end{itemize}
+\newpage
+\subsection{Partie Sécurité}
+\subsubsection{Permettre seuls aux administrateurs de modifier les tours}
+
+Pour permettre seuls aux administrateurs de l'application Solycee de passer en mode édition  et pouvoir rajouter et/ou modifier des tours, j'ai créé une nouvelle table(Entité) Personnel dans l'API AppTour, cette table contient un identifiant et libellé de l'application, les personnes présentes dans la tables Personnel sont des administrateurs de leurs applications. Après j'ai commencé à réaliser les classes nécessaires dans la même architecture que les tables Tours et Step. J'ai implémenté donc une classe PersonnelDto et puis une classe PersonnelMapper qui permet de passer d'un objet Personnel à un objet PersonnelDto ou l'inverse(d'un objet PersonnelDto à un objet Personnel), ensuite j'ai créé la classe PersonnelService pour pouvoir implémenter les méthodes utilisées par la classe PersonnelController.Enfin, J'ai implémenté un service qui permet de faire une recherche dans la table Personnel et vérifier la présence de la personne en donnant son identifiant (Nom + Prénom) et aussi le libellé de l'application. 
+
+
+En laçant l'application Solycee, je récupère l'identifiant de la personne connecté (Toute personne connecté a un identifiant (Nom + Prénom)) et puis j’envoie une requête à l'API AppTour pour vérifier si la personne connecté est présente dans la table Personnel. Dans le cas ou la requête renvoie une réponse positive (200 Succès), j'affiche le bouton qui permet aux admins de passer en mode édition, dans le cas contraire le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas. 
+
+
+
+\subsubsection{Sécuriser l'API}
+
+
+
+
 
 \end{document}
