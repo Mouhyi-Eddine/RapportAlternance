@@ -13,7 +13,9 @@
 \usepackage[a4paper]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{Documentation interactif dans les applis du rectorat}
+\fancyhead[R]{Académie de Rennes}
 \begin{document}
 \begin{titlepage}
 	
@@ -368,8 +370,12 @@ Le fonctionnement de Keycloack nécessite  une configuration. IL faut déclarer 
 
 Après l’authentification, nous obtenons un Identity token qui fournit des informations d’identité sur l’utilisateurAccess token : un token pouvant être fourni dans le cadre d’une requête HTTP autorisant l’accès au service invoqué.
 
-En suite, j'ai fait des recherches pour trouver une libraire JavaScript qui permet à utiliser keycloak pour l'authentification. Pendant mon développement j'ai utilisé deux librairie JavaScript différentes mais le fonctionnement était le même. J'ai commencé par implémenté la librairie KeycloakJS et par la suite j'ai utilisé la librairie Oidc-clientJS pour permettre aux administrateurs de se diriger à une plateforme d'authentification, dans mon cas c'était Keycloak pour tester la librairies.  
-
+En suite, j'ai fait des recherches pour trouver une libraire JavaScript qui permet à utiliser keycloak pour l'authentification. Pendant mon développement j'ai utilisé deux librairie JavaScript différentes mais le fonctionnement était le même. J'ai commencé par implémenté la librairie KeycloakJS et par la suite j'ai utilisé la librairie Oidc-clientJS pour permettre aux administrateurs de se diriger à une plateforme d'authentification, dans mon cas c'était Keycloak pour tester la librairies. Voici la plateforme d'authentification Keycloak: 
+ \begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/authentification_keycloak.png} 
+  		\caption{Authentification avec OpenID et Keycloak }
+	\end{figure}
 
 \newpage
 \section{Annexes}
