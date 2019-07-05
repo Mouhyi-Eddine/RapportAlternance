@@ -14,21 +14,40 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-
-\title{\textbf{Rapport d'alternance Master 2 Ingénierie logicielle\\ }}
-\author{\textbf{MOUTARAJJI} Mouhyi-Eddine\
-\\Encadré par :\\\textbf{SALAÜN} Gaël \\\textbf{BOURDÉ} Annabel }
 \begin{document}
-\date{}
+\begin{titlepage}
+	
+    \vspace*{0.0 cm}
+    \begin{flushleft}
+    
+    \includegraphics  [scale = 0.6] {diagrammes/logo_Rectorat.jpg}\includegraphics  [scale = 0.1] {diagrammes/lo.png}
+    \end{flushleft}
+    \textsc{96 Rue d'Antrain}\hspace{100 pt}\textsc{ UFR Informatique - Électronique }\\
+    \hspace{20 pt}\textsc{35700 RENNES }\hspace{200 pt}\textsc{Campus De Beaulieu}\\
+   \text{.} \hspace{289 pt}\textsc{35042 Rennes Cedex}\\
+   \\
+   \\
+   \\
+   \\
+ 	\centering   % Course Code
+	\textsc{\large Master 2 Informatique}\\
+		\textsc{\large Ingénierie Logicielle en alternance}\\
+		\textsc{\large 2018/2019}\\
+	\rule{\linewidth}{0.7 mm} \\[0.2 cm]
+	\textsc{\large Documentation interactif dans les applications du rectorat}\\
+	\rule{\linewidth}{0.2 mm} \\[0.2 cm]
 
-\begin{figure}
-\includegraphics[width=0.5\textwidth,left]{diagrammes/logo_Rectorat.jpg}
-\includegraphics[width=0.5\textwidth,right]{diagrammes/logoisticfr_0.png}
-\end{figure}
+	\centering   % Course Code
+	\textsc{ Mouhyi MOUTARAJJI}\\
+		\begin{flushleft} \large
+		    \emph{Maîtres d'apprentissage:} \\
+			Gaël SALAÜN , Gael.Salaun@ac-rennes.fr\\
+			Annabel BOURDÉ, Annabel.Bourde@ac-rennes.fr
+			
+		\end{flushleft}
+	
+\end{titlepage}
 
-
-
-\maketitle
 
 \newpage
 
@@ -179,7 +198,7 @@ Voici maintenant une présentation plus précise sur les principaux outils utili
 	\item \textbf{Spring Security }: Spring Security est un Framework de sécurité léger qui fournit une authentification et un support d’autorisation afin de sécuriser les applications Spring.\newline
 \end{itemize} 
 
-\textbf{Maven:} Maven est un outil de construction de projets (build) open source développé par la fondation Apache, initialement pour les besoins du projet Jakarta Turbine. Il permet de faciliter et d'automatiser certaines tâches de la gestion d'un projet Java.\newline
+\textbf{Maven:} Maven est un outil de construction de projets (build) open source développé par la fondation Apache. Il permet de faciliter et d'automatiser certaines tâches de la gestion d'un projet Java.\newline
 
 \textbf{Thymeleaf:} Thymeleaf est un  Java XML/XHTML/HTML5 Template Engine qui peut travailler à la fois dans des environnements Web (Servlet) et celui de non Web. Il est mieux adapté pour diffuser XHTML/HTML5 sur View (View Layer) des applications Web basées sur MVC. Mais il peut traiter n'importe quel fichier XML même dans les environnements hors ligne. Il fournit une intégration complète de Spring Framework. 
 
@@ -332,7 +351,29 @@ En laçant l'application Solycee, je récupère l'identifiant de la personne con
 \subsubsection{Sécuriser l'API}
 
 
+Après avoir réaliser toutes les tâches demandés par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités rajoutées en production pour avoir un avis des utilisateurs. Mais avant de les mettre en prod fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droit de réaliser ces requêtes et ils sont administrateurs de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
+
+Le premier travail a commencé par faire des recherches par rapport à la façon dont nous allons sécuriser les applications.Un sujet de recherche du rectorat était de pourvoir intégrer la plateforme Keycloak pour l'authentification des utilisateurs dans les applications. Solycee était une occasion pour commencer les recherches sur ce sujet.  Nous avons décidé de mettre en place une couche d'authentification basé sur OAuth 2.0 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé, et nous avons utilisé Keycloak localement pour s'authentifier et obtenir un Token JWT pour chaque utilisateurs de l'application.  \includegraphics[width=30mm,scale=0.5]{diagrammes/logo_Keycloak.jpeg}  
+
+La première étape était  d'installer un serveur Keycloak localement qui permettra par la suite de faire des tests. Keycloak  est un logiciel open source permettant l'authentification unique avec la gestion des identités et des accès, destiné aux applications et services modernes. Pour la configuration de keycloak, il suffit juste de fournir un fichier  royaume(Realm) ainsi qu'un fichier utilisateurs(User) pour renseigner les utilisateurs  avec leur identifiants et leurs mots de passe (Voir annexes pour un exemple des fichiers Realm et User)
+
+Le fonctionnement de Keycloack nécessite  une configuration. IL faut déclarer plusieurs données : 
+\begin{itemize}
+\item Utilisateurs : Ils sont des entités pouvant se connecter à votre système
+\item Rôles : ils identifient un type ou une catégorie d’utilisateur ( Admin, user, …)
+\item Groupe : permet de gérer un groupe d’utilisateur
+\item Royaumes (realms): un domaine qui gère un ensemble d’utilisateurs, d’informations d’identification, des rôles et des groupes.
+\item Clients : ils sont des entités pouvant demander à Keycloak d’authentifier un utilisateur ( comme des applications )
+\end{itemize}
+
+Après l’authentification, nous obtenons un Identity token qui fournit des informations d’identité sur l’utilisateurAccess token : un token pouvant être fourni dans le cadre d’une requête HTTP autorisant l’accès au service invoqué.
+
+En suite, j'ai fait des recherches pour trouver une libraire JavaScript qui permet à utiliser keycloak pour l'authentification. Pendant mon développement j'ai utilisé deux librairie JavaScript différentes mais le fonctionnement était le même. J'ai commencé par implémenté la librairie KeycloakJS et par la suite j'ai utilisé la librairie Oidc-clientJS pour permettre aux administrateurs de se diriger à une plateforme d'authentification, dans mon cas c'était Keycloak pour tester la librairies.  
 
 
+\newpage
+\section{Annexes}
+
+Nous trouverons dans cette partie tout les éléments graphiques, schémas, diagrammes,parties de code  qui n’ont pas pu être ajouté au rapport faute de place.
 
 \end{document}
