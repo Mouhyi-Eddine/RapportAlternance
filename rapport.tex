@@ -14,8 +14,10 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand\headrulewidth{1pt}
-\fancyhead[L]{Documentation interactif dans les applis du rectorat}
+\fancyhead[L]{Documentation interactive dans les applis du rectorat}
 \fancyhead[R]{Académie de Rennes}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{Mouhyi MOUTARAJJI}
 \begin{document}
 \begin{titlepage}
 	
@@ -36,15 +38,16 @@
 		\textsc{\large Ingénierie Logicielle en alternance}\\
 		\textsc{\large 2018/2019}\\
 	\rule{\linewidth}{0.7 mm} \\[0.2 cm]
-	\textsc{\large Documentation interactif dans les applications du rectorat}\\
+	\textsc{\large Documentation interactive dans les applications du rectorat}\\
 	\rule{\linewidth}{0.2 mm} \\[0.2 cm]
 
 	\centering   % Course Code
 	\textsc{ Mouhyi MOUTARAJJI}\\
 		\begin{flushleft} \large
 		    \emph{Maîtres d'apprentissage:} \\
+		    Annabel BOURDÉ, Annabel.Bourde@ac-rennes.fr\\
 			Gaël SALAÜN , Gael.Salaun@ac-rennes.fr\\
-			Annabel BOURDÉ, Annabel.Bourde@ac-rennes.fr
+			
 			
 		\end{flushleft}
 	
@@ -59,16 +62,15 @@
 
 \section{Introduction}
 
-J'ai réalisé mon alternance de Master 2 Ingénierie logiciel au sein du rectorat de l'académie de rennes du 09 septembre 2018 au 30 août 2019. J'ai intégré le service informatique et plus précisément le pôle DINAMO sous la responsabilité  de Annabel BOURDÉ et Gaël SALAÜN. Ce service s'occupe généralement de développer et maintenir des applications web national utilisées par les chefs des établissement, les élèves  ou leurs parents et aussi des applications métiers dédier aux employées du rectorat.\newline
-
-   
-Durant mon alternance, j'ai eu pour principale mission d'intégrer un outil de documentation interactive dans les applications du rectorat en implémentant une API de service pour gérer cette documentation et en rajoutant une interface graphique qui aide les utilisateurs à utiliser cette API, j'ai donc eu la chance de pouvoir développer aussi bien sur le back-end que sur le front-end.\newline
+J'ai réalisé mon alternance de Master 2 Ingénierie logiciel au sein du rectorat de l'académie de rennes du 09 septembre 2018 au 30 août 2019. J'ai intégré la DSII (Direction des Systèmes d'Information et de l'Innovation) et plus précisément le pôle DINAMO (Développement et INtégration en environnement Académique ou Mutualisé) encadré par Annabel BOURDÉ et Gaël SALAÜN. Ce pôle s'occupe généralement de développer et maintenir des applications web national utilisées par les chefs des établissement, les élèves  ou leurs parents et aussi des applications métiers dédiés aux employés du rectorat.\newline
 
 
-C'était une première expérience en tant qu'apprenti dans une entreprise, cela m'a permet d'acquérir des nouvelles méthodes de travail comme l'agilité et de plus j'ai pu travaillé sur des des concepts innovants ainsi qu'utiliser des technologies et outils actuels.\newline
+Durant mon alternance, j'ai eu pour principale mission d'intégrer un outil de documentation interactive dans les applications du rectorat. Le travail consistait à trouver une solution qui permet aux administrateurs des applications d'être autonomes et pouvoir rajouter la documentation sans utiliser du code informatique. Nous avons réaliser cette solution ainsi réaliser une interface graphique utilisée par ces administrateurs, j'ai donc eu la chance de pouvoir développer aussi bien sur le back-end que sur le front-end.\newline   
+
+C'était une première expérience en tant qu'apprenti dans une entreprise, cela m'a permis d'acquérir des nouvelles méthodes de travail comme l'agilité et de plus j'ai pu travaillé sur des des concepts innovants ainsi qu'utiliser des technologies et outils actuels.\newline
 
 
-Dans un premier temps, j'établirai un bref historique du service informatique du rectorat en présentant les multiples pôles qui existent et son organisation. Puis je présenterai plus en détails les objectifs de mon alternance ainsi que les méthodologies de gestion de projet que j'ai suivies et les outils que j'ai utilisés. Enfin j'expliquerai les travaux réalisés dans ma mission et je conclurai avec un bilan de mon alternance.
+Dans un premier temps, j'établirai une bref présentation du service informatique du rectorat en présentant les multiples pôles qui existent et son organisation. Puis je présenterai plus en détail les objectifs de mon alternance ainsi que les méthodologies de gestion de projet que j'ai suivies et les outils que j'ai utilisés. Enfin j'expliquerai les travaux réalisés dans ma mission et je conclurai avec un bilan de mon alternance.
 
 \newpage
 
@@ -78,16 +80,122 @@ Dans un premier temps, j'établirai un bref historique du service informatique d
 \section{Contexte général}
 \subsection{Rectorat de l’académie de Rennes}
 
-Le rectorat de l'académie de Rennes est une circonscription administrative propre à l’éducation nationale.\\
-Elle regroupe 4 directions des services départementaux de l'éducation nationale : 
-Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des services départementaux de l'éducation nationale est placée sous la responsabilité d'un inspecteur d'académie, directeur académique des services de l'Éducation nationale.Son rôle au sein de ces départements est de gérer les personnels, les élèves, les moyens financiers, les examens... de tous les établissements scolaires, depuis la maternelle jusqu'au lycée.
+Le rectorat de l'académie de Rennes est une circonscription administrative propre à l’Éducation Nationale.\\
+Elle regroupe 4 directions des services départementaux de l'Éducation Nationale : 
+Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des services départementaux de l'Éducation Nationale est placée sous la responsabilité d'un inspecteur d'académie, directeur académique des services de l'Éducation Nationale. Son rôle au sein de ces départements est de gérer les personnels, les élèves, les moyens financiers, les examens... de tous les établissements scolaires, depuis la maternelle jusqu'au lycée.
+
 
 \subsection{Organisation}
-
 (TODO)
-\subsection{Architecture des projets}
 
-Au sein du rectorat Rennes, la majorité de l'équipe d'informatique  développe des applications web. Il existe plusieurs types d'application (métiers,outils...). Ces applications sont constituées de deux modules, Back-end \&  Front-end.
+\subsection{Pôle DINAMO}
+
+Au sein du rectorat, nous trouvons le pôle DINAMO (Développement et INtégration en environnement Académique ou Mutualisé), dans lequel je travaille en tant qu'apprentis et dont l'activité principale est le développement et l'intégration académiques. 
+
+
+\begin{enumerate}
+\item \textbf{Missions :}\\
+
+\begin{itemize}
+\item Mettre en œuvre des services numériques académiques ou mutualisés.
+\item Réalisation des applications web et fournir des applications fiables, sécurisées et adaptées aux usages des utilisateurs. 
+\item Assurer la maintenance et l'évolution des projets.\\
+\end{itemize}
+
+\item \textbf{Effectifs :}\\
+L’équipe de développement du pôle DINAMO est constituée d’Arnaud Rupin, responsable du pôle, ainsi que 6 développeurs informatiques (Albane GUIHOMAT, Annabel BOURDÉ, Gaël SALAÜN, Maïna DIRINGER, Marc BERHAUT et Vincent CARON). Voir figure 1\\
+
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/PoleDinamo.png}
+  		\caption{l'équipe du pôle DINAMO}
+	\end{figure}
+
+
+\subsection{Méthodes de travail}
+\subsubsection{Méthodologie agile}
+
+les nouveaux projets de l'équipe DINAMO fonctionnent en méthodologie agile sous forme de sprints qui varie de 2 à 4 semaines. Chaque équipe effectue un Daily-meeting afin d'échanger sur l'évolution des tâches à faire.
+
+Durant un sprint, l'équipe embarque des nouvelles \textbf{User Story} et réaliser des nouvelles fonctionnalités et aussi corriger les erreurs et les bugs rencontrés lors des démos. Le lancement de chaque sprint se fait lors d'une réunion \textbf{sprint planning}, dans laquelle toute l'équipe du projet est présente ainsi que le client. Ce dernier désigne les nouvelles \textbf{User Story} et des nouvelles fonctionnalités qu'il souhaite qu'elles soient rajoutées ou corrigées dans la prochaine version de l'application. 
+
+Durant mon alternance, j'ai eu la chance d'être inviter par mes maîtres d'alternances à assister plusieurs réunions des autres projets afin de voir le déroulement d'un projet agile. j'ai pu assister à un sprint planning, une rétrospective et une démo...    
+
+Dans mon cas, j'étais le seul développeur dans mon projet, je faisais un Daily-meeting  tous les jours avec mes maîtres d'alternances pour que je puisse dire sur quoi je travaillais et leurs poser des questions en cas de blocages. L'administrateur des systèmes d'informations(ADSI) JOSSO Clément, qui est en même temps le Product Owner(PO) du projet, et mes maîtres d'alternances me conseillaient sur l'ordre des tâches à suivre lors des multiples réunions.   
+
+\subsubsection{Communication}
+
+Pour communiquer, l'équipe informatique utilise l'outil de messagerie instantané Rocket.Chat. Il permet de créer différents
+channels pour chaque équipe, des channels de veille ont été également crées pour de la veille technologique.
+
+Nous utilisons aussi l'outil Calendar (un outil développé par Oracle) qui permet d’organiser les réunions.  
+
+\subsubsection{Dockerisation}
+
+Le logiciel Docker permet de créer, déployer et exécuter des conteneurs de manière efficace. Un conteneur enveloppe l’application d’un logiciel dans une boîte invisible avec tout ce dont il a besoin pour s’exécuter.
+
+
+Dans le pôle DINAMO, l'équipe utilise Docker Compose pour partager le même environnement de travail entre plusieurs personne et tout installer sur docker. Docker Compose est un outil qui permet de décrire et gérer  plusieurs conteneurs comme un ensemble des services inter-connectés.
+
+Dans les projets sur lesquelles j'ai travaillés, nous avons utilisé Docker-compose pour déclarer tout les conteneurs dont nous avons besoin dans un fichier .yml  et nous démarrons l'ensemble des conteneurs en une seule commande \textbf{docker-compose up}. 
+
+Dans le fichier docker-compose.yml, chaque conteneur est décrit avec un ensemble de paramètres qui correspondent aux options disponibles lors d’un docker run : l’image à utiliser, les volumes à monter, les ports à ouvrir...
+ 
+
+\subsubsection{Versionning}
+
+L'équipe informatique utilise Git sur la plateforme Gitlab hébergée par la Forge National comme gestionnaire de versions. 
+
+\section{À propos du projet}
+
+\subsection{Contexte et Problématique}
+
+La DSII (direction des systèmes d'information et d'innovation (DSII) et plus précisément l'équipe DNIAMO utilise plusieurs façons pour documenter leur applications. La plupart du temps elle utilise une documentation écrite (Manuel Utilisateur), une chose qui ne rend pas facile aux utilisateurs de se documenter sur l'appli à cause de contrainte de temps. 
+
+
+C'est pour cette raison que Monsieur JOSSO Clément,le product Owner du projet(PO), a voulu mettre en œuvre une documentation interactive dans l'application métier Solycee afin de faciliter l’accès de la documentation à ces utilisateurs et d'interagir directement avec la page web. Nous avons utilisé un outil nommé BootstrapTour pour réaliser cette documentation. 
+
+Le besoin du client est d'avoir une application qui permet à l'ADSI(Administrateur Des Systèmes d'Informations) de créer la documentation directement à partir de sa page web et pouvoir l'améliorer au fur et à mesure des demandes des utilisateurs via une interface graphique rajouter dans le projet Solycee. 
+
+
+Le but final du projet est de permettre aux ADSI d'être autonomes et de pouvoir rajouter la documentation dans leurs applications. Nous avons donc crée un web service(AppTour) où sont sauvegardés tous les tours et leurs étapes.
+ 
+\subsection{Présentation de Bootstrap Tour : Une visite guidée interactive}
+ 
+Bootstrap tour est une librairie JavaScript permettant de présenter de façon assez simple l’application, l’avantage, comme pour toutes les librairies en fait, c’est qu’il y a déjà des bouts de fonctionnalités toutes faites, ce qui évite de réimplémenter le code. Bootstrap tour est une implémentation qui sert à créer une visite guidée pour une application.
+
+Le bénéfice de l'utilisation de Bootstrap tour est immédiat pour les utilisateurs car elle présente les fonctionnalités de la page directement sur l'écran soit en lançant la documentation  dés l'ouverture de la page ou en appuyant sur un bouton pour déclencher cette documentation.
+
+
+\subsection{Architecture du projet}
+
+Le projet se constitue d'une interface utilisateur qui est une application web (Solycee) et d'un Back-end qui est une API REST (AppTour) qui communique avec une base de données relationnelles. Voir figure 2.
+
+
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/ArchitectureGenerale.png}
+  		\caption{Architecture du projet}
+	\end{figure}
+
+
+\begin{enumerate}
+\item \textbf{Technologies :}\\
+
+\begin{itemize}
+\item \textbf{Java: }Langage du développement du Back-end de Solycee. 
+\item \textbf{Kotlin: }Langage du développement de l'API Rest AppTour.
+\item \textbf{Maven: }Construction des projets Java et Kotlin du Back-end.
+\item \textbf{Spring: }Spring est un framework libre pour construire et définir l'infrastructure d'une application java dont il facilite le développement et les tests
+\item \textbf{Spring Boot: }Framework d'infrastructure des Back-end.
+\item \textbf{Hibernate: } Framweork 
+\item \textbf{Spring Security: }Spring Security est un Framework de sécurité léger qui fournit une authentification et un support d’autorisation afin de sécuriser les applications Spring.
+\item \textbf{JavaScript,CSS,HTML: } Développement du Front-end de Solycee.
+\end{itemize} 
+
+\end{enumerate}
 
 \subsubsection{Back-end}
 
@@ -111,69 +219,11 @@ Une couche Contrôller: Il s'agit de l'API qui permet de répondre à toutes les
   		\caption{Arichtecture Back-end d'une application web}
 	\end{figure}
 
-\subsubsection{Front-end}
-Le Front-end est la partie visible par les utilisateurs des applications web. Elle comprend l'interface graphique par laquelle nos utilisateurs vont interagir avec le reste du système (Back-end).
-
-
-Le Front-end des applications web du rectorats sont développées en plusieurs langages. La plupart de ces applications  sont codées avec le triplet HTML,CSS \& JavaScript. Tandis que ces derniers mois, l'équipe informatique commence à intégrer le langage React.js  afin de monter en compétences et découvrir des nouveaux langages plus récents. 
-
-\textbf{HTML:} HTML est une technologie et un standard qui permet d'afficher le contenu d'une application sur le web. Le langage reprend la syntaxe de XML,c'est-à-dire, une imbrication de balise/élément/tag les uns dans les autres. \newline
-\newline
-\textbf{CSS:} CSS, est une technologie complémentaire à HTML, c'est elle qui va permettre d'ajouter des couleurs, des ombres, de mettre en forme le texte, de positionner les blocs, etc. Elle sert à mettre en forme une page web. \newline
-\newline
-\textbf{JavaScript:} JavaScript, au contraire de HTML et CSS, n'est pas un langage de présentation mais de programmation, qui plus est, objet orienté prototype. Il permet de rendre plus dynamique une application web grâce à la manipulation de l'API DOM (Document Object Model) et de l'AJAX (Asynchronous JavaScript And XML).\newline
-\newline
-\textbf{React:} Le défaut de JavaScript, mais qui est aussi sa force, est sa grande flexibilité (typage dynamique, première ordre, point virgule optionnel...). On peut donc arriver très facilement à un code illisible et non maintenable. Le framework React apporte beaucoup de solutions à ces problèmes, avec sa façon de manipuler la DOM (via un moteur de template), l'utilisation de TypeScript (une amélioration du JavaScript par Microsoft.De plus, il est très facile de générer un environnement React pour un projet. C'est pour ces raisons que l'équipe informatique du rectorat commence à prendre en main ce Langage et l’intégrer dans les nouveaux projets et les nouvelles applications web. 
-
-\begin{figure}[H]
-	\centering
- 		\includegraphics[width=1\textwidth]{diagrammes/schema-serveur.png} 
-  		\caption{Application Web classique}
-	\end{figure}
-
-\subsection{Méthodes de travail}
-\subsubsection{Méthodologie agile}
-
-Les équipes informatiques du rectorat fonctionnent en méthodologie agile, chaque équipe effectue un Daily afin que chaque personne puisse présenter sur quoi elle a travaillé la veille et sur quoi elle compte continuer le jour même. Dans mon cas, j'étais le seul développeur dans mon projet, je faisais un Daily tout les jours avec mes maîtres d'alternances pour que je puisse dire sur quoi je travaillais et leurs poser des questions en cas de blocages. 
-
-\subsubsection{Communication}
-
-Pour communiquer, l'équipe informatique utilise l'outil de messagerie instantané Rocket.Chat. Il permet de créer différents
-channels pour chaque équipe, des channels de veille ont été également crées pour de la veille technologies.
-
-Nous utilisons aussi l'outil Calendar (un outil développer par Oracle) qui permet d’organiser les réunions.  
-
-\subsubsection{Dockerisation}
-
-Le logiciel Docker permet de créer, déployer et exécuter des conteneurs de manière efficace. Un conteneur enveloppe l’application d’un logiciel dans une boîte invisible avec tout ce dont il a besoin pour s’exécuter. Cela comprend le système d’exploitation, le code de l’application, le runtime, les outils système et les librairies. Les conteneurs Docker sont construits à partir des images Docker.
-
-Ils sont légers, portables et permettent aux développeurs de créer, déployer et exécuter efficacement des applications distribuées. En outre, ils permettent à une application d’être empaquetée et déplacée facilement, augmentant ainsi la simplicité d’une infrastructure.
-
-\subsubsection{Versionning}
-
-L'équipe informatique utilise Git sur la plateforme Gitlab hébergé par la Forge comme gestionnaire de versions. 
-
-
 \section{Objectifs et missions de l'alternance}
-
-\subsection{Objectif du projet}
-
-Au sein du rectorat, le pôle DINAMO se charge de réaliser les applications web métiers et autres. L'équipe informatique utilise différentes façons pour documenter leur applications. La plupart du temps elle utilise une documentation écrite (Manuel Utilisateur), une chose qui ne rend pas facile aux utilisateurs d’interagir avec l'application et comprendre la documentation. 
-
-
-C'est pour cette raison que Monsieur JOSSO Clément,le product Owner du projet(PO), a voulu mettre en œuvre une documentation interactive dans l'application métier Solycee afin de permettre à ces  utilisateurs de se auto-documenter et interagir directement avec la page web. Nous avons utilisé un outil nommé BootstrapTour pour réaliser cette documentation. 
-
-Le but final du projet est de permettre aux administrateurs d'être autonomes et de pouvoir rajouter ou modifier les tours ainsi que leurs  étapes dans leurs applications. Nous avons donc crée un web service(AppTour) où sont sauvegardé tous les tours et leurs étapes.
-
-\subsection{Présentation de Bootstrap Tour : Une visite guidée interactive}
- 
-Bootstrap tour est une petite librairie JavaScript permettant de présenter de façon assez simple l’application, l’avantage, comme pour toutes les librairies en fait, c’est qu’il y a déjà des bouts de fonctionnalités toutes faites, ce qui évite de réimplémenter le code. Bootstrap tour est une implémentation qui sert à créer une visite guidée pour une application.
-
-Le bénéfice de l'utilisation de Bootstrap tour est immédiat pour les utilisateurs car elle présente les fonctionnalités de la page directement sur l'écran soit en lançant la documentation  dés l'ouverture de la page ou en appuyant sur un bouton pour déclencher cette documentation.
 
 \subsection{Solycee}
 
-Solycee est une application métier créée par le rectorat et destinée à la gestion des offres et demandes de stages. Elle permet aux collèges et aux lycées d'inscrire leurs élèves dans des mini-stages proposés par les lycées.  
+Solycee est une application métier créée par le pôle DINAMO et destinée à la gestion des offres et demandes de stages. Elle permet aux collèges et aux lycées d'inscrire leurs élèves dans des mini-stages proposés par les lycées.  
 
 L'application serveur est réalisé en Java avec l'utilisation des composants du framework Spring.L'interface est codé avec le triplet HTML,CSS \& Javascript en intégrant du Thymeleaf pour le traitement des vues.  
 
@@ -282,8 +332,6 @@ API Apptour est une application Sring Boot codé en langage Kotlin. Le but de ce
 \item L'API AppTour a été réalisé de la même manière que les autres applications du rectorat. Il existe plusieurs couches. Une couche service pour implémenter tous les services dont nous avons besoin, une couche controller pour construire l'API utilisée par le Front Solycee et qui sera utilisée par d'autres applications dans le futur, il existe d'autres couches afin de créer une application similaire aux autres applis du rectorat.
 
 \end{itemize}
-
-\newpage
 
 \subsubsection{Travail réalisé}
 
