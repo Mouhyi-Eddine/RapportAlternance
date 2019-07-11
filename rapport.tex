@@ -65,7 +65,7 @@
 J'ai réalisé mon alternance de Master 2 ingénierie logiciel au sein du rectorat de l'académie de Rennes du 09 septembre 2018 au 30 août 2019. J'ai intégré la DSII (Direction des Systèmes d'Information et de l'Innovation) et plus précisément le pôle DINAMO (Développement et INtégration en environnement Académique ou Mutualisé) encadré par Annabel BOURDÉ et Gaël SALAÜN. Ce pôle s'occupe généralement de développer et maintenir des applications web national utilisées par les chefs des établissement, les élèves  ou leurs parents et aussi des applications métiers dédiés aux employés du rectorat.\newline
 
 
-Durant mon alternance, j'ai eu pour principale mission d'intégrer un outil de documentation interactive dans les applications du rectorat. Le travail consistait à trouver une solution qui permet aux administrateurs des applications d'être autonomes et pouvoir rajouter la documentation sans utiliser du code informatique. Nous avons réaliser cette solution ainsi implémenter une interface graphique utilisée par ces administrateurs, j'ai donc eu la chance de pouvoir développer aussi bien sur le back-end que sur le front-end.\newline   
+Durant mon alternance, j'ai eu plusieurs mission toutes orientées sur une application Web, j'ai eu pour principale mission d'intégrer un outil de documentation interactive dans les applications du rectorat. Le travail consistait à trouver une solution qui permet aux administrateurs des applications d'être autonomes et pouvoir rajouter la documentation sans utiliser du code informatique. Une de mes missions était la réalisation d'une interface graphique, j'ai donc eu la chance de pouvoir développer aussi bien sur le back-end que sur le front-end.\newline   
 
 C'était une première expérience en tant qu'apprenti dans une entreprise, cela m'a permis d'acquérir des nouvelles méthodes de travail comme l'agilité et de plus j'ai pu travaillé sur des des concepts innovants ainsi qu'utiliser des technologies et outils actuels.\newline
 
@@ -164,29 +164,39 @@ Le but final du projet est de permettre aux ADSI d'être autonomes et de pouvoir
  
 \subsection{Présentation de Bootstrap Tour : Une visite guidée interactive}
  
-Bootstrap tour est une librairie JavaScript permettant de présenter de façon assez simple l’application, l’avantage, comme pour toutes les librairies en fait, c’est qu’il y a déjà des bouts de fonctionnalités toutes faites, ce qui évite de réimplémenter le code. Bootstrap tour est une implémentation qui sert à créer une visite guidée pour une application.
+Bootstrap Tour est une librairie JavaScript permettant de présenter de façon assez simple l’application, l’avantage, comme pour toutes les librairies en fait, c’est qu’il y a déjà des bouts de fonctionnalités toutes faites, ce qui évite de réimplémenter le code. Bootstrap Tour est une implémentation qui sert à créer une visite guidée pour une application.
 
-Le bénéfice de l'utilisation de Bootstrap tour est immédiat pour les utilisateurs car elle présente les fonctionnalités de la page directement sur l'écran soit en lançant la documentation  dés l'ouverture de la page ou en appuyant sur un bouton pour déclencher cette documentation.
+Le bénéfice de l'utilisation de Bootstrap Tour est immédiat pour les utilisateurs car elle présente les fonctionnalités de la page directement sur l'écran soit en lançant la documentation  dés l'ouverture de la page ou en appuyant sur un bouton pour déclencher cette documentation.\\
+\textbf{Mis en œuvre et  Utilisation :}
+
+Pour utiliser une visite guidée par Bootstrap Tour, il suffit juste de récupérer les bibliothèques et les sources dont nous avons besoin. La première étape est de construire un "Tour" qui accepte un bon nombre de paramètres dont le paramètre "Step" (étape). Ensuite il suffit de donner des étapes à notre tour, pour chaque étape il faut définir certain attribut : 
+
+\begin{itemize}
+\item \textbf{Élement: } Élément sur lequel vous désirez afficher votre popup. 
+\item \textbf{Title: } Titre affiché sur la popup. 
+\item \textbf{Content: } Message affiché dans le corps du popup.
+ect.
+\item \textbf{placement: } Permet d’indiquer dans quel sens vous désirez afficher la popup.
+\end{itemize} 
+
 
 
 \subsection{Architecture du projet}
 
 Le projet se constitue d'une interface utilisateur qui est une application web (Solycee) et d'un Back-end qui est une API REST (AppTour) qui communique avec une base de données relationnelles. Voir figure 2.
 
-
-\begin{figure}[H]
-	\centering
- 		\includegraphics[width=1\textwidth]{diagrammes/ArchitectureGenerale.png}
-  		\caption{Architecture du projet}
-	\end{figure}
-
-
 \begin{enumerate}
 \item \textbf{Technologies :}\\
 
 \begin{itemize}
 \item \textbf{Java: }Langage du développement du Back-end de Solycee. 
-\item \textbf{Kotlin: }Langage du développement de l'API Rest AppTour.
+\item \textbf{Kotlin: }Langage du développement de l'API Rest AppTour. Kotlin est un langage de programmation orienté objet et fonctionnel, il a plusieurs avantages, voici les plus importants avantages :
+\begin{itemize}
+\item \textbf{Typage statique: } Kotlin est un langage de programmation à typage statique. Cela signifie que le type de chaque variable et expression est connu au moment de la compilation.
+\item \textbf{Sécurisé: } Kotlin est sécurisé. Il évite les exceptions NullPointerExceptions les plus redoutées en prenant en charge la nullabilité dans le cadre de son système de types.
+\item \textbf{Facile à apprendre: } La syntaxe ressemble beaucoup à Java.
+ect.
+\end{itemize} 
 \item \textbf{Maven: }Construction des projets Java et Kotlin du Back-end.
 \item \textbf{Spring: }Spring est un framework libre pour construire et définir l'infrastructure d'une application java dont il facilite le développement et les tests. Le concept fondamental du Spring, qui fait sa force, est l'injection des dépendances (dependency injection).
 \item \textbf{Spring Boot: }Framework d'infrastructure des Back-end.
@@ -196,6 +206,11 @@ Le projet se constitue d'une interface utilisateur qui est une application web (
 \end{itemize} 
 
 \end{enumerate}
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/ArchitectureGenerale.png}
+  		\caption{Architecture du projet}
+	\end{figure}
 
 
 \section{Objectifs et missions de l'alternance}
@@ -233,10 +248,10 @@ Voici maintenant une présentation plus précise sur les principaux outils utili
   		\caption{Schéma du patron de conception MVC}
 	\end{figure}
 	
-	\item \textbf{Spring Security }: Spring Security est un Framework de sécurité léger qui fournit une authentification et un support d’autorisation afin de sécuriser les applications Spring.\newline
+	\item \textbf{Spring Security }: Spring Security est un Framework de sécurité léger qui fournit une authentification et un support d’autorisation afin de sécuriser les applications Spring. \newline
 \end{itemize} 
 
-\textbf{Maven:} Maven est un outil de construction de projets (build) open source développé par la fondation Apache. Il permet de faciliter et d'automatiser certaines tâches de la gestion d'un projet Java.\newline
+\textbf{Maven:} Maven est un outil de construction de projets (build) open source développé par la fondation Apache. Il permet de faciliter et d'automatiser certaines tâches de la gestion d'un projet Java. Le but est de produire un logiciel à partir de code source en optimisant les tâches à réaliser. Il est facile à configurer.\newline
 
 \textbf{Thymeleaf:} Thymeleaf est un Java XML/XHTML/HTML5 Template qui apporte le concept de templates naturels en utilisant des attributs HTML spécifiques. Ce framework apporte aussi une séparation entre l'affichage et le contenu.\\
 
@@ -244,16 +259,23 @@ Thymeleaf s’intègre très facilement dans un projet Spring et permet de diffu
 
 \subsubsection{Travail réalisé}
 
-\textbf{(TODO)!!!}
+\textbf{(TODO)!!!}\\
 Dans le projet Solycee, j'ai principalement travaillé sur la partie Front-end. J'ai réalisé plusieurs tâches soit en rajoutant des nouvelles vues et des nouveaux composants dans les pages web et/ou en rajoutant des nouvelles fonctionnalités sur les composants existants.
 
 Le projet a été développé par l'équipe Dinamo. Avant de commencer à réaliser les tâches demandées, il était nécessaire de procéder un travail  de lecture du code implémenté et de la compréhension de ce dernier en posant des multiples questions à mes maîtres d'alternances. Il m'a fallu aussi comprendre l'architecture du projet ainsi que les technologies utilisées. 
 
-Une fois que le code était compréhensible et j'ai acquis toutes les informations importantes sur le projet, j'ai commencé à réaliser les tâches demandées.  Voici une présentation plus précise de toutes les tâches réalisées:   
+Une fois que le code était compréhensible et j'ai acquis toutes les informations importantes sur le projet, j'ai commencé à réaliser les tâches demandées.
+
+J'ai commencé par manipuler Bootstrap Tour sur l'application Solycee en rajoutant le code de la librairie dans le front de Solycee (code en javascript avec les étapes souhaités). Suite à une demande de l'ADSI de Solycee nous avons pu réaliser une première version en utilisant Bootstrap Tour. Un tour est défini dans un fichier JavaScript et il est composé de différent étapes. Bootstrap tour permet d'afficher l'étape du tour et aussi passer à l'étape suivante ou précédente ainsi que arrêter le tour avec le bouton "Fin"(Voir Figure 5). Pour lancer la documentation faut juste exécuter  2 méthodes dans le fichier Javascript, init et star. 
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/exemple_Tour.png} 
+  		\caption{Exemple d'une étape de Bootstrap Tour}
+	\end{figure}
 
 
 \begin{itemize}
-\item Rajout d'une modale pour prévenir les utilisateurs de la présence d'un bouton aide pour déclencher la documentation interactif.
+\item Rajout d'une modale pour prévenir les utilisateurs de la présence d'un bouton aide pour déclencher la documentation interactive.Voir Figure 6
 
 \begin{figure}[H]
 	\centering
@@ -261,16 +283,9 @@ Une fois que le code était compréhensible et j'ai acquis toutes les informatio
   		\caption{Image page d'accueil Solycee}
 	\end{figure}
 	
-Pour que ça soit pas dérangeant pour les utilisateurs qu'ils ont déjà vu la modale et qui ont eu l'info, j'ai fait en sorte que ça s'affiche qu'une seule fois pour eux. 
+\item Pour que cette modale apparaît qu'une seule fois chez les utilisateurs de l'application. Nous avons fait en sorte qu'elle ne s'affiche qu'une seule fois.  
    
-\item Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} sur toutes les pages web de l'application. En appuyant dessus ça déclenche les pop-ups  de Bootstrap tour (Les étapes du tour sur la page web), une étape se représente avec 3 champs: Element (l'id d'élément cliqué, Titre (titre de l'étape) \& Content (Description de l'étape). Dans le cas où il n'existe pas de tour sur la page web, le bouton affiché est gris et titré par une phrase "Aide non disponible pour cette page" \includegraphics[width=7mm,scale=0.5]{diagrammes/Bouton_aideNonDispo.png}  
-
-\begin{figure}[H]
-	\centering
- 		\includegraphics[width=1\textwidth]{diagrammes/exemple_Tour.png} 
-  		\caption{Exemple d'une étape de Bootstrap Tour}
-	\end{figure}
-
+\item Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} sur toutes les pages web de l'application. En appuyant dessus ça déclenche les pop-ups  de Bootstrap tour (Les étapes du tour sur la page web), une étape se représente avec 3 champs: Element (l'id d'élément cliqué, Titre (titre de l'étape) \& Content (Description de l'étape). Dans le cas où il n'existe pas de tour sur la page web, le bouton affiché est gris et titré par une phrase "Aide non disponible pour cette page".\\
 \item Récupérer le tour d'une page web avec ses étapes: Pour chaque page web de solycee, l'application récupère le tour de cette dernière avec ses étapes en lançant une requête à l'API AppTour en passant en paramètre le nom de l'application et l'identifiant de la page courante. Cette requête (FindTourWithLibelleAplicationAndIdHtmlPage) renvois un json avec toutes les étapes en cas de la présence du tour dans la base. En cas où le tour n'existe pas et la requête renvoi une réponse 404 (Not found), nous mettons le bouton d'aide en gris et il devient non cliquable. 
 
 \begin{figure}[H]
@@ -295,10 +310,9 @@ La récupération de l'étape de chaque composant se fait par un appel à l'API 
 
 Il existe un bouton valider dans la modal qui  permet soit de rajouter la nouvelle méthode avec la méthode POST si elle n'existe pas ou sinon modifier les éléments de l'étape avec une méthode PUT. 
 \end{itemize}
-
+\newpage
 \subsection{AppTour}   
-\todo{(TODO)!!!}
-Au début du projet, j'ai commencé par manipuler BootstrapTour sur l'application Solycee en rajoutant le code de la librairie dans le front de Solycee (code en javascript avec les étapes souhaités). Bootstrap tour permet d'afficher l'étape du tour et aussi passer à l'étape suivante ou précédente ainsi que arrêter le tour avec le bouton "Fin".
+(TODO)!!!
 
 Cette manipulation est simple et efficace pour un développeur pour rajouter des tours et leurs étapes afin de faire une visite d'application. Il suffit juste de manipuler le code Javascript. Chose qui n'est pas facile pour d'autres personnes ou les administrateurs de l'application.
 
@@ -307,7 +321,7 @@ AppTour est un web service qui permet aux administrateurs des applications du re
 API Apptour est une application Sring Boot codé en langage Kotlin. Le but de cette application est d’implémenter plusieurs  services afin de permettre aux administrateurs des autres applications de rajouter et modifier les étapes. 
 
 \subsubsection{Architecture de l'API AppTour}
-\todo{(TODO)!!!}
+(TODO)!!!
 Le Back-End, c’est la partie du code qui est exécutée par le serveur, il s’agît d'un serveur fournissant une API gérant la persistance des données et la logique de l'application.La majorité des applications du rectorat sont développées en framework Spring-boot et en langage Java et il existe quelques applications développées en langage Kotlin dont l'application Apptour.
 
 L'architecture des projets du rectorat est unique dans tous les projets afin  de faciliter la prise en main de ces derniers et avoir le même point de vue au sein du l'équipe.
@@ -328,7 +342,7 @@ Une couche Contrôller: Il s'agit de l'API qui permet de répondre à toutes les
   		\caption{Arichtecture Back-end d'une application web}
 	\end{figure}
 \subsubsection{Aspect technique}
- \todo{(TODO)!!!}
+(TODO)!!!
  Le projet AppTour était initialiser par l'alternant de l'année dernière. j'ai commencé par la relecture du code et la compréhension de l'existant. L'application a été implémenté en Kotlin qui est un langage de programmation orienté objet et fonctionnel, avec un typage statique qui permet de compiler pour la machine virtuelle Java et JavaScript et Spring boot qui est un framework utilisé afin de faciliter la configuration d'un projet Spring et de réduire le temps alloué au démarrage d'un projet. plusieurs autres technologies était utilisées dans ce projet : 
  
 \begin{itemize}
@@ -343,7 +357,7 @@ Une couche Contrôller: Il s'agit de l'API qui permet de répondre à toutes les
 \end{itemize}
 
 \subsubsection{Travail réalisé}
-\todo{(TODO)!!!}
+(TODO)!!!
 Dans le projet AppTour, j'ai travaillé sur la réalisation d'une API web (Le back-end pour le bootstrapt), j'ai développé plusieurs Web Services qui permets de rajouter ou modifier les étapes des tours ainsi que faire des recherches pour vérifier l’existence des tours. 
 
 Comme noté plus haut, le projet AppTour était initialiser par l'alternant de l'année dernière en créant les tables (Entity). Il existait deux tables, une table Tour et une table Step. j'ai commencé donc par la relecture du code existant et la modification des tables.
