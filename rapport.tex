@@ -65,7 +65,7 @@
 J'ai réalisé mon alternance de Master 2 ingénierie logiciel au sein du rectorat de l'académie de Rennes du 09 septembre 2018 au 30 août 2019. J'ai intégré la DSII (Direction des Systèmes d'Information et de l'Innovation) et plus précisément le pôle DINAMO (Développement et INtégration en environnement Académique ou Mutualisé) encadré par Annabel BOURDÉ et Gaël SALAÜN. Ce pôle s'occupe généralement de développer et maintenir des applications web national utilisées par les chefs des établissement, les élèves  ou leurs parents et aussi des applications métiers dédiés aux employés du rectorat.\newline
 
 
-Durant mon alternance, j'ai eu plusieurs mission toutes orientées sur les  applications Web, une de mes principales missions était d'intégrer un outil de documentation interactive dans les applications du rectorat. Le travail consistait à trouver une solution qui permet aux administrateurs des applications d'être autonomes et pouvoir rajouter la documentation sans utiliser du code informatique. j'ai eu aussi comme mission de réaliser une interface graphique, j'ai donc eu la chance de pouvoir développer aussi bien sur le Back-end que sur le Front-end.\newline   
+Durant mon alternance, j'ai eu plusieurs mission toutes orientées sur les  applications Web, une de mes principales missions était d'intégrer un outil de documentation interactive dans les applications du rectorat. Le travail consistait à trouver une solution qui permet aux administrateurs des applications d'être autonomes et pouvoir rajouter la documentation sans utiliser du code informatique. Une autre mission était de réaliser une interface graphique, j'ai donc eu la chance de pouvoir développer aussi bien sur le Back-end que sur le Front-end.\newline   
 
 C'était une première expérience en tant qu'apprenti dans une entreprise, cela m'a permis d'acquérir des nouvelles méthodes de travail comme l'agilité et de plus j'ai pu travaillé sur des des concepts innovants ainsi qu'utiliser des technologies et outils actuels.\newline
 
@@ -290,27 +290,26 @@ Voici maintenant une présentation plus précise des fonctionnalités rajoutées
   		\caption{Image page d'accueil Solycee}
 	\end{figure}
 \newpage
-Pour que cette modale n'apparaît qu'une seule fois chez les utilisateurs de l'application. Nous avons fait en sorte qu'elle ne s'affiche que si l'utilisateur consulte l'application Solycee pour la première fois. 
+Pour que cette modale n'apparaît qu'une seule fois chez les utilisateurs de l'application. Nous avons fait en sorte qu'elle ne s'affiche que si l'utilisateur consulte l'application Solycee pour la première fois. \\ 
 
 
-\underline{Mise en oeuvre} :\\ 
-Pour réaliser cette tâche, j'ai dû ajouter une modale qui est un composant Bootstrap qui s'affiche à la première connexion de l'utilisateur à l'application. Cette modale n'apparaît pas une deuxième fois. \\
+\underline{Mise en oeuvre} :
+Pour réaliser cette tâche, j'ai dû ajouter une modale qui est un composant Bootstrap qui s'affiche à la première connexion de l'utilisateur à l'application. Cette modale n'apparaît pas une deuxième fois. \\ 
 
    
-\item Déclencher la documentation interactive en appuyant sur un bouton: Dans la première version, la documentation se déclenchait dés que l'utilisateur arrive sur la page de l'application et cela peut être répétitif pour l'utilisateur. Dans le cas présent, la documentation s'exécute seulement en cliquant sur un bouton. 
+\item Déclencher la documentation interactive en appuyant sur un bouton: Dans la première version, la documentation se déclenchait dés que l'utilisateur arrive sur la page de l'application et cela peut être répétitif pour l'utilisateur. Dans le cas présent, la documentation s'exécute seulement en cliquant sur un bouton. \\ 
 
-\underline{Mise en oeuvre} :\\ 
+\underline{Mise en oeuvre} :
 Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} sur toutes les pages web de l'application. En appuyant dessus ça déclenche les pop-ups  de Bootstrap tour. 
 
 
 La mis en place de Bootstrap Tour dans un ficher Javascript était une façon simple non compliqué pour lancer une documentation interactive. Il suffit juste de rajouter des Tours et des Steps dans le fichier JS, donc il faut aller chercher et modifier dans le code, une manipulation qui peut être compliqué des fois.
 
-Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et les Steps. L'application Solycee communique avec ce web service pour récupérer les informations et la documentation. 
+Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et les Steps. L'application Solycee communique avec ce web service pour récupérer les informations et la documentation. \\ 
 
-\item Récupérer La documentation d'une page web de l'application Solycee: Il suffit de faire un appel au Web service AppTour.   
-
-\underline{Mise en oeuvre} :\\ 
-
+\item Récupérer La documentation d'une page web de l'application Solycee: Il suffit de faire un appel au Web service AppTour. \\   
+ 
+\underline{Mise en oeuvre} :
 - Chaque page HTML(Vue) de l'application Solycee a un identifiant qui correspond à l'Id de son corps "Body".
 
 - Un fichier JavaScript "tourLoader" est importé dans toutes les vues de Solycee.
@@ -326,17 +325,46 @@ Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et 
   		\caption{Pas de tour disponible dans cette page Web }
 	\end{figure}
     
+\item Rajouter un mode d'édition pour les ADSI: Jusqu'à maintenant, les ADSI ne pouvaient pas rajouter la documentation sauf s'ils rajoutent des données en dur dans la base de données, chose qui n'est pas facile. Pour cette cela, nous avons créé un mode édition dans l'application Solycee qui est présenté par une interface graphique et elle  permet de rajouter la documentation.\\
 
-\textbf{(TODO)!!!}\\
-\item Mode édition pour les Administrateurs : En appuyant sur le bouton  \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png}, les administrateurs  de l'application passent en mode édition. Il s'agit d'un mode avec la même interface graphique mais les composants et les boutons de cette interface ne réagissent plus de la même façon(Le fonctionnement de ces composant se désactive). En appuyant sur un des composant de la page, il y a une modale qui s'affiche pour permettre aux admins de rajouter des étapes de leur tour dans cette page Web.  Nous affichons aussi un champs sur l'interface Web pour afin de prévenir les admins qu'ils ont passé en mode édition.
 
- \begin{figure}[H]
+\underline{Mise en oeuvre} : \\
+- Nous avons rajouter le bouton\includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} dans toutes les pages web de l'application Solycee qui est titré par une  phrase "Veuillez cliquer ici pour passer en mode édition".
+
+- En appuyant sur le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} les ADSI passe en mode édition pour rajouter la documentation souhaité sur n'importe quel composant de la page web.Nous affichons un champs sur l'interface pour prévenir les ADSI qu'ils sont passés en mode éditions.Voir Figure 8.
+
+\begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/mode_edition.png} 
   		\caption{Page d'accueil en mode édition}
 	\end{figure}
+ 
 
-\item Permettre seuls aux administrateurs de voir le bouton qui permet de passer en mode édition. En se connectant à l'application, nous récupérons le nom complet de l'utilisateur connecté et nous envoyons une requête à l'API AppTour pour voir si l'utilisateur est administrateur. Si la requête renvoie le json de l’utilisateur nous affichons le bouton, dans le cas inverse le bouton ne sera pas affiché. \newline 
+- Ce mode consiste à rester la même page web où il se trouvait l'ADSI mais le comportement des composants(boutons, url,logo,etc...) de cette page change et ne fonctionne plus comme le mode normal. 
+
+Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, cela affiche une modale qui contient plusieurs composants(Titre,Élément,Contenu...) créés en HTML et CSS.Voir Figure 9.  
+
+\item Pour sécuriser un minimum le mode édition, nous avons fait en sorte que seuls les ADSI peuvent rajouter la documentation et non les utilisateurs et ils sont les seuls à accéder à ce mode.\\ 
+
+
+\underline{Mise en oeuvre} : \\
+- Quand l'utilisateur se connecte sur l'application, nous récupérons son nom complet.
+
+- Nous interrogeons ensuite le Web service AppTour en utilisant la classe RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le noms complet d'utilisateur et le libelle de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au mode édition. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
+\footnotetext{Spring RestTemplate est un Framework de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.
+ 
+ 
+
+
+\textbf{(TODO)!!!}
+
+
+\item Rajouter ou modifier la documentation : Quand les ADSI passent en mode édition et en appuyant sur un composant de la page web, la modale qui s'affiche permet de rajouter ou modifier une étape du Bootstrap Tour de cette page.\\
+
+ 
+\underline{Mise en oeuvre} : \\
+
+- En appuyant sur un composant de la page, nous envoyons une requête Ajax au Web service AppTour  
 
 \item Rajouter ou modifier les étapes :Quand les administrateurs se mettent en mode édition et en appuyant sur les composant de la page web(Boutons, liens ou autres), une modale s'affiche afin de permettre aux administrateurs de rajouter une étape du tour dans le cas où aucune étape existe pour le composant appuyé ou modifier l'étape si elle existe. 
 La récupération de l'étape de chaque composant se fait par un appel à l'API AppTour (FindStepByElementandIdTour), dans le cas où l'étape existe, nous remplissons les champs de la modale avec les données récupérées par la requêtes(Title \& content). Dans le cas inverse, nous laissons les champs vide afin que les administrateurs remplissent les données qui veulent stocker dans la base AppTour.
