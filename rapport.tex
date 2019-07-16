@@ -175,7 +175,6 @@ Pour utiliser une visite guidée par Bootstrap Tour, il suffit juste de récupé
 \item \textbf{Élement: } Élément sur lequel vous désirez afficher votre popup. 
 \item \textbf{Title: } Titre affiché sur la popup. 
 \item \textbf{Content: } Message affiché dans le corps du popup.
-ect.
 \item \textbf{placement: } Permet d’indiquer dans quel sens vous désirez afficher la popup.
 \end{itemize} 
 
@@ -342,8 +341,13 @@ Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et 
 
 - Ce mode consiste à rester la même page web où il se trouvait l'ADSI mais le comportement des composants(boutons, url,logo,etc...) de cette page change et ne fonctionne plus comme le mode normal. 
 
-Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, cela affiche une modale qui contient plusieurs composants(Titre,Élément,Contenu...) créés en HTML et CSS.Voir Figure 9.  
+Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, cela affiche une modale qui contient plusieurs composants(Titre,Élément,Contenu...) créés en HTML et CSS.Voir Figure 9.
 
+\begin{itemize}
+\item \textbf{Élement: } Id de l'élément séléctionné. 
+\item \textbf{Title: } Titre affiché sur la popup. 
+\item \textbf{Content: } Message affiché dans pour expliqué le fonctionnement du composant appuyé.  
+\end{itemize}
 \item Pour sécuriser un minimum le mode édition, nous avons fait en sorte que seuls les ADSI peuvent rajouter la documentation et non les utilisateurs et ils sont les seuls à accéder à ce mode.\\ 
 
 
@@ -356,18 +360,25 @@ Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, c
 
 \textbf{(TODO)!!!}
 
+\item Remplir les champs de la modale : Quand les ADSI passent en mode édition et en appuyant sur un composant de la page web, la modale s'affiche quui permet de rajouter ou modifier la documentation. Ensuite, nous remplissons les champs de la modale dans le cas où il existe une documentation pour ce composant. \\
 
-\item Rajouter ou modifier la documentation : Quand les ADSI passent en mode édition et en appuyant sur un composant de la page web, la modale qui s'affiche permet de rajouter ou modifier une étape du Bootstrap Tour de cette page.\\
+\underline{Mise en oeuvre} : \\
 
+- En appuyant sur un composant de la page, nous envoyons une requête Ajax au Web service AppTour pour récupérer l'étape dans le cas SI elle existe. Nous passons en paramètre l'Id du l'élément appuyer ainsi que id du tour de la page web où il se trouve l'ADSI. 
+
+- Si l'étape existe dans la table Step de AppTour,nous récupèrons l'objet et puis nous remplissons les champs par les données récuéprées(Title \& content).
+
+- Dans le cas où il n'exsite pas de documentation pour l'élément séléctionné, nous laissons les champs vides. 
+
+\item Rajouter ou modifier la documentation : Quand l'ADSI est en mode édition, il peut soit rajouter la documentation pour un composant de la page web dans le cas où il n'existe pas de docuementation pour ce dernier, soit la modifier dans le cas où elle existe. 
  
 \underline{Mise en oeuvre} : \\
 
-- En appuyant sur un composant de la page, nous envoyons une requête Ajax au Web service AppTour pour récupérer l'étape dans le cas où elle existe. Nous passons en paramètre l'Id du l'élément appuyer ainsi que id du tour de la page web où il se trouve l'ADSI. 
 
-\item Rajouter ou modifier les étapes :Quand les administrateurs se mettent en mode édition et en appuyant sur les composant de la page web(Boutons, liens ou autres), une modale s'affiche afin de permettre aux administrateurs de rajouter une étape du tour dans le cas où aucune étape existe pour le composant appuyé ou modifier l'étape si elle existe. 
-La récupération de l'étape de chaque composant se fait par un appel à l'API AppTour (FindStepByElementandIdTour), dans le cas où l'étape existe, nous remplissons les champs de la modale avec les données récupérées par la requêtes(Title \& content). Dans le cas inverse, nous laissons les champs vide afin que les administrateurs remplissent les données qui veulent stocker dans la base AppTour.
+- Après que nous interregeons le Web service AppTour sur la présence de la documention pour le composant appuyer, si elle est présente nous remplissons les champs et l'ADSI peut la modifié en changeant le contenu de l'étape ou son titre. Le bouton valider de la modale permetterra alors d'envoyer une requête Ajax (PUT) au Web service pour stocker les  modifications faite sur l'étape. 
 
-Il existe un bouton valider dans la modal qui  permet soit de rajouter la nouvelle méthode avec la méthode POST si elle n'existe pas ou sinon modifier les éléments de l'étape avec une méthode PUT. 
+- Dans le cas où elle n'existe pas de documentation pour l'élément appuyé, l'ADSI peut remplir les champs vides(Mettre un titre à la nouvelle étape et un contenu pour expliquer le fonctionnement de l'élément). Le bouton valider permet cette fois d'envoyer une requête Ajax (POST) pour rajouter la nouvelle étape dans la table Step.  
+
 \end{itemize}
 
 \end{enumerate}
