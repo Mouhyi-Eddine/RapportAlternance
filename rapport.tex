@@ -350,11 +350,9 @@ Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, c
 \underline{Mise en oeuvre} : \\
 - Quand l'utilisateur se connecte sur l'application, nous récupérons son nom complet.
 
-- Nous interrogeons ensuite le Web service AppTour en utilisant la classe RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le noms complet d'utilisateur et le libelle de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au mode édition. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
+- Nous interrogeons ensuite le Web service AppTour en utilisant  Srping-RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le noms complet d'utilisateur et le libelle de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au mode édition. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
 \footnotetext{Spring RestTemplate est un Framework de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.
  
- 
-
 
 \textbf{(TODO)!!!}
 
@@ -364,7 +362,7 @@ Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, c
  
 \underline{Mise en oeuvre} : \\
 
-- En appuyant sur un composant de la page, nous envoyons une requête Ajax au Web service AppTour  
+- En appuyant sur un composant de la page, nous envoyons une requête Ajax au Web service AppTour pour récupérer l'étape dans le cas où elle existe. Nous passons en paramètre l'Id du l'élément appuyer ainsi que id du tour de la page web où il se trouve l'ADSI. 
 
 \item Rajouter ou modifier les étapes :Quand les administrateurs se mettent en mode édition et en appuyant sur les composant de la page web(Boutons, liens ou autres), une modale s'affiche afin de permettre aux administrateurs de rajouter une étape du tour dans le cas où aucune étape existe pour le composant appuyé ou modifier l'étape si elle existe. 
 La récupération de l'étape de chaque composant se fait par un appel à l'API AppTour (FindStepByElementandIdTour), dans le cas où l'étape existe, nous remplissons les champs de la modale avec les données récupérées par la requêtes(Title \& content). Dans le cas inverse, nous laissons les champs vide afin que les administrateurs remplissent les données qui veulent stocker dans la base AppTour.
