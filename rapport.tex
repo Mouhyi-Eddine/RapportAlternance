@@ -97,9 +97,9 @@ Au sein du rectorat, nous trouvons le pôle DINAMO (Développement et INtégrati
 \item \textbf{Missions :}\\
 
 \begin{itemize}
-\item Mettre en œuvre des services numériques académiques ou mutualisés.
-\item Réalisation des applications web et fournir des applications fiables, sécurisées et adaptées aux usages des utilisateurs. 
-\item Assurer la maintenance et l'évolution des projets.\\
+\item - Mettre en œuvre des services numériques académiques ou mutualisés.
+\item - Réalisation des applications web et fournir des applications fiables, sécurisées et adaptées aux usages des utilisateurs. 
+\item - Assurer la maintenance et l'évolution des projets.\\
 \end{itemize}
 
 \item \textbf{Effectifs :}\\
@@ -119,7 +119,8 @@ L’équipe de développement du pôle DINAMO est constituée d’Arnaud Rupin, 
 
 les nouveaux projets de l'équipe DINAMO fonctionnent en méthodologie agile sous forme de sprints qui varie de 2 à 4 semaines. Chaque équipe effectue un Daily-meeting afin d'échanger sur l'évolution des tâches à faire.
 
-Durant un sprint, l'équipe embarque des nouvelles \textbf{User Story} et réaliser des nouvelles fonctionnalités et aussi corriger les erreurs et les bugs rencontrés lors des démos. Le lancement de chaque sprint se fait lors d'une réunion \textbf{sprint planning}, dans laquelle toute l'équipe du projet est présente ainsi que le client. Ce dernier désigne les nouvelles \textbf{User Story} et des nouvelles fonctionnalités qu'il souhaite qu'elles soient rajoutées ou corrigées dans la prochaine version de l'application. 
+Durant un sprint, l'équipe embarque des nouvelles \textbf{User Story}\footnotemark. et réalise des nouvelles fonctionnalités ou corriger les erreurs et les bugs rencontrés lors des démos. Le lancement de chaque sprint se fait lors d'une réunion \textbf{sprint planning} dans laquelle toute l'équipe du projet est présente ainsi que le client. Ce dernier désigne les nouvelles \textbf{User Story} et des nouvelles fonctionnalités qu'il souhaite qu'elles soient rajoutées ou corrigées dans la prochaine version de l'application. 
+\footnotetext{Un récit utilisateur, ou « user story »  en anglais, est une description simple d’un besoin ou d’une attente exprimée par un utilisateur et utilisée dans le domaine du développement de logiciels et de la conception de nouveaux produits pour déterminer les fonctionnalités à développer.}.
 
 Durant mon alternance, j'ai eu la chance d'être inviter par mes maîtres d'alternances à assister plusieurs réunions des autres projets afin de voir le déroulement d'un projet agile. j'ai pu assister à un sprint planning, une rétrospective et une démo...    
 
@@ -281,14 +282,13 @@ J'ai commencé par manipuler Bootstrap Tour sur l'application Solycee en rajouta
 Voici maintenant une présentation plus précise des fonctionnalités rajoutées : 
 
 \begin{itemize}
-\item L'ajout d'une modale pour prévenir les utilisateurs de la présence d'un bouton aide pour déclencher la documentation interactive.Voir Figure 6
+\item - L'ajout d'une modale pour prévenir les utilisateurs de la présence d'un bouton aide pour déclencher la documentation interactive.Voir Figure 6
 
 \begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/aide_modal.png}
-  		\caption{Image page d'accueil Solycee}
+  		\caption{Page d'accueil Solycee}
 	\end{figure}
-\newpage
 Pour que cette modale n'apparaît qu'une seule fois chez les utilisateurs de l'application. Nous avons fait en sorte qu'elle ne s'affiche que si l'utilisateur consulte l'application Solycee pour la première fois. \\ 
 
 
@@ -296,7 +296,7 @@ Pour que cette modale n'apparaît qu'une seule fois chez les utilisateurs de l'a
 Pour réaliser cette tâche, j'ai dû ajouter une modale qui est un composant Bootstrap qui s'affiche à la première connexion de l'utilisateur à l'application. Cette modale n'apparaît pas une deuxième fois. \\ 
 
    
-\item Déclencher la documentation interactive en appuyant sur un bouton: Dans la première version, la documentation se déclenchait dés que l'utilisateur arrive sur la page de l'application et cela peut être répétitif pour l'utilisateur. Dans le cas présent, la documentation s'exécute seulement en cliquant sur un bouton. \\ 
+\item - Déclencher la documentation interactive en appuyant sur un bouton: Dans la première version, la documentation se déclenchait dés que l'utilisateur arrive sur la page de l'application et cela peut être répétitif pour l'utilisateur. Dans le cas présent, la documentation s'exécute seulement en cliquant sur un bouton. \\ 
 
 \underline{Mise en oeuvre} :
 Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} sur toutes les pages web de l'application. En appuyant dessus ça déclenche les pop-ups  de Bootstrap tour. 
@@ -306,7 +306,7 @@ La mis en place de Bootstrap Tour dans un ficher Javascript était une façon si
 
 Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et les Steps. L'application Solycee communique avec ce web service pour récupérer les informations et la documentation. \\ 
 
-\item Récupérer La documentation d'une page web de l'application Solycee: Il suffit de faire un appel au Web service AppTour. \\   
+\item - Récupérer La documentation d'une page web de l'application Solycee: Il suffit de faire un appel au Web service AppTour. \\   
  
 \underline{Mise en oeuvre} :
 - Chaque page HTML(Vue) de l'application Solycee a un identifiant qui correspond à l'Id de son corps "Body".
@@ -324,7 +324,7 @@ Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et 
   		\caption{Pas de tour disponible dans cette page Web }
 	\end{figure}
     
-\item Rajouter un mode d'édition pour les ADSI: Jusqu'à maintenant, les ADSI ne pouvaient pas rajouter la documentation sauf s'ils rajoutent des données en dur dans la base de données, chose qui n'est pas facile. Pour cette cela, nous avons créé un mode édition dans l'application Solycee qui est présenté par une interface graphique et elle  permet de rajouter la documentation.\\
+\item - Rajouter un mode d'édition pour les ADSI: Jusqu'à maintenant, les ADSI ne pouvaient pas rajouter la documentation sauf s'ils rajoutent des données en dur dans la base de données, chose qui n'est pas facile. Pour cette cela, nous avons créé un mode édition dans l'application Solycee qui est présenté par une interface graphique et elle  permet de rajouter la documentation.\\
 
 
 \underline{Mise en oeuvre} : \\
@@ -339,66 +339,78 @@ Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et 
 	\end{figure}
  
 
-- Ce mode consiste à rester la même page web où il se trouvait l'ADSI mais le comportement des composants(boutons, url,logo,etc...) de cette page change et ne fonctionne plus comme le mode normal. 
+ Ce mode consiste à rester sur la même page web où il se trouvait l'ADSI mais le comportement des composants(boutons, url,logo,etc...) de cette page change et ne fonctionne plus comme le mode normal. 
 
-Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, cela affiche une modale qui contient plusieurs composants(Titre,Élément,Contenu...) créés en HTML et CSS.Voir Figure 9.
+Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, cela affiche une modale qui contient plusieurs composants(Titre,Élément,Contenu...) créés en HTML et CSS.
 
 \begin{itemize}
-\item \textbf{Élement: } Id de l'élément séléctionné. 
+\item \textbf{Élement: } Id de l'élément sélectionné. 
 \item \textbf{Title: } Titre affiché sur la popup. 
-\item \textbf{Content: } Message affiché dans pour expliqué le fonctionnement du composant appuyé.  
+\item \textbf{Content: } Message affiché pour expliquer le fonctionnement du composant appuyé.  
 \end{itemize}
-\item Pour sécuriser un minimum le mode édition, nous avons fait en sorte que seuls les ADSI peuvent rajouter la documentation et non les utilisateurs et ils sont les seuls à accéder à ce mode.\\ 
+\item - Pour sécuriser un minimum le mode édition, nous avons fait en sorte que seuls les ADSI peuvent rajouter la documentation et non les utilisateurs et ils sont les seuls à accéder à ce mode.\\ 
 
 
 \underline{Mise en oeuvre} : \\
 - Quand l'utilisateur se connecte sur l'application, nous récupérons son nom complet.
 
 - Nous interrogeons ensuite le Web service AppTour en utilisant  Srping-RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le noms complet d'utilisateur et le libelle de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au mode édition. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
-\footnotetext{Spring RestTemplate est un Framework de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.
- 
+\footnotetext{Spring RestTemplate est un Framework de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.\\
 
-\textbf{(TODO)!!!}
 
-\item Remplir les champs de la modale : Quand les ADSI passent en mode édition et en appuyant sur un composant de la page web, la modale s'affiche quui permet de rajouter ou modifier la documentation. Ensuite, nous remplissons les champs de la modale dans le cas où il existe une documentation pour ce composant. \\
+\item - Remplir les champs de la modale : Quand les ADSI passent en mode édition et en appuyant sur un composant de la page web, la modale s'affiche qui permet de rajouter ou modifier la documentation. Ensuite, nous remplissons les champs de la modale dans le cas où il existe une documentation pour ce composant. \\
 
-\underline{Mise en oeuvre} : \\
+\underline{Mise en oeuvre} : 
 
 - En appuyant sur un composant de la page, nous envoyons une requête Ajax au Web service AppTour pour récupérer l'étape dans le cas SI elle existe. Nous passons en paramètre l'Id du l'élément appuyer ainsi que id du tour de la page web où il se trouve l'ADSI. 
 
-- Si l'étape existe dans la table Step de AppTour,nous récupèrons l'objet et puis nous remplissons les champs par les données récuéprées(Title \& content).
+- Si l'étape existe dans la table Step de AppTour,nous récupérons l'objet et puis nous remplissons les champs par les données récupérées(Title \& content).Voir Figure 9.
 
-- Dans le cas où il n'exsite pas de documentation pour l'élément séléctionné, nous laissons les champs vides. 
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/Modal_gestion.png} 
+  		\caption{une documentation existe déjà pour le lien Gestion des mini-stages}
+	\end{figure}
 
-\item Rajouter ou modifier la documentation : Quand l'ADSI est en mode édition, il peut soit rajouter la documentation pour un composant de la page web dans le cas où il n'existe pas de docuementation pour ce dernier, soit la modifier dans le cas où elle existe. 
+- Dans le cas où il n’existe pas de documentation pour l'élément sélectionné, nous laissons les champs vides.\\ Voir Figure 10.
+
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/Modal_Deconnexion.png} 
+  		\caption{Pas de documentation pour le bouton Déconnexion}
+	\end{figure}
+
+\item - Rajouter ou modifier la documentation : Quand l'ADSI est en mode édition, il peut soit rajouter la documentation pour un composant de la page web dans le cas où il n'existe pas de documentation pour ce dernier, soit la modifier dans le cas où elle existe. 
  
-\underline{Mise en oeuvre} : \\
+\underline{Mise en oeuvre} : 
 
-
-- Après que nous interregeons le Web service AppTour sur la présence de la documention pour le composant appuyer, si elle est présente nous remplissons les champs et l'ADSI peut la modifié en changeant le contenu de l'étape ou son titre. Le bouton valider de la modale permetterra alors d'envoyer une requête Ajax (PUT) au Web service pour stocker les  modifications faite sur l'étape. 
+- Après que nous interrogeons le Web service AppTour sur la présence de la documention pour le composant appuyer, si elle est présente nous remplissons les champs et l'ADSI peut la modifié en changeant le contenu de l'étape ou son titre. Le bouton valider de la modale permettra alors d'envoyer une requête Ajax (PUT) au Web service pour stocker les  modifications faite sur l'étape. 
 
 - Dans le cas où elle n'existe pas de documentation pour l'élément appuyé, l'ADSI peut remplir les champs vides(Mettre un titre à la nouvelle étape et un contenu pour expliquer le fonctionnement de l'élément). Le bouton valider permet cette fois d'envoyer une requête Ajax (POST) pour rajouter la nouvelle étape dans la table Step.  
 
 \end{itemize}
 
 \end{enumerate}
-\newpage
+
 \subsection{AppTour}   
-(TODO)!!!
 
-Cette manipulation est simple et efficace pour un développeur pour rajouter des tours et leurs étapes afin de faire une visite d'application. Il suffit juste de manipuler le code Javascript. Chose qui n'est pas facile pour d'autres personnes ou les administrateurs de l'application.
+Comme expliquer plus haut, au début nous avons commencé par manipuler Bootstrap Tour en rajoutant du code JS de la librairie. Chose qui n'est pas facile et pas efficace. Pour cette raison, nous avons créé le Web service AppTour afin de permettre aux ADSI des applications de stocker leurs documentations. 
 
-AppTour est un web service qui permet aux administrateurs des applications du rectorat d'être plus autonome afin qu'il puissent rajouter ou/et modifier des étapes sans aller chercher dans le code. Tous les tours et les étapes de toutes les applications où nous souhaitons mettre du Bootstrap tour seront sauvegardés dans le web service AppTour.   
+AppTour est un Web service qui permet aux ADSI de rajouter ou modifier les étapes de leur documentation interactive (Bootstrap Tour). 
+API Rest AppTour est une application Spring Boot codée en langage Kotlin, nous avons implémenté plusieurs Endpoint afin stocker leurs documentations. 
 
-API Apptour est une application Sring Boot codé en langage Kotlin. Le but de cette application est d’implémenter plusieurs  services afin de permettre aux administrateurs des autres applications de rajouter et modifier les étapes. 
 
 \subsubsection{Architecture de l'API AppTour}
-(TODO)!!!
-Le Back-End, c’est la partie du code qui est exécutée par le serveur, il s’agît d'un serveur fournissant une API gérant la persistance des données et la logique de l'application.La majorité des applications du rectorat sont développées en framework Spring-boot et en langage Java et il existe quelques applications développées en langage Kotlin dont l'application Apptour.
 
-L'architecture des projets du rectorat est unique dans tous les projets afin  de faciliter la prise en main de ces derniers et avoir le même point de vue au sein du l'équipe.
 
-Le Back-end des applications se décompose de plusieurs couches: \newline
+
+Le Back-end AppTour, c’est la partie du code qui est exécutée par le serveur, il s'agit d'un serveur qui fourni une API Rest gérant la persistance des données et la logique de l'application. 
+
+L'architecture du Web service AppTour est similaire avec les nouveaux Webs services implémentés par le pôle Dinamo, j'ai essayé de respecter cette architecture pendant mon développement. 
+
+Le Back-en Apptour se décompose de plusieurs couches: \newline
+
+\textbf{(TODO)!!!}
 
 Une couche Repository/DAO: Repositories sont des interfaces héritant de l'interface Repository. L'objectif de ces interfaces consiste à rendre la création de la couche d'accès aux données (requêtes SELECT, UPDATE...) plus rapide.\newline
 
@@ -408,11 +420,16 @@ Une couche Service: Elle permet de séparer les opérations effectuées par le c
 
 Une couche Contrôller: Il s'agit de l'API qui permet de répondre à toutes les requêtes envoyées par le client. 
 
+
 \begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/ArchitectureProjet.png}
   		\caption{Arichtecture Back-end d'une application web}
 	\end{figure}
+	
+
+
+
 \subsubsection{Aspect technique}
 (TODO)!!!
  Le projet AppTour était initialiser par l'alternant de l'année dernière. j'ai commencé par la relecture du code et la compréhension de l'existant. L'application a été implémenté en Kotlin qui est un langage de programmation orienté objet et fonctionnel, avec un typage statique qui permet de compiler pour la machine virtuelle Java et JavaScript et Spring boot qui est un framework utilisé afin de faciliter la configuration d'un projet Spring et de réduire le temps alloué au démarrage d'un projet. plusieurs autres technologies était utilisées dans ce projet : 
