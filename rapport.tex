@@ -245,13 +245,6 @@ Voici maintenant une présentation plus précise sur les principaux outils utili
 	\item \textbf{Spring Security }: Spring Security est un Framework de sécurité léger qui fournit une authentification et un support d’autorisation afin de sécuriser les applications Spring. \newline
 \end{itemize} 
 
-\textbf{Kotlin:} Kotlin est un langage de programmation orienté objet et fonctionnel, il a plusieurs avantages, voici les plus importants :
-\begin{itemize}
-\item \textbf{Typage statique: } Kotlin est un langage de programmation à typage statique. Cela signifie que le type de chaque variable et expression est connu au moment de la compilation.
-\item \textbf{Sécurisé: } Kotlin est sécurisé. Il évite les exceptions NullPointerExceptions les plus redoutées en prenant en charge la nullabilité dans le cadre de son système de types.
-\item \textbf{Facile à apprendre: } La syntaxe ressemble beaucoup à la syntaxe Java.
-ect.
-\end{itemize} 
 \textbf{Maven:} Maven est un outil de construction de projets (build) open source développé par la fondation Apache. Il permet de faciliter et d'automatiser certaines tâches de la gestion d'un projet Java. Le but est de produire un logiciel à partir de code source en optimisant les tâches à réaliser. Il est facile à configurer.\newline
 
 \textbf{Hibernate: } Hibernate est un framework open source de type ORM (Object Relational Mapping) qui permet de faciliter le développement de la couche persistance d'une application. Il permet donc de représenter une base de données en objets Java et vice versa.
@@ -396,14 +389,9 @@ Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, c
 
 Comme expliquer plus haut, au début nous avons commencé par manipuler Bootstrap Tour en rajoutant du code JS de la librairie. Chose qui n'est pas facile et pas efficace. Pour cette raison, nous avons créé le Web service AppTour afin de permettre aux ADSI des applications d'être autonome et pouvoir rajouter la documentation interactive tout simplement en interrogeant le web service. Ils peuvent rajouter des étapes à des tours existants ou même rajouter des nouveaux tours.Nous avons donc implémenté plusieurs Endpoint afin stocker leurs documentations.  
  
-API Rest AppTour est une application Spring Boot codée en langage Kotlin. 
-
-
 \subsubsection{Architecture de l'API AppTour}
 
-
-
-Le Back-end AppTour, c’est la partie du code qui est exécutée par le serveur, il s'agit d'un serveur qui fourni une API Rest gérant la persistance des données et la logique de l'application. 
+Le Back-end AppTour, c’est la partie du code qui est exécutée par le serveur, il s'agit d'une API Rest qui gère la persistance des données et la logique de l'application. 
 
 L'architecture du Web service AppTour est similaire avec les nouveaux Webs services implémentés par le pôle Dinamo, j'ai essayé de respecter cette architecture pendant mon développement. 
 
@@ -430,22 +418,25 @@ Le Back-en Apptour se décompose de plusieurs couches: \newline
 
 
 \subsubsection{Aspect technique}
-\textbf{(TODO)!!!}\newline
- Le projet AppTour était initialiser par l'alternant de l'année dernière. j'ai commencé par la relecture du code et la compréhension de l'existant. L'application a été implémenté en Kotlin qui est un langage de programmation orienté objet et fonctionnel, avec un typage statique qui permet de compiler pour la machine virtuelle Java et JavaScript et Spring boot qui est un framework utilisé afin de faciliter la configuration d'un projet Spring et de réduire le temps alloué au démarrage d'un projet. plusieurs autres technologies était utilisées dans ce projet : 
- 
+
+API Rest AppTour est une application Spring Boot codée en langage Kotlin. Voici est une présentation plus précisé sur les principaux  
+outils utilisés: 
+\textbf{Spring boot:} Est un framework utilisé afin de faciliter la configuration d'un projet Spring et de réduire le temps alloué au démarrage d'un projet.
+
+\textbf{Kotlin:} Kotlin est un langage de programmation orienté objet et fonctionnel, il a plusieurs avantages, voici les plus importants :
 \begin{itemize}
-\item Maven :  Est un outil de gestion et d'automatisation de production des projets logiciels Java en général et Java EE en particulier. Il est utilisé pour automatiser l'intégration continue lors d'un développement de logiciel.
+\item \textbf{Typage statique: } Kotlin est un langage de programmation à typage statique. Cela signifie que le type de chaque variable et expression est connu au moment de la compilation.
+\item \textbf{Sécurisé: } Kotlin est sécurisé. Il évite les exceptions NullPointerExceptions les plus redoutées en prenant en charge la nullabilité dans le cadre de son système de types.
+\item \textbf{Facile à apprendre: } La syntaxe ressemble beaucoup à la syntaxe Java.
+ect.
+\end{itemize} 
 
-\item JUnit : Pendant mon développement de l'API AppTour, j'ai utilisé la méthode du TDD(Test Driven Development),le développement piloté par les tests. j'ai utilisé le framework JUnit pour implémenter les tests unitaires afin d'assurer la maintenance et l'efficacité de l’application.
+- \textbf{JUnit:} Pendant mon développement de l'API AppTour, j'ai utilisé la méthode du TDD(Test Driven Development),le développement piloté par les tests. j'ai utilisé le framework JUnit pour implémenter les tests unitaires afin d'assurer la maintenance et l'efficacité de l’application.
 
-\item Git : Est un logiciel de gestion de versions décentralisé. Il permet de sauvegarder les fichiers en gardant la chronologie de chaque sauvegarde.
-
-\item L'API AppTour a été réalisé de la même manière que les autres applications du rectorat. Il existe plusieurs couches. Une couche service pour implémenter tous les services dont nous avons besoin, une couche controller pour construire l'API utilisée par le Front Solycee et qui sera utilisée par d'autres applications dans le futur, il existe d'autres couches afin de créer une application similaire aux autres applis du rectorat.
-
-\end{itemize}
-
+-D'autres technologies déjà expliqué précédemment comme Maven, Hibernate, Git
+ 
 \subsubsection{Travail réalisé}
-(TODO)!!!
+\textbf{(TODO)!!!}\newline
 Dans le projet AppTour, j'ai travaillé sur la réalisation d'une API web (Le back-end pour le bootstrapt), j'ai développé plusieurs Web Services qui permets de rajouter ou modifier les étapes des tours ainsi que faire des recherches pour vérifier l’existence des tours. 
 
 Comme noté plus haut, le projet AppTour était initialiser par l'alternant de l'année dernière en créant les tables (Entity). Il existait deux tables, une table Tour et une table Step. j'ai commencé donc par la relecture du code existant et la modification des tables.
