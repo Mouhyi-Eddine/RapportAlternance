@@ -434,10 +434,36 @@ ect.
 - \textbf{JUnit:} Pendant mon développement de l'API AppTour, j'ai utilisé la méthode du TDD(Test Driven Development),le développement piloté par les tests. j'ai utilisé le framework JUnit pour implémenter les tests unitaires afin d'assurer la maintenance et l'efficacité de l’application.
 
 -D'autres technologies déjà expliqué précédemment comme Maven, Hibernate, Git
+
+Nous utilisons aussi quelques technos pour l'intégration continue qui est un ensemble de pratiques utilisées en génie logiciel consistant à vérifier,à chaque modification de code source, que le résultat des modifications ne produit pas de régression dans l’application développée, voici les outils utilisés pour l'intégration continue: 
+
+\textbf{Gitlab:} \includegraphics[width=7mm,scale=0.5]{diagrammes/gitlab.png}
+
+Le répertoire du code source de l’application est un serveur Gitlab. C’est une plateforme complète avec une interface graphique simple et moderne. Gitlab permet de gérer les branches git et les merge-requests en quelques clicks, il simplifie la collaboration des contributeurs du développement de l’application. 
+
+\textbf{Jenkins:}\includegraphics[width=7mm,scale=0.5]{diagrammes/jenkins.png}
+
+Jenkins est un outil logiciel d’intégration continu. Il s’agit d’un logiciel open source, développé à l’aide du langage de programmation Java. En utilisant ce logiciel, les développeurs peuvent détecter et résoudre les problèmes dans une base de code et rapidement. Ainsi les tests de nouveaux builds peuvent être automatisés, ce qui permet d’intégrer plus facilement des changements à un projet, de façon continue. L’objectif de Jenkin est en effet d’accélérer le développement de logiciels par le biais de l’automatisation. Jenkins permet l’intégration de toutes les étapes du cycle de développement.
+
+
+La documentation de Jenkins est très riche, et l’outil est devenu bien populaire grâce à sa communauté immense, dynamique et réactive.\\
+\newpage
+\textbf{Sonarqube:}\includegraphics[width=30mm,scale=0.5]{diagrammes/sonarqube.png}
+
+C’est un outil qui permet faire l’inspection continue du code source dans un pro-cessus de CI. Une plateforme open-source écrit en Java, avec une interface graphique simple et intuitive. Il peut faire un analyse de plus de vingt langages différents tels que JAVA, JavaScript, PHP et tant d’autres.
+Il permet une Analyse automatisée en l’integrant dans d’autres serveurs de CI tels que Jenkins, ou projets Maven, Gradle ou Ant. Il est extrêmement complet en terme de fonctionnalités pour la gestion des analyses dans un processus CI:
+
+• Supervision du respect des règles(prédéfinis par l’utilisateur) de programmation.
+
+• Analyse des designs ou l’architecture.
+
+• Évaluation de la couverture du code par les tests unitaires.
+
+• Détection des bugs et des duplications des codes.\newline
  
 \subsubsection{Travail réalisé}
 \textbf{(TODO)!!!}\newline
-Dans le projet AppTour, j'ai travaillé sur la réalisation d'une API web (Le back-end pour le bootstrapt), j'ai développé plusieurs Web Services qui permets de rajouter ou modifier les étapes des tours ainsi que faire des recherches pour vérifier l’existence des tours. 
+Dans le projet AppTour, j'ai travaillé sur la réalisation d'une API Rest, j'ai développé plusieurs EndPoints qui permets de rajouter ou modifier les étapes des tours ainsi que faire des recherches pour vérifier l’existence des tours. 
 
 Comme noté plus haut, le projet AppTour était initialiser par l'alternant de l'année dernière en créant les tables (Entity). Il existait deux tables, une table Tour et une table Step. j'ai commencé donc par la relecture du code existant et la modification des tables.
 Ensuite, Nous avons travaillés avec mes maîtres d'alternance sur l'architecture du projet.
