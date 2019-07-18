@@ -394,10 +394,9 @@ Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, c
 
 \subsection{AppTour}   
 
-Comme expliquer plus haut, au début nous avons commencé par manipuler Bootstrap Tour en rajoutant du code JS de la librairie. Chose qui n'est pas facile et pas efficace. Pour cette raison, nous avons créé le Web service AppTour afin de permettre aux ADSI des applications de stocker leurs documentations. 
-
-AppTour est un Web service qui permet aux ADSI de rajouter ou modifier les étapes de leur documentation interactive (Bootstrap Tour). 
-API Rest AppTour est une application Spring Boot codée en langage Kotlin, nous avons implémenté plusieurs Endpoint afin stocker leurs documentations. 
+Comme expliquer plus haut, au début nous avons commencé par manipuler Bootstrap Tour en rajoutant du code JS de la librairie. Chose qui n'est pas facile et pas efficace. Pour cette raison, nous avons créé le Web service AppTour afin de permettre aux ADSI des applications d'être autonome et pouvoir rajouter la documentation interactive tout simplement en interrogeant le web service. Ils peuvent rajouter des étapes à des tours existants ou même rajouter des nouveaux tours.Nous avons donc implémenté plusieurs Endpoint afin stocker leurs documentations.  
+ 
+API Rest AppTour est une application Spring Boot codée en langage Kotlin. 
 
 
 \subsubsection{Architecture de l'API AppTour}
@@ -410,20 +409,20 @@ L'architecture du Web service AppTour est similaire avec les nouveaux Webs servi
 
 Le Back-en Apptour se décompose de plusieurs couches: \newline
 
-\textbf{(TODO)!!!}
+- Une couche Model: Cette couche représente le modèle de données objet de l'application. \newline
 
-Une couche Repository/DAO: Repositories sont des interfaces héritant de l'interface Repository. L'objectif de ces interfaces consiste à rendre la création de la couche d'accès aux données (requêtes SELECT, UPDATE...) plus rapide.\newline
-
-
-Une couche Service: Elle permet de séparer les opérations effectuées par le contrôleur et celles qui concernent le modèle des données. Toute action devrait passer par cette couche.\newline
+- Une couche Repository/DAO: Repositories sont des interfaces héritant de l'interface Repository. L'objectif de ces interfaces consiste à rendre la création de la couche d'accès aux données (requêtes SELECT, UPDATE...) plus rapide. Cette couche s'appuie sur l'interface JPA (Java Persistence API) qui permet la persistance des données.\newline
 
 
-Une couche Contrôller: Il s'agit de l'API qui permet de répondre à toutes les requêtes envoyées par le client. 
+- Une couche Service: Cette couche implémente l'ensemble de la logique métier de l'applicationn. Elle s'appuie sur les couches DAO et model pour effectuer des opérations CRUD (Create, Research, Update, Delete) sur des objets persistés et leur appliquer ensuite des traitements métier.\newline
+
+
+- Une couche Controller: Il s'agit de l'API qui permet de répondre à toutes les requêtes envoyées par le client. 
 
 
 \begin{figure}[H]
 	\centering
- 		\includegraphics[width=1\textwidth]{diagrammes/ArchitectureProjet.png}
+ 		\includegraphics[width=1\textwidth]{diagrammes/Architecture_Apptour.png}
   		\caption{Arichtecture Back-end d'une application web}
 	\end{figure}
 	
@@ -431,7 +430,7 @@ Une couche Contrôller: Il s'agit de l'API qui permet de répondre à toutes les
 
 
 \subsubsection{Aspect technique}
-(TODO)!!!
+\textbf{(TODO)!!!}\newline
  Le projet AppTour était initialiser par l'alternant de l'année dernière. j'ai commencé par la relecture du code et la compréhension de l'existant. L'application a été implémenté en Kotlin qui est un langage de programmation orienté objet et fonctionnel, avec un typage statique qui permet de compiler pour la machine virtuelle Java et JavaScript et Spring boot qui est un framework utilisé afin de faciliter la configuration d'un projet Spring et de réduire le temps alloué au démarrage d'un projet. plusieurs autres technologies était utilisées dans ce projet : 
  
 \begin{itemize}
