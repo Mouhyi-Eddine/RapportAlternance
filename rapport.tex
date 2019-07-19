@@ -97,9 +97,9 @@ Au sein du rectorat, nous trouvons le pôle DINAMO (Développement et INtégrati
 \item \textbf{Missions :}\\
 
 \begin{itemize}
-\item - Mettre en œuvre des services numériques académiques ou mutualisés.
-\item - Réalisation des applications web et fournir des applications fiables, sécurisées et adaptées aux usages des utilisateurs. 
-\item - Assurer la maintenance et l'évolution des projets.\\
+\item  Mettre en œuvre des services numériques académiques ou mutualisés.
+\item  Réalisation des applications web et fournir des applications fiables, sécurisées et adaptées aux usages des utilisateurs. 
+\item  Assurer la maintenance et l'évolution des projets.\\
 \end{itemize}
 
 \item \textbf{Effectifs :}\\
@@ -275,7 +275,7 @@ J'ai commencé par manipuler Bootstrap Tour sur l'application Solycee en rajouta
 Voici maintenant une présentation plus précise des fonctionnalités rajoutées : 
 
 \begin{itemize}
-\item - L'ajout d'une modale pour prévenir les utilisateurs de la présence d'un bouton aide pour déclencher la documentation interactive.Voir Figure 6
+\item  L'ajout d'une modale pour prévenir les utilisateurs de la présence d'un bouton aide pour déclencher la documentation interactive.Voir Figure 6
 
 \begin{figure}[H]
 	\centering
@@ -289,7 +289,7 @@ Pour que cette modale n'apparaît qu'une seule fois chez les utilisateurs de l'a
 Pour réaliser cette tâche, j'ai dû ajouter une modale qui est un composant Bootstrap qui s'affiche à la première connexion de l'utilisateur à l'application. Cette modale n'apparaît pas une deuxième fois. \\ 
 
    
-\item - Déclencher la documentation interactive en appuyant sur un bouton: Dans la première version, la documentation se déclenchait dés que l'utilisateur arrive sur la page de l'application et cela peut être répétitif pour l'utilisateur. Dans le cas présent, la documentation s'exécute seulement en cliquant sur un bouton. \\ 
+\item  Déclencher la documentation interactive en appuyant sur un bouton: Dans la première version, la documentation se déclenchait dés que l'utilisateur arrive sur la page de l'application et cela peut être répétitif pour l'utilisateur. Dans le cas présent, la documentation s'exécute seulement en cliquant sur un bouton. \\ 
 
 \underline{Mise en oeuvre} :
 Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} sur toutes les pages web de l'application. En appuyant dessus ça déclenche les pop-ups  de Bootstrap tour. 
@@ -299,7 +299,7 @@ La mis en place de Bootstrap Tour dans un ficher Javascript était une façon si
 
 Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et les Steps. L'application Solycee communique avec ce web service pour récupérer les informations et la documentation. \\ 
 
-\item - Récupérer La documentation d'une page web de l'application Solycee: Il suffit de faire un appel au Web service AppTour. \\   
+\item  Récupérer La documentation d'une page web de l'application Solycee: Il suffit de faire un appel au Web service AppTour. \\   
  
 \underline{Mise en oeuvre} :
 - Chaque page HTML(Vue) de l'application Solycee a un identifiant qui correspond à l'Id de son corps "Body".
@@ -317,7 +317,7 @@ Nous avons donc créé un web service AppTour où sont sauvegarder les Tours et 
   		\caption{Pas de tour disponible dans cette page Web }
 	\end{figure}
     
-\item - Rajouter un mode d'édition pour les ADSI: Jusqu'à maintenant, les ADSI ne pouvaient pas rajouter la documentation sauf s'ils rajoutent des données en dur dans la base de données, chose qui n'est pas facile. Pour cette cela, nous avons créé un mode édition dans l'application Solycee qui est présenté par une interface graphique et elle  permet de rajouter la documentation.\\
+\item  Rajouter un mode d'édition pour les ADSI: Jusqu'à maintenant, les ADSI ne pouvaient pas rajouter la documentation sauf s'ils rajoutent des données en dur dans la base de données, chose qui n'est pas facile. Pour cette cela, nous avons créé un mode édition dans l'application Solycee qui est présenté par une interface graphique et elle  permet de rajouter la documentation.\\
 
 
 \underline{Mise en oeuvre} : \\
@@ -341,7 +341,7 @@ Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, c
 \item \textbf{Title: } Titre affiché sur la popup. 
 \item \textbf{Content: } Message affiché pour expliquer le fonctionnement du composant appuyé.  
 \end{itemize}
-\item - Pour sécuriser un minimum le mode édition, nous avons fait en sorte que seuls les ADSI peuvent rajouter la documentation et non les utilisateurs et ils sont les seuls à accéder à ce mode.\\ 
+\item  Pour sécuriser un minimum le mode édition, nous avons fait en sorte que seuls les ADSI peuvent rajouter la documentation et non les utilisateurs et ils sont les seuls à accéder à ce mode.\\ 
 
 
 \underline{Mise en oeuvre} : \\
@@ -351,7 +351,7 @@ Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, c
 \footnotetext{Spring RestTemplate est un Framework de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.\\
 
 
-\item - Remplir les champs de la modale : Quand les ADSI passent en mode édition et en appuyant sur un composant de la page web, la modale s'affiche qui permet de rajouter ou modifier la documentation. Ensuite, nous remplissons les champs de la modale dans le cas où il existe une documentation pour ce composant. \\
+\item  Remplir les champs de la modale : Quand les ADSI passent en mode édition et en appuyant sur un composant de la page web, la modale s'affiche qui permet de rajouter ou modifier la documentation. Ensuite, nous remplissons les champs de la modale dans le cas où il existe une documentation pour ce composant. \\
 
 \underline{Mise en oeuvre} : 
 
@@ -373,7 +373,7 @@ Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, c
   		\caption{Pas de documentation pour le bouton Déconnexion}
 	\end{figure}
 
-\item - Rajouter ou modifier la documentation : Quand l'ADSI est en mode édition, il peut soit rajouter la documentation pour un composant de la page web dans le cas où il n'existe pas de documentation pour ce dernier, soit la modifier dans le cas où elle existe. 
+\item  Rajouter ou modifier la documentation : Quand l'ADSI est en mode édition, il peut soit rajouter la documentation pour un composant de la page web dans le cas où il n'existe pas de documentation pour ce dernier, soit la modifier dans le cas où elle existe. 
  
 \underline{Mise en oeuvre} : 
 
@@ -476,7 +476,6 @@ Comme noté plus haut, le projet AppTour était initialisé par l'alternant, il 
 
 Une fois que le code et le travail demandé était compris et acquis, j'ai commencé par implémenter du code nécessaire pour réaliser les endPoints dont nous en avons besoin. Voici une présentation plus précise de toutes les tâches réalisées:   
 
-\textbf{(TODO)!!!}\newline
 \begin{itemize}
 
 \item J'ai commencé par complémenter les tables Tour et Step en rajoutant des nouveaux élément comme Storage dans l'entité tour qui permet de garder les tours exécutés dans l'historique ou pas en mettant l’attribut Storage à True ou False. 
@@ -521,30 +520,31 @@ Il existe aussi une classe StepService : Dans cette classe, j'ai réalisé plusi
 \item Lister tout les step d'un tour par ordre croissant.  
 
 
-J'ai aussi créé une table Personnel pour pouvoir l'alimenter par les ADSI des applications de rectorat. Le but final était de pouvoir identifier si la personne connectée sur Solycee est un ADSI ou pas afin d'avoir le droit d'accéder au mode édition de Solycee. 
+\item J'ai aussi créé une table Personnel pour pouvoir l'alimenter par les ADSI des applications de rectorat. Le but final était de pouvoir identifier si la personne connectée sur Solycee est un ADSI ou pas afin d'avoir le droit d'accéder au mode édition de Solycee. 
 
 \end{itemize}
 \end{itemize}
 \subsection{Partie Sécurité}
-\subsubsection{Permettre seuls aux administrateurs de modifier les tours}
-
-Pour permettre seuls aux administrateurs de l'application Solycee de passer en mode édition  et pouvoir rajouter et/ou modifier des tours, j'ai créé une nouvelle table(Entité) Personnel dans l'API AppTour, cette table contient un identifiant et libellé de l'application, les personnes présentes dans la tables Personnel sont des administrateurs de leurs applications. Après j'ai commencé à réaliser les classes nécessaires dans la même architecture que les tables Tours et Step. J'ai implémenté donc une classe PersonnelDto et puis une classe PersonnelMapper qui permet de passer d'un objet Personnel à un objet PersonnelDto ou l'inverse(d'un objet PersonnelDto à un objet Personnel), ensuite j'ai créé la classe PersonnelService pour pouvoir implémenter les méthodes utilisées par la classe PersonnelController.Enfin, J'ai implémenté un service qui permet de faire une recherche dans la table Personnel et vérifier la présence de la personne en donnant son identifiant (Nom + Prénom) et aussi le libellé de l'application. 
-
-
-En laçant l'application Solycee, je récupère l'identifiant de la personne connecté (Toute personne connecté a un identifiant (Nom + Prénom)) et puis j’envoie une requête à l'API AppTour pour vérifier si la personne connecté est présente dans la table Personnel. Dans le cas ou la requête renvoie une réponse positive (200 Succès), j'affiche le bouton qui permet aux admins de passer en mode édition, dans le cas contraire le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas. 
-
-
 
 \subsubsection{Sécuriser l'API}
 
+Après avoir réaliser toutes les tâches demandées par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités de l'application en production pour avoir un avis des utilisateurs. Mais avant de les mettre en prod fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droit de réaliser ces requêtes et ils sont ADSI de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
 
-Après avoir réaliser toutes les tâches demandés par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités rajoutées en production pour avoir un avis des utilisateurs. Mais avant de les mettre en prod fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droit de réaliser ces requêtes et ils sont administrateurs de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
+Nous avons mis en place OpenId Connect(Oidc) qui est une couche d'authentification basé sur du OAuth2 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé. j'ai utilisé Keyckloak comme plateforme d'authentification. 
 
-Le premier travail a commencé par faire des recherches par rapport à la façon dont nous allons sécuriser les applications.Un sujet de recherche du rectorat était de pourvoir intégrer la plateforme Keycloak pour l'authentification des utilisateurs dans les applications. Solycee était une occasion pour commencer les recherches sur ce sujet.  Nous avons décidé de mettre en place une couche d'authentification basé sur OAuth 2.0 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé, et nous avons utilisé Keycloak localement pour s'authentifier et obtenir un Token JWT pour chaque utilisateurs de l'application.  \includegraphics[width=30mm,scale=0.5]{diagrammes/logo_Keycloak.jpeg}  
+En premier temps, j'ai commencé à faire des recherches sur la façons d'implémenter Oidc coté Front-end de Solycee, j'ai utilisé une librairie JavaScript Oidc-clientJS qui permettre aux ADSI de se diriger à la plateforme d'authentification Keycloak.
 
-La première étape était  d'installer un serveur Keycloak localement qui permettra par la suite de faire des tests. Keycloak  est un logiciel open source permettant l'authentification unique avec la gestion des identités et des accès, destiné aux applications et services modernes. Pour la configuration de keycloak, il suffit juste de fournir un fichier  royaume(Realm) ainsi qu'un fichier utilisateurs(User) pour renseigner les utilisateurs  avec leur identifiants et leurs mots de passe (Voir annexes pour un exemple des fichiers Realm et User)
+Par la suite, avec l'équipe, nous avons décidé de mettre en place un Srping Security coté Back-end de Solycee afin de sécuriser le Web service AppTour et permettre seul aux ADSI d'échanger avec ce dernier.  
+ 
+\subsubsection{Aspect technique}
 
-Le fonctionnement de Keycloack nécessite  une configuration. IL faut déclarer plusieurs données : 
+Nous avons utilisé plusieurs technologies pour implémenter l'authentification avec le protocole Oidc. Voici une présentation plus précise de chaque techno utilisée : 
+
+\includegraphics[width=30mm,scale=0.5]{diagrammes/logo_Keycloak.jpeg}: \\
+
+Keycloak  est un logiciel open source permettant l'authentification unique avec la gestion des identités et des accès, destiné aux applications et services modernes. 
+
+Le fonctionnement de Keycloack nécessite une configuration. IL faut déclarer plusieurs données : 
 \begin{itemize}
 \item Utilisateurs : Ils sont des entités pouvant se connecter à votre système
 \item Rôles : ils identifient un type ou une catégorie d’utilisateur ( Admin, user, …)
@@ -552,15 +552,11 @@ Le fonctionnement de Keycloack nécessite  une configuration. IL faut déclarer 
 \item Royaumes (realms): un domaine qui gère un ensemble d’utilisateurs, d’informations d’identification, des rôles et des groupes.
 \item Clients : ils sont des entités pouvant demander à Keycloak d’authentifier un utilisateur ( comme des applications )
 \end{itemize}
+ 
+\textbf{Protocole OAuth2:}\\ 
 
-Après l’authentification, nous obtenons un Identity token qui fournit des informations d’identité sur l’utilisateurAccess token : un token pouvant être fourni dans le cadre d’une requête HTTP autorisant l’accès au service invoqué.
+OAuth2 permet d'autoriser un site web, un logiciel ou une application à utiliser l'API sécurisée d'un autre site web pour le compte d'un utilisateur. OAuth n'est pas un protocole d'authentification, mais de « délégation d'autorisation ».
 
-En suite, j'ai fait des recherches pour trouver une libraire JavaScript qui permet à utiliser keycloak pour l'authentification. Pendant mon développement j'ai utilisé deux librairie JavaScript différentes mais le fonctionnement était le même. J'ai commencé par implémenté la librairie KeycloakJS et par la suite j'ai utilisé la librairie Oidc-clientJS pour permettre aux administrateurs de se diriger à une plateforme d'authentification, dans mon cas c'était Keycloak pour tester la librairies. Voici la plateforme d'authentification Keycloak: 
- \begin{figure}[H]
-	\centering
- 		\includegraphics[width=1\textwidth]{diagrammes/authentification_keycloak.png} 
-  		\caption{Authentification avec OpenID et Keycloak }
-	\end{figure}
 
 \newpage
 \section{Annexes}
