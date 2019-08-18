@@ -59,6 +59,25 @@
 \tableofcontents
 ~
 \newpage
+\begin{center}
+\bfseries {REMERCIEMENTS}
+\end{center}
+
+
+Ce mémoire d'alternance est  une occasion pour faire un bilan sur l'état de mes connaissances. C'est une occasion aussi de remercier toutes les personnes qui m'ont accompagné et assisté pour atteindre mon objectif.\\
+
+
+Je tiens à remercier, Mme \textbf{Annabel BOURDÉ} et M. \textbf{Gaël SALAÜN} d'avoir accepter mon encadrement. Vos patience et tous les conseils que vous m'avez donnés, m'ont ennormément aidé à mener à bien mon travail. Leurs conseils et leurs capacités à guider mes activités tout en préservant mon esprit d'initiative m'ont aidé à me développer, à me confirmer et à découvrir des prespectives professionnelles en lien direct avec ma formation.\\ 
+
+
+j'ai également mes remerciements à mon tuteur enseignant, M. \textbf{Noël PLOUZEAU},  d'avoir suivi mon apprentissage, de me conseiller pour la rédaction de mon mémoire et le déroulement de ma soutenance. \\
+
+Cette mémoire n'est pas seulement le bilan d'une année d'apprentissage, il est le bilan de 5ans d'études au sein de l'ISTIC à l'Université de Rennes1. D'une manière générale, je souhaite remercier tout le corps professoral pour leur enseignement de qualité et leur accompagnement pédagogique. Je tiens remercier en particulier M. \textbf{Marc BOUSSE}, le responsable de la formation Ingénierie Logicielle en Alternance. \\
+
+Merci à toute l'équipe de développement du pôle DINAMO ainsi	que l'ensemble de personnels de la DSII pour votre excellente réception et de m'avoir accueilli pendant cette période. Vous avez rendu facile mon intégration. \\
+
+Enfin, je tiens tout spécialement à remercier ma famille pour leur présence, leur générosité, leur discernement et leur soutien inconditionnel. 
+
 
 \section{Introduction}
 
@@ -85,8 +104,46 @@ Elle regroupe les 4 directions des services départementaux de l'Éducation Nati
 Côtes d'Armor, Finistère, Ille-et-Vilaine et Morbihan. Chaque direction des services départementaux de l'Éducation Nationale est placée sous la responsabilité d'un inspecteur d'académie, directeur académique des services de l'Éducation Nationale. Son rôle au sein de ces départements est de gérer les personnels, les élèves, les moyens financiers, les examens... de tous les établissements scolaires, depuis la maternelle jusqu'au lycée.
 
 
+- 2356 écoles (public : 1493) => 328 003 écoliers.\\
+
+
+- 121 lycées (public : 60) => 80 602 lycéens.\\
+
+
+- 384 collèges (public : 210) => 162 075 collégiens.\\
+
+- 4 grandes universités => 105 007 étudiants (hors post bac des lycées)\\
+
+\subsection{Direction des Systèmes d'Information et d'Innovationv - DSII }
+
+
+La DSII fait partie des services communs de l’Académie de Rennes dont les activités couvrent les systèmes d’information et le numérique pour la pédagogie, le pilotage et la gestion.
+Son organisation et ses missions, à vocation académique et nationale, s’insèrent dans une politique de développement de services numériques pour les services académiques et les établissements scolaires, arrêtée par le ministère de l’Éducation nationale et portée par le Recteur d’académie.
+La DSII, dirigé par Frédérique BISSERIER-POULIQUEN, comprend plus de 190 agents.
 \subsection{Organisation}
-(TODO)
+
+
+La multiplicité et la diversité des missions (académiques et nationales) du SERIA expliquent l’importance de ses effectifs. En effet, ce service est composé de 190 personnes et est divisé en plusieurs pôles qui remplissent des rôles très différents :
+\begin{itemize}
+\item \textbf{Pôle U: } Utilisateurs - AMIGO et demandes utilisateurs.
+\item \textbf{Pôle M: } Services et applications Métiers pour administrer et gérer.
+\item \textbf{Pôle Num Péda: } Services et applications pédagogiques pour enseigner et apprendre.
+\item \textbf{Pôle O: } Outils et communs numériques.
+\item \textbf{Pôle D: } Services numériques en DSDEN.
+\item \textbf{Pôle P: } Proximité.	
+\item \textbf{Pôle N: } Mission nationale, Examens et concours.
+\item \textbf{Pôle DINAMO: } Développement et intégration académiques.
+\item \textbf{Pôle ID: } Infocentre et traitement des Données.
+\item \textbf{Pôle R: } Hébergement et Infrastructures, systèmes et réseaux.
+
+
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/organigramme_DSII.png}
+  		\caption{Organigramme fonctionnel du service informatique académique}
+	\end{figure}
+
+\end{itemize}
 
 \subsection{Pôle DINAMO}
 
@@ -103,7 +160,7 @@ Au sein du rectorat, nous trouvons le pôle DINAMO (Développement et INtégrati
 \end{itemize}
 
 \item \textbf{Effectifs :}\\
-L’équipe de développement du pôle DINAMO est constituée d’Arnaud Rupin, responsable du pôle, ainsi que 6 développeurs informatiques (Albane GUIHOMAT, Annabel BOURDÉ, Gaël SALAÜN, Maïna DIRINGER, Marc BERHAUT et Vincent CARON). Voir figure 1\\
+L’équipe de développement du pôle DINAMO est constituée d’Arnaud Rupin, responsable du pôle, ainsi que 6 développeurs informatiques (Albane GUIHOMAT, Annabel BOURDÉ, Gaël SALAÜN, Maïna DIRINGER, Marc BERHAUT et Vincent CARON). Voir figure 2\\
 
 \end{enumerate}
 
@@ -161,14 +218,14 @@ C'est pour cette raison que Monsieur JOSSO Clément,le product Owner du projet(P
 Le besoin du client est d'avoir une application qui permet à l'ADSI(Administrateur Des Systèmes d'Informations) de créer la documentation directement à partir de sa page web et pouvoir l'améliorer au fur et à mesure des demandes des utilisateurs via une interface graphique rajoutée dans le projet Solycee. 
 
 
-Le but final du projet est de permettre aux ADSI d'être autonomes et de pouvoir rajouter la documentation dans leurs applications. Nous avons implémenté un web service(AppTour) qui permettra aux ADSI de rajouter la documentation et la sauvegarder. Nous avons donc ajouté une interface graphique dans l'applciation Solycee pour faire appel au web service AppTour.
+Le but final du projet est de permettre aux ADSI d'être autonomes et de pouvoir rajouter la documentation dans leurs applications. Nous avons implémenté un web service(AppTour) qui permettra aux ADSI de rajouter la documentation et la sauvegarder, nous avons donc ajouté une interface graphique dans l'applciation Solycee pour faire appel au web service AppTour.
  
 \subsection{Présentation de Bootstrap Tour : Une visite guidée interactive}
  
 Bootstrap Tour est une librairie JavaScript permettant de présenter de façon assez simple l’application. Bootstrap Tour est une implémentation qui sert à créer une visite guidée pour une application.
 
 Le bénéfice de l'utilisation de Bootstrap Tour est immédiat pour les utilisateurs car elle présente les fonctionnalités de la page directement sur l'écran soit en lançant la documentation  dès l'ouverture de la page ou en appuyant sur un bouton pour déclencher cette documentation.\\
-\textbf{Mis en œuvre et  Utilisation :}
+\textbf{Mise en œuvre et  Utilisation :}
 
 Pour utiliser une visite guidée par Bootstrap Tour, il faut récupérer les bibliothèques et les sources dont nous avons besoin. La première étape est de construire un "Tour" qui accepte un bon nombre de paramètres dont le paramètre "Step" (étape). Ensuite il suffit de donner des étapes à notre tour, pour chaque étape il faut définir certains attributs : 
 
@@ -183,7 +240,7 @@ Pour utiliser une visite guidée par Bootstrap Tour, il faut récupérer les bib
 
 \subsection{Architecture du projet}
 
-Le projet se constitue de rajouter une interface utilisateur sur l'application une application web (Solycee) et  implémenter une API REST (AppTour) qui communique avec une base de données relationnelles. Voir figure 2.
+Le projet se constitue de rajouter une interface utilisateur sur l'application web (Solycee) et  implémenter une API REST (AppTour) qui communique avec une base de données relationnelles. Voir figure 3.
 
 \begin{enumerate}
 \item \textbf{Technologies :}\\
@@ -204,7 +261,7 @@ Le projet se constitue de rajouter une interface utilisateur sur l'application u
   		\caption{Architecture du projet}
 	\end{figure}\\
 
-Nous avons une application web nommée Solycee qui communqiue avec une API REST nommée AppTour via des requêtes HTTP(CRUD), ces dernières renvoient des réponses en format Json.  
+Nous avons une application web nommée Solycee qui communqiue avec une API REST nommée AppTour via des requêtes HTTP(CRUD), ces dernières renvoient des réponses en format Json. 
 
 \section{Objectifs et missions de l'alternance}
 
@@ -243,11 +300,11 @@ Voici maintenant une présentation plus précise sur les principaux outils utili
 	
 	Spring MVC s'appuie sur :
 
-    - une servlet principale appelée Dispatcher Servlet qui va gérer l'intégralité 			  des requêtes HTTP reçues
-    - un handler mapping qui va faire le lien entre l'URI appelée et le contrôleur    	  MVC
-    - le Controller qui va gérer le rôle du contrôleur MVC et qui va solliciter le 			  modèle
+    - une servlet principale appelée Dispatcher Servlet qui va gérer l'intégralité 			  des requêtes HTTP reçues.\\
+    - un handler mapping qui va faire le lien entre l'URI appelée et le contrôleur    	  MVC.\\
+    - le Controller qui va gérer le rôle du contrôleur MVC et qui va solliciter le 			  modèle.\\
     - View Resolver qui va préparer la vue en fonction du code retour du Controller
-      la View qui assure le rôle de vue au sens MVC
+      la View qui assure le rôle de vue au sens MVC.
 
 	
 	\item \textbf{Spring Security }: Spring Security est un Framework de sécurité  qui fournit une authentification et un support d’autorisation afin de sécuriser les applications Spring. \newline
@@ -271,7 +328,7 @@ Le projet a été développé par l'équipe Dinamo. Avant de commencer à réali
 
 Une fois que le code était compris et que j'ai acquis toutes les informations importantes sur le projet, j'ai commencé à réaliser les tâches demandées.
 
-J'ai commencé par manipuler Bootstrap Tour sur l'application Solycee en intégrant le code de la librairie dans le front-end de Solycee (code en javascript avec les étapes souhaités). Suite à une demande de l'ADSI de Solycee nous avons pu réaliser une première version(V1) en utilisant Bootstrap Tour. Un tour est défini dans un fichier JavaScript et il est composé de différentes étapes. Bootstrap Tour permet d'afficher l'étape du tour et aussi passer à l'étape suivante ou précédente ainsi que arrêter le tour avec le bouton "Fin"(Voir Figure 5). Pour lancer la documentation faut exécuter deux méthodes dans le fichier Javascript, init et start. 
+J'ai commencé par manipuler Bootstrap Tour sur l'application Solycee en intégrant le code de la librairie dans le front-end de Solycee (code en javascript avec les étapes souhaités). Suite à une demande de l'ADSI de Solycee nous avons pu réaliser une première version(V1) en utilisant Bootstrap Tour. Un tour est défini dans un fichier JavaScript et il est composé de différentes étapes. Bootstrap Tour permet d'afficher l'étape du tour et aussi passer à l'étape suivante ou précédente ainsi que arrêter le tour avec le bouton "Fin"(Voir Figure 6). Pour lancer la documentation, il faut exécuter deux méthodes dans le fichier Javascript, init et start. 
 \begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/exemple_Tour.png} 
@@ -286,14 +343,14 @@ Après avoir livrer une première version au PO, il s'agit de déclancher la doc
 Voici une présentation plus précise des fonctionnalités ajoutés pour la V2 :
 
 \begin{itemize}
-\item  L'ajout d'une fenêtre modale pour prévenir les utilisateurs de la présence d'un bouton aide pour déclencher la documentation interactive.Voir Figure 6
+\item  L'ajout d'une fenêtre modale pour prévenir les utilisateurs de la présence d'un bouton aide pour déclencher la documentation interactive.Voir Figure 7
 
 \begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/aide_modal.png}
   		\caption{Page d'accueil Solycee}
 	\end{figure}
-Pour que cette modale n'apparaît qu'une seule fois chez les utilisateurs de l'application, nous avons fait en sorte qu'elle ne s'affiche que si l'utilisateur consulte l'application Solycee pour la première fois. \\ 
+Cette modale n'apparaît qu'une seule fois chez les utilisateurs. Elle ne s'affiche que si l'utilisateur consulte l'application Solycee pour la première fois. \\ 
 
 
 \underline{Mise en oeuvre} :
@@ -303,7 +360,7 @@ Pour réaliser cette tâche, j'ai dû ajouter une modale qui est un composant Bo
 \item  Déclencher la documentation interactive en appuyant sur un bouton: Dans la première version, la documentation se déclenchait dés que l'utilisateur arrive sur la page de l'application et cela peut être répétitif pour l'utilisateur. Dans le cas présent, la documentation s'exécute seulement en cliquant sur un bouton. \\ 
 
 \underline{Mise en oeuvre} :
-Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} dans le fichier Decorator, ce fichier est l'entête de toute les vues de l'application Solycee. Il s'agit d'un fichier HTML qui contient le nom de l'appliaction ainsi les composants utilisés par toutes les pages web de Solycee. En appuyant sur le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} ça déclenche les pop-ups  de Bootstrap tour. 
+Rajout du Bootstrap Tour : Il s'agit de l'ajout d'un bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} dans le fichier Decorator, ce fichier est l'entête de toute les vues de l'application Solycee. Il s'agit d'un fichier HTML qui contient le nom de l'application ainsi les composants utilisés par toutes les pages web de Solycee. En appuyant sur le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png} ça déclenche les pop-ups  de Bootstrap tour. 
 
 
 
@@ -320,9 +377,9 @@ Nous avons donc créé un web service AppTour où sont sauvegardés les Tours et
 
 - Nous interrogeons le Web service AppTour avec une requête Ajax en passant en paramètre le nom de l'application et l'identifiant de la page courante. La requête vérifie s'il existe de la documentation pour l’identifiant concerné. 
 
-- Si la requête renvoie un fichier json qui contient les tours et les étapes à déclencher avec Bootstrap Tour, l'utilisateur peut exécuter une documentation interactive en cliquant sur le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png}. Voir Figure 5.    
+- Si la requête renvoie un fichier json qui contient les tours et les étapes à déclencher avec Bootstrap Tour, l'utilisateur peut exécuter une documentation interactive en cliquant sur le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_aideDispo.png}. Voir Figure 6.    
 
-- Dans le cas où il n'existe pas de documentation sur la page web, le bouton affiché est gris et titré par une phrase "Aide non disponible pour cette page". Voir Figure 7 \\
+- Dans le cas où il n'existe pas de documentation sur la page web, le bouton affiché est gris et titré par une phrase "Aide non disponible pour cette page". Voir Figure 8 \\
 \begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/aideNonDispo.png} 
@@ -336,13 +393,13 @@ Après avoir fini la V2 et que l'ADSI pouvait déclancher la documentation à l'
 
 Voici une présentation plus précise des fonctionnalités ajoutés pour la V3:
  
-\item  Rajouter un mode d'édition pour les ADSI: Jusqu'à maintenant, les ADSI ne pouvaient pas rajouter la documentation sauf s'ils rajoutent des données en dur dans la base de données. Pour cela, nous avons créé un mode édition dans l'application Solycee qui est présenté par une interface graphique et elle  permet de rajouter la documentation.\\
+\item  Ajouter un mode d'édition pour les ADSI: Jusqu'à maintenant, les ADSI ne pouvaient pas rajouter la documentation sauf s'ils rajoutent des données en dur dans la base de données. Pour cela, nous avons créé un mode édition dans l'application Solycee qui est présenté par une interface graphique et elle  permet de rajouter la documentation.\\
 
 
 \underline{Mise en oeuvre} : \\
-- Nous avons rajouté le bouton\includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} dans toutes les pages web de l'application Solycee qui est titré par une  phrase "Veuillez cliquer ici pour passer en mode édition".
+- Nous avons ajouté le bouton\includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} dans toutes les pages web de l'application Solycee qui est titré par une  phrase "Veuillez cliquer ici pour passer en mode édition".
 
-- En appuyant sur le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} les ADSI passent en mode édition pour rajouter la documentation souhaitée sur n'importe quel composant de la page web.Nous affichons un champs sur l'interface pour prévenir les ADSI qu'ils sont passés en mode édition.Voir Figure 8.
+- En appuyant sur le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} les ADSI passent en mode édition pour rajouter la documentation souhaitée sur n'importe quel composant de la page web.Nous affichons un champs sur l'interface pour prévenir les ADSI qu'ils sont passés en mode édition.Voir Figure 9.
 
 \begin{figure}[H]
 	\centering
@@ -350,21 +407,13 @@ Voici une présentation plus précise des fonctionnalités ajoutés pour la V3:
   		\caption{Page d'accueil en mode édition}
 	\end{figure}
  
-Ce mode consite à désactiver le fonctionnement de tous les composants de la page web(boutons, url,logo,etc...). Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, cela affiche une modale qui contient plusieurs champs(Titre,Élément,Contenu...) créés en HTML et CSS.
+Ce mode consite à désactiver le fonctionnement de tous les composants de la page web(boutons, url,logo,etc...), par exemple si l'utilisateur appuie sur une url, la page web ne se dirige plus vers l'url. Par contre, Si l'ADSI appuie sur un composant de la page alors qu'il est en mode édition, cela affiche une modale qui contient plusieurs champs(Titre,Élément,Contenu...) créés en HTML et CSS.
 
 \begin{itemize}
 \item \textbf{Élement: } Id de l'élément sélectionné. 
 \item \textbf{Title: } Titre affiché sur la popup. 
 \item \textbf{Content: } Message affiché pour expliquer le fonctionnement du composant appuyé.  
 \end{itemize}
-\item  Pour sécuriser un minimum le mode édition, nous avons fait en sorte que seuls les ADSI peuvent rajouter la documentation et non les utilisateurs et ils sont les seuls à accéder à ce mode.\\ 
-
-
-\underline{Mise en oeuvre} : \\
-- Quand l'utilisateur se connecte sur l'application, nous récupérons son nom complet.
-
-- Nous interrogeons ensuite le Web service AppTour en utilisant  Srping-RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le nom complet d'utilisateur et le libellé de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au mode édition. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
-\footnotetext{Spring RestTemplate est une class de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.\\
 
 
 \item  Remplir les champs de la modale : Quand les ADSI passent en mode édition et en appuyant sur un composant de la page web, la modale s'affiche qui permet de rajouter ou modifier la documentation. Ensuite, nous remplissons les champs de la modale dans le cas où il existe une documentation pour ce composant. \\
@@ -373,7 +422,7 @@ Ce mode consite à désactiver le fonctionnement de tous les composants de la pa
 
 - En appuyant sur un composant de la page, nous envoyons une requête HTTP en utilisant Ajax au Web service AppTour pour récupérer l'étape dans le cas où elle existe. Nous passons en paramètre l'identifiant de l'élément appuyé ainsi que l'id du tour de la page web où se trouve l'ADSI. 
 
-- Si l'étape existe dans la table Step de AppTour, nous récupérons l'objet et puis nous remplissons les champs par les données récupérées(Title \& content).Voir Figure 9.
+- Si l'étape existe dans la table Step de AppTour, nous récupérons l'objet et puis nous remplissons les champs par les données récupérées(Title \& content).Voir Figure 10.
 
 \begin{figure}[H]
 	\centering
@@ -381,7 +430,7 @@ Ce mode consite à désactiver le fonctionnement de tous les composants de la pa
   		\caption{une documentation existe déjà pour le lien Gestion des mini-stages}
 	\end{figure}
 
-- Dans le cas où il n’existe pas de documentation pour l'élément sélectionné, nous laissons les champs vides.\\ Voir Figure 10.
+- Dans le cas où il n’existe pas de documentation pour l'élément sélectionné, nous laissons les champs vides.\\ Voir Figure 11.
 
 \begin{figure}[H]
 	\centering
@@ -427,7 +476,7 @@ Le Back-end Apptour se compose de plusieurs couches: \newline
 \begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/Architecture_Apptour.png}
-  		\caption{Arichtecture Back-end d'une application web}
+  		\caption{Architecture Back-end d'une application web}
 	\end{figure}
 	
 
@@ -473,7 +522,7 @@ La documentation de Jenkins est très riche, et l’outil est devenu bien popula
 \newpage
 \textbf{Sonarqube:}\includegraphics[width=30mm,scale=0.5]{diagrammes/sonarqube.png}
 
-C’est un outil qui permet de faire l’inspection continue du code source dans un processus de CI. Une plateforme open-source avec une interface graphique simple et intuitive. Il peut faire une analyse de plus de vingt langages différents tels que JAVA, JavaScript, PHP et tant d’autres.
+C’est un outil qui permet de faire l’inspection continue du code source dans un processus de CI. Une plateforme open-source avec une interface graphique simple et intuitive. Il peut faire une analyse de plus de vingt langages différents tels que JAVA, JavaScript, PHP...\\
 Il permet une analyse automatisée en l’integrant dans d’autres serveurs de CI tels que Jenkins, ou projets Maven, Gradle ou Ant. Il est extrêmement complet en terme de fonctionnalités pour la gestion des analyses dans un processus CI:
 
 • Supervision du respect des règles (prédéfinie par l’utilisateur) de programmation.
@@ -486,27 +535,27 @@ Il permet une analyse automatisée en l’integrant dans d’autres serveurs de 
  
 \subsubsection{Travail réalisé}
 
-Dans le projet AppTour, j'ai travaillé sur la réalisation d'une API Rest, j'ai développé plusieurs endPoints qui permet de rajouter ou modifier les étapes des tours ainsi que faire des recherches pour vérifier l’existence des tours. 
+Dans le projet AppTour, j'ai travaillé sur la réalisation d'une API Rest, j'ai développé plusieurs endPoints qui permettent de rajouter ou modifier les étapes des tours ainsi que faire des recherches pour vérifier l’existence des tours. 
 
 Comme noté plus haut, le projet AppTour était initialisé par l'alternant précédent, il a initialisé le projet avec la création des tables Tour et Step. j'ai commencé donc par la relecture du code existant et la modification des tables. Ensuite, Nous avons travaillés avec mes maîtres d'alternance sur l'architecture du projet.
 
-Une fois que le code et le travail demandé était compris et acquis, j'ai commencé par implémenter les endPoints nécessaire au projet. Voici une présentation plus précise de toutes les tâches réalisées:   
+Une fois que le code et le travail demandé étaient compris et acquis, j'ai commencé par implémenter les endPoints nécessaire au projet. Voici une présentation plus précise de toutes les tâches réalisées:   
 
 \begin{itemize}
 
-\item J'ai commencé par complémenter les tables Tour et Step en rajoutant des nouveaux éléments comme Storage dans l'entité tour qui permet de garder les tours exécutés dans l'historique ou pas en mettant l’attribut Storage à True ou False. 
-
-Rajouter aussi l'attribut Ordre dans la table Step pour donner un ordre d’exécution des étapes de Bootstrap Tour. 
+\item  Ajouter des nouveux attributs dans les tables de la base de données. J'ai ajouté dans l'entité Tour  l'atrribut Storage qui permet de garder l'historique des tours éxecutés ou non en mettant l’attribut Storage à True ou False.
   
-  
+J'ai ajouté aussi l'attribut Ordre dans l'entité Step pour donner un ordre  d’exécution des étapes de Bootstrap Tour. 
 
 \item Créer toutes les classes DTO afin de les utiliser dans les requêtes  pour envoyer ou récupérer des données.
 
-\item Rajouter les classes Repositories en utilisant l'interface JpaRepository qui permettent de faciliter l'accès ou le stockage des données dans la base.
+\item Créer les classes Repositories en utilisant l'interface JpaRepository qui permettent de faciliter l'accès ou le stockage des données dans la base.
 
 \item Créer des classes Mapper qui permettent de convertir un objet Dto à un objet métier ou l'inverse. Par exemple passer d'un objet TourDto à un objet Tour il suffit d'appeler la méthode tourDtoToTour et qui prend en paramètre un objet tourDto : TourDto.  
 
-\item La réalisation de l'API et tous les EndPoints, il s'agit d’implémenter des classes controllers qui consomment toutes les méthodes qui se trouvent dans les classes services. Il existe plusieurs types de EndPoints: 
+\item Réaliser l'API et tous les EndPoints, il s'agit d’implémenter des classes controllers qui consomment toutes les méthodes qui se trouvent dans les classes services. Il existe plusieurs types de EndPoints: 
+
+\underline{Mise en oeuvre} : 
 \begin{itemize}
 \item Des méthodes GET : Pour la récupération des données de la base dans le cas où elles existent.
 
@@ -515,9 +564,9 @@ Rajouter aussi l'attribut Ordre dans la table Step pour donner un ordre d’exé
 \item Des méthodes PUT : Permettre aux ADSI de modifier la documentation déjà existante. 
 
 \end{itemize}
-\item L'implémentation des classes Services: Toutes les actions effectuer par le controller doivent passer par les classes services. 
+\item Implémenter des classes Services: Toutes les actions effectuer par le controller doivent passer par les classes services. Les services manipulent les objets métiers.
 
-Il existe une classe TourService: Dans cette classe, j'ai réalisé plusieurs méthodes qui permettent à stocker ou récupérer des Tours de la base données : 
+Il existe une classe TourService: Dans cette classe, j'ai réalisé plusieurs méthodes qui permettent de stocker ou récupérer des Tours de la base données : 
 \begin{itemize}
 \item Chercher un Tour : Elle permet de récupérer un tour en passant en paramètre nom d'une application et l'identifiant de la page HTMl. 
 
@@ -536,19 +585,35 @@ Il existe aussi une classe StepService : Dans cette classe, j'ai réalisé plusi
 \item Lister tout les step d'un tour par ordre croissant.  
 
 
-\item J'ai aussi créé une table Personnel pour pouvoir l'alimenter par les ADSI des applications de rectorat. Le but final était de pouvoir identifier si la personne connectée d'une application est un ADSI ou pas afin d'avoir le droit d'accéder au mode édition de Solycee. 
+\item J'ai aussi créé une table Personnel pour pouvoir l'alimenter par les ADSI des applications de rectorat. Le but final était de pouvoir identifier si la personne connectée d'une application est un ADSI ou pas afin d'avoir le droit d'accéder au mode édition. 
 
 \end{itemize}
 \end{itemize}
 \subsection{Partie Sécurité}
 
+\subsubsection{Sécuriser le mode édition}
+	
+	Avant de faire une démonstration au PO et montrer les nouvelles fonctionnalités, un minimum le mode édition, nous avons fait en sorte que seuls les ADSI peuvent rajouter la documentation et non les utilisateurs et ils sont les seuls à accéder à ce mode.\\   
+  
+  
+\underline{Mise en oeuvre} : \\
+- Quand l'utilisateur se connecte sur l'application, nous récupérons son identifiant complet.
+
+- Nous interrogeons ensuite le Web service AppTour en utilisant  Srping-RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le nom complet d'utilisateur et le libellé de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au mode édition. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
+\footnotetext{Spring RestTemplate est une class de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.\\
+
+
 \subsubsection{Sécuriser l'API}
 
-Après avoir réaliser toutes les tâches demandées par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités de l'application en production pour avoir un avis des utilisateurs. Mais avant de les mettre en prod fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droit de réaliser ces requêtes et ils sont ADSI de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
+Après avoir réaliser toutes les tâches demandées par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités de l'application en production pour avoir un avis des utilisateurs. Mais avant de les mettre en produdction fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droits de réaliser ces requêtes ou/et ils sont ADSI de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
 
-Nous avons mis en place OpenId Connect(Oidc) qui est une couche d'authentification basé sur du OAuth2 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé. j'ai utilisé Keyckloak comme plateforme d'authentification. 
 
-En premier temps, j'ai commencé à faire des recherches sur la façons d'implémenter Oidc coté Front-end de Solycee, j'ai utilisé une librairie JavaScript Oidc-clientJS qui permettre aux ADSI de se diriger à la plateforme d'authentification Keycloak.
+Nous avons échangé, en organisant plusieurs réunions, avec le PO et le directeur technique de la DSII, Mr OLivier ADAM, pour prendre une décision de comment sécuriser les échanges entre  Solycee et AppTour. 
+
+
+Nous avons mis en place OpenId Connect(Oidc) qui est une couche d'authentification basée sur du OAuth2 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé. j'ai utilisé Keyckloak comme plateforme d'authentification. 
+
+En premier temps, j'ai commencé à faire des recherches sur la façons d'implémenter Oidc coté Front-end de Solycee, j'ai utilisé une librairie JavaScript Oidc-clientJS qui permettre aux ADSI de se diriger vers la plateforme d'authentification Keycloak.
 
 Par la suite, avec l'équipe, nous avons décidé de mettre en place un Srping Security coté Back-end de Solycee afin de sécuriser le Web service AppTour et permettre seul aux ADSI d'échanger avec ce dernier.  
  
@@ -560,19 +625,33 @@ Nous avons utilisé plusieurs technologies pour implémenter l'authentification 
 
 Keycloak  est un logiciel open source permettant l'authentification unique avec la gestion des identités et des accès, destiné aux applications et services modernes. 
 
-Le fonctionnement de Keycloack nécessite une configuration. IL faut déclarer plusieurs données : 
+Le fonctionnement de Keycloak nécessite une configuration. IL faut déclarer plusieurs données : 
 \begin{itemize}
 \item Utilisateurs : Ils sont des entités pouvant se connecter à votre système
 \item Rôles : ils identifient un type ou une catégorie d’utilisateur ( Admin, user, …)
 \item Groupe : permet de gérer un groupe d’utilisateur
 \item Royaumes (realms): un domaine qui gère un ensemble d’utilisateurs, d’informations d’identification, des rôles et des groupes.
-\item Clients : ils sont des entités pouvant demander à Keycloak d’authentifier un utilisateur ( comme des applications )
+\item Clients : ils sont des entités pouvant demander à Keycloak d’authentifier un utilisateur(comme des applications).
 \end{itemize}
  
 \textbf{Protocole OAuth2:}\\ 
 
 OAuth2 permet d'autoriser un site web, un logiciel ou une application à utiliser l'API sécurisée d'un autre site web pour le compte d'un utilisateur. OAuth n'est pas un protocole d'authentification, mais de « délégation d'autorisation ».
+\newpage
 
+\begin{center}
+\bfseries {Bilan}
+\end{center}
+
+En conculusion, à l'issue d'une année d'alternance, beaucoup de nouveautés ont été appréhendées, tant sur le plan du savoir-faire que du savoir-être. Cette expérience a été l'occasion, pour moi, d'acquérir une totale autonomie sur les plans personnels et professionnels mais également l'occasion de travailler au sein d'une structure et d'une équipe. D'un point de vue professionnel, cela m'a permis de découvrir un nouvel environnement de travail, de développer mes connaissances sur le développement des applications web mais également d'enrichir mon CV. \\
+
+
+Durant mon année d'altrance, la première période avait un rythme très rapide et la fréquence de travail était un peu élevée, avec d'un côte la formation universitaire et les travaux pratiques à rendre toutes les deux semaines à peu près. Néanmoins, je ne peux que être satisfait de cette formation en altenance car elle m'a permis d'appliquer, au fur et à mersure, ce que j'apprend à l'école. Je fais référence aux cours de TAA et GLI qui m'ont beaucoup aidé à développer des applciations web. \\
+
+D'un point de vue technique, mes deux maitres d'apprentisage m'ont apporté leur vision des différents projets et leurs explications. J'ai appris des nouvelles technologies puissantes et recherchées, notament Srping et ses modules, Bootstrap Tour ainsi que le langes Kotlin. \\
+
+C'est clairement une solide expérience complète et valorisante. Les connaissances aquises durant cette année d'alternance m'ont permis de décrocher un poste de développeur Web chez Extia. Je peux conclure en affirmant que mes objectifs professionnels et personnels ont été atteints. 
+	
 
 \newpage
 \section{Annexes}
