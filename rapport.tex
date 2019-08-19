@@ -72,11 +72,13 @@ Je tiens à remercier, Mme \textbf{Annabel BOURDÉ} et M. \textbf{Gaël SALAÜN}
 
 j'ai également mes remerciements à mon tuteur enseignant, M. \textbf{Noël PLOUZEAU},  d'avoir suivi mon apprentissage, de me conseiller pour la rédaction de mon mémoire et le déroulement de ma soutenance. \\
 
-Cette mémoire n'est pas seulement le bilan d'une année d'apprentissage, il est le bilan de 5ans d'études au sein de l'ISTIC à l'Université de Rennes1. D'une manière générale, je souhaite remercier tout le corps professoral pour leur enseignement de qualité et leur accompagnement pédagogique. Je tiens remercier en particulier M. \textbf{Marc BOUSSE}, le responsable de la formation Ingénierie Logicielle en alternance. \\
+Ce mémoire n'est pas seulement le bilan d'une année d'apprentissage, il est le bilan de 5ans d'études au sein de l'ISTIC à l'Université de Rennes1. D'une manière générale, je souhaite remercier tout le corps professoral pour leur enseignement de qualité et leur accompagnement pédagogique. Je tiens remercier en particulier M. \textbf{Marc BOUSSE}, le responsable de la formation Ingénierie Logicielle en alternance. \\
 
 Merci à toute l'équipe de développement du pôle DINAMO ainsi que l'ensemble de personnels de la DSII pour votre excellente réception et de m'avoir accueilli pendant cette période. Vous avez rendu facile mon intégration. \\
 
 Enfin, je tiens tout spécialement à remercier ma famille pour leur présence, leur générosité, leur discernement et leur soutien inconditionnel. 
+
+\newpage
 
 
 \section{Introduction}
@@ -262,7 +264,7 @@ Le projet se constitue de rajouter une interface utilisateur sur l'application w
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/ArchitectureGenerale.png}
   		\caption{Architecture du projet}
-	\end{figure}\\
+\end{figure}
 
 Nous avons une application web nommée Solycee qui communqiue avec une API REST nommée AppTour via des requêtes HTTP(CRUD), ces dernières renvoient des réponses en format Json. 
 
@@ -301,13 +303,22 @@ Voici maintenant une présentation plus précise sur les principaux outils utili
   		\caption{Schéma du patron de conception MVC}
 	\end{figure}
 	
-	Spring MVC s'appuie sur :
 
-    - une servlet principale appelée Dispatcher Servlet qui va gérer l'intégralité 			  des requêtes HTTP reçues.\\
-    - un handler mapping qui va faire le lien entre l'URI appelée et le contrôleur    	  MVC.\\
-    - le Controller qui va gérer le rôle du contrôleur MVC et qui va solliciter le 			  modèle.\\
-    - View Resolver qui va préparer la vue en fonction du code retour du Controller
-      la View qui assure le rôle de vue au sens MVC.
+Lorsque DispatcherServlet reçoit une requête, il commence par rechercher un gestionnaire adapté pour son traitement. Il associe chaque requête à un gestionnaire en utilisant un ou plusieurs mappages de gestionnaire. Un mappage de gestionnaire est un bean configuré dans le contexte de l’application web qui implémente l’interface HandlerMapping. Son rôle est de retourner le gestionnaire adapté à une requête. En général, les mappages de gestionnaire se fondent sur l’URL de la requête pour trouver le gestionnaire adéquat.\\
+	
+
+Après que DispatcherServlet a obtenu le gestionnaire approprié, il l’invoque pour traiter la requête. Un gestionnaire est un objet Java quelconque capable de prendre en charge des requêtes web. Dans Spring MVC, un tel gestionnaire est le plus souvent mis en œuvre par un contrôleur. Celui-ci invoque généralement les services dorsaux pour
+réaliser les traitements.\\
+
+
+Lorsque le contrôleur a terminé son travail sur la requête, il retourne à Dispatcher-Servlet un nom de modèle et de vue ou, parfois, un objet de vue. Le modèle contient les attributs que le contrôleur souhaite passer à la vue pour qu’elle les affiche. Si le nom d’une vue est retourné, il est converti en un objet de vue pour l’affichage. La classe de base qui lie un modèle et une vue se nomme ModelAndView.\\
+	
+
+Lorsque DispatcherServlet reçoit un nom de modèle et de vue, il convertit le nom logique de la vue en un objet de vue qui se charge de l’affichage. Pour effectuer cette conversion, DispatcherServlet contacte un ou plusieurs résolveurs de vue. Un résolveur de vue est un bean configuré dans le contexte d’application web et qui implémente
+l’interface ViewResolver. Son rôle est de retourner un objet de vue qui correspond à un nom logique de vue.\\
+
+
+Après que DispatcherServlet a converti un nom de vue en un objet de vue, il affiche celui-ci et lui passe le modèle retourné par le contrôleur. La vue se charge de présenter à l’utilisateur les attributs contenus dans le modèle.\\
 
 	
 	\item \textbf{Spring Security }: Spring Security est un Framework de sécurité  qui fournit une authentification et un support d’autorisation afin de sécuriser les applications Spring. \newline
@@ -526,7 +537,6 @@ Jenkins est un outil logiciel d’intégration continu. Il s’agit d’un logic
 
 
 La documentation de Jenkins est très riche, et l’outil est devenu bien populaire grâce à sa communauté immense, dynamique et réactive.\\
-\newpage
 \textbf{Sonarqube:}\includegraphics[width=30mm,scale=0.5]{diagrammes/sonarqube.png}
 
 C’est un outil qui permet de faire l’inspection continue du code source dans un processus de CI. Une plateforme open-source avec une interface graphique simple et intuitive. Il peut faire une analyse de plus de vingt langages différents tels que JAVA, JavaScript, PHP...\\
@@ -585,11 +595,11 @@ Il existe une classe TourService: Dans cette classe, j'ai réalisé plusieurs m�
 Il existe aussi une classe StepService : Dans cette classe, j'ai réalisé plusieurs méthodes qui permettent à stocker ou récupérer des Step de la base données : 
 \begin{itemize}
 
-\item  Chercher une étape: Récupérer un Step en passant en paramètre l'élément rechercher et l'identifiant du tour.
+\item  - Chercher une étape: Récupérer un Step en passant en paramètre l'élément rechercher et l'identifiant du tour.
 
-\item Sauvegarder une étape : Stocker un Step dans la base de données.
+\item - Sauvegarder une étape : Stocker un Step dans la base de données.
 
-\item Lister tout les step d'un tour par ordre croissant.  
+\item - Lister tout les step d'un tour par ordre croissant.  \\
 
 
 \item J'ai aussi créé une table Personnel pour pouvoir l'alimenter par les ADSI des applications de rectorat. Le but final était de pouvoir identifier si la personne connectée d'une application est un ADSI ou pas afin d'avoir le droit d'accéder au mode édition. 
@@ -600,27 +610,41 @@ Il existe aussi une classe StepService : Dans cette classe, j'ai réalisé plusi
 
 \subsubsection{Sécuriser le mode édition}
 	
-	Après avoir fini d'implémenter l'interface graphique pour ajouter de la documentation et avant de faire une démonstration au PO pour montrer les nouvelles fonctionnalités, le mode édition, nous avons fait en sorte que seuls les ADSI ont accés et peuvent rajouter la documentation et non les utilisateurs, ils sont les seuls à accéder à ce mode.\\   
+	Après avoir fini d'implémenter l'interface graphique pour ajouter de la documentation et avant de faire une démonstration au PO pour montrer les nouvelles fonctionnalités, le mode édition, nous avons fait en sorte que seuls les ADSI ont accès et peuvent rajouter la documentation et non les utilisateurs, ils sont les seuls à accéder à ce mode.\\   
   
   
 \underline{Mise en œuvre} : \\
 - Quand l'utilisateur se connecte sur l'application, nous récupérons son identifiant complet.
 
 - Nous interrogeons ensuite le Web service AppTour en utilisant  Srping-RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le nom complet d'utilisateur et le libellé de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au mode édition. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
-\footnotetext{Spring RestTemplate est une class de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.\\
+\footnotetext{Spring RestTemplate est une classe de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.\\
 
 
 \subsubsection{Sécuriser l'API}
 
-Après avoir réaliser toutes les tâches demandées par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités de l'application en production pour avoir un avis des utilisateurs. Mais avant de les mettre en produdction fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droits de réaliser ces requêtes ou/et ils sont ADSI de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
+Après avoir réaliser toutes les tâches demandées par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités de l'application en production pour avoir un avis des utilisateurs. Mais avant de les mettre en production fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droits de réaliser ces requêtes ou/et ils sont ADSI de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
+
+Mes maîtres d'alternance ont voulu mettre en place l'authentification par l' OpenId Connect(Oidc) qui est une couche d'authentification basée sur du OAuth2 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé. Mais avant de commencer le développement, nous avons remarqué que l'application Solycee est déjà relier à un autre portail d'authentification ARENA, qui permet de récupérer les informations et les délégations des personnes connectés, ce qu'il pose un problème. Nous ne voulons pas que Solycee soit lié à deux portail d'authentification.
+
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/schemaOIDC.png}
+  		\caption{Schéma pour décrire le problème rencontré}\end{figure}	
+
+Nous avons sur le schéma l'application Solycee qui est lié au portail ARENA pour demander les délégations des personnes connectées. Nous avons voulu mettre en place OIDC pour authentification coté AppTour. Nous avons donc deux portails d'authentification. 
 
 
-Nous avons échangé, en organisant plusieurs réunions, avec le PO et le directeur technique de la DSII, Mr OLivier ADAM, pour prendre une décision de comment sécuriser les échanges entre  Solycee et AppTour.
+Nous avons échangé, en organisant plusieurs réunions, avec le PO et le directeur technique de la DSII, Mr OLivier ADAM, pour prendre une décision de comment sécuriser les échanges entre  Solycee et AppTour. À la fin, nous avons décidé de couper Solycee de portail ARENA et le mettre sur OIDC. 
 
-Mes maîtres d'alternance ont voulu mettre en place l'autenfication par l' OpenId Connect(Oidc) qui est une couche d'authentification basée sur du OAuth2 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé. j'ai utilisé Keyckloak comme plateforme d'authentification. 
+J'ai commencé le développement côté Solycee pour faire authentification par OIDC, j'ai utilisé Keycloak comme plateforme d'authentification. J'ai mis en place un Spring-Security pour diriger les utilisateurs sur Keycloak afin de se connecter et accéder ensuite sur Solycee soit en tant que ADSI soit en tant qu'un utilisateur normal. 
 
+J'ai également mis en place du Spring-Security côté AppTour pour pouvoir récupérer les accesToken envoyer par le front-end( Solycee). 
 
-Nous avons mis en place OpenId Connect(Oidc) qui est une couche d'authentification basée sur du OAuth2 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé. j'ai utilisé Keyckloak comme plateforme d'authentification. 
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1\textwidth]{diagrammes/schemaOIDC2.png}
+  		\caption{Schéma pour décrire le problème rencontré}\end{figure}	
+
 
 En premier temps, j'ai commencé à faire des recherches sur la façons d'implémenter Oidc coté Front-end de Solycee, j'ai utilisé une librairie JavaScript Oidc-clientJS qui permettre aux ADSI de se diriger vers la plateforme d'authentification Keycloak.
 
@@ -652,12 +676,12 @@ OAuth2 permet d'autoriser un site web, un logiciel ou une application à utilise
 \bfseries {Bilan}
 \end{center}
 
-En conclusion, à l'issue d'une année d'alternance, beaucoup de nouveautés ont été appréhendées, tant sur le plan du savoir-faire que du savoir-être. Cette expérience a été l'occasion, pour moi, d'acquérir une totale autonomie sur les plans personnels et professionnels mais également l'occasion de travailler au sein d'une structure et d'une équipe. D'un point de vue professionnel, cela m'a permis de découvrir un nouvel environnement de travail, de développer mes connaissances sur le développement des applications web mais également d'enrichir mon CV. \\
+À l'issue d'une année d'alternance, beaucoup de nouveautés ont été appréhendées, tant sur le plan du savoir-faire que du savoir-être. Cette expérience a été l'occasion, pour moi, d'acquérir une totale autonomie sur les plans personnels et professionnels mais également l'occasion de travailler au sein d'une structure et d'une équipe. D'un point de vue professionnel, cela m'a permis de découvrir un nouvel environnement de travail, de développer mes connaissances sur le développement des applications web mais également d'enrichir mon CV. \\
 
 
-Durant mon année d'd'alternance, la première période avait un rythme très rapide et la fréquence de travail était un peu élevée, avec d'un côte la formation universitaire et les travaux pratiques à rendre toutes les deux semaines à peu près. Néanmoins, je ne peux que être satisfait de cette formation en d'alternance car elle m'a permis d'appliquer, au fur et à mesure, ce que j’apprends à l'école. Je fais référence aux cours de TAA et GLI qui m'ont beaucoup aidé à développer des applications web. \\
+Durant mon année d'alternance, la première période avait un rythme très rapide et la fréquence de travail était un peu élevée, avec d'un côté la formation universitaire et les travaux pratiques à rendre toutes les deux semaines à peu près et l'autre côté, les missions qui m'étaient confiés au Rectorat. Néanmoins, je ne peux que être satisfait de cette formation en alternance car elle m'a permis d'appliquer, au fur et à mesure, ce que j’apprends à l'école. Je fais référence aux cours de TAA et GLI qui m'ont beaucoup aidé à développer des applications web. \\
 
-D'un point de vue technique, mes deux maîtres d'd’apprentissage m'ont apporté leur vision des différents projets et leurs explications. J'ai appris des nouvelles technologies puissantes et recherchées, notamment Srping et ses modules, Bootstrap Tour ainsi que le langes Kotlin. \\
+D'un point de vue technique, mes deux maîtres d’apprentissage m'ont apporté leur vision des différents projets et leurs explications. J'ai appris des nouvelles technologies puissantes et recherchées, notamment Spring et ses modules, Bootstrap Tour ainsi que le langage Kotlin. \\
 
 C'est clairement une solide expérience complète et valorisante. Les connaissances acquises durant cette année d'alternance m'ont permis de décrocher un poste de développeur Web chez Extia. Je peux conclure en affirmant que mes objectifs professionnels et personnels ont été atteints. 
 	
