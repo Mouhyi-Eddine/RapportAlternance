@@ -7,6 +7,7 @@
 \usepackage{amsfonts,amsmath,amssymb}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage[final]{pdfpages}
 \usepackage{amsmath}
 \usepackage{newunicodechar}
 \usepackage[export]{adjustbox}
@@ -217,7 +218,7 @@ L'équipe informatique utilise Git sur la plateforme Gitlab hébergée par la Fo
 
 \subsection{Contexte et Problématique}
 
-La DSII (Direction des Systèmes d'Information et d'Innovation) et plus précisément l'équipe DINAMO utilise plusieurs façons pour documenter leur applications. La plupart du temps elle utilise une documentation écrite (Manuel Utilisateur). Cette documentation n'est souvent pas lu à cause de contrainte de temps, ce qui rend difficile aux utilisateurs de se documenter sur l'application.
+La DSII (Direction des Systèmes d'Information et d'Innovation) et plus précisément l'équipe DINAMO utilise plusieurs façons pour documenter leur applications. La plupart du temps elle utilise une documentation écrite (Manuel Utilisateur). Cette documentation n'est souvent pas lue à cause de contrainte de temps, ce qui rend difficile aux utilisateurs de se documenter sur l'application.
 
 
 C'est pour cette raison que Monsieur JOSSO Clément,le product Owner du projet(PO), a voulu mettre en œuvre une documentation interactive dans l'application métier Solycee afin de faciliter l’accès de la documentation à ces utilisateurs et d'interagir directement avec l'application via une interface graphique. Nous avons utilisé un outil nommé BootstrapTour pour réaliser cette documentation. 
@@ -621,45 +622,47 @@ Il existe aussi une classe StepService : Dans cette classe, j'ai réalisé plusi
 
 \subsubsection{Sécuriser le mode édition}
 	
-	Après avoir fini d'implémenter l'interface graphique pour ajouter de la documentation et avant de faire une démonstration au PO pour montrer les nouvelles fonctionnalités, le \textbf{"mode édition"}, nous avons fait en sorte que seuls les ADSI ont accès et peuvent rajouter la documentation et non les utilisateurs, ils sont les seuls à accéder à ce mode.\\   
+	Après avoir fini d'implémenter l'interface graphique pour ajouter de la documentation et avant de faire une démonstration au PO pour montrer les nouvelles fonctionnalités, le \textbf{"mode édition"}, nous avons fait en sorte que seuls les ADSI ont accès et puissent rajouter la documentation et non les simples utilisateurs. Ils sont les seuls à accéder à ce mode.\\   
   
   
 \underline{Mise en œuvre} : \\
 - Quand l'utilisateur se connecte sur l'application, nous récupérons son identifiant complet.
 
-- Nous interrogeons ensuite le Web service AppTour en utilisant  Srping-RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le nom complet d'utilisateur et le libellé de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au \textbf{"mode édition"}. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
+- Nous interrogeons ensuite le Web service AppTour en utilisant  Spring-RestTemplate\footnotemark, nous envoyons une requête HTTP en passant en paramètre le nom complet d'utilisateur et le libellé de l'application. Si l'utilisateur est présent dans la table Personnel de AppTour, il est ADSI et dans ce cas il a le droit d'accéder au \textbf{"mode édition"}. Dans le cas inverse, l'utilisateur n'a pas le droit à ce mode et le bouton \includegraphics[width=5mm,scale=0.5]{diagrammes/Bouton_modeEdition.png} ne s'affiche pas.
 \footnotetext{Spring RestTemplate est une classe de Spring qui permet d'établir une communication entre un client et un serveur REST, ceci grâce aux requêtes HTTP.}.\\
 
 
 \subsubsection{Sécuriser l'API}
 
-Après avoir réaliser toutes les tâches demandées par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités de l'application en production pour avoir un avis des utilisateurs. Mais avant de les mettre en production fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droits de réaliser ces requêtes ou/et ils sont ADSI de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
+Après avoir réalisé toutes les tâches demandées par le PO(Product Owner), il voulait mettre les nouvelles fonctionnalités de l'application en production pour avoir un avis des utilisateurs. Mais avant de les mettre en production, il fallait sécuriser l'API Apptour ainsi que s'assurer que les personnes qui voudraient envoyer des requêtes à l'API ont les droits de réaliser ces requêtes ou/et ils sont ADSI de l'application. Nous avons donc décidé de sécuriser les échanges entre le client (Solycee) et l'API AppTour. 
 
-Mes maîtres d'alternance ont voulu mettre en place l'authentification par l' OpenId Connect(Oidc) qui est une couche d'authentification basée sur du OAuth2 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisé. Mais avant de commencer le développement, nous avons remarqué que l'application Solycee est déjà relier à un autre portail d'authentification ARENA, qui permet de récupérer les informations et les délégations des personnes connectés, ce qu'il pose un problème. Nous ne voulons pas que Solycee soit lié à deux portail d'authentification.
+Mes maîtres d'alternance ont voulu mettre en place l'authentification par l' OpenId Connect(Oidc). L'OIDC est une couche d'authentification basée sur du OAuth2 qui permet d'autoriser une application web (ou un logiciel) à utiliser une autre API sécurisée. \\
+
+Mais avant de commencer le développement, nous avons remarqué que l'application Solycee est déjà géré par un autre portail d'authentification ARENA, qui permet de récupérer les informations et les délégations des personnes connectés, ce qu'il pose un problème. Nous ne voulons pas que Solycee soit lié à deux portails d'authentification.
 
 \begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/schemaOIDC.png}
   		\caption{Schéma pour décrire le problème rencontré}\end{figure}	
 
-Nous avons sur le schéma l'application Solycee qui est lié au portail ARENA pour demander les délégations des personnes connectées. Nous avons voulu mettre en place OIDC pour authentification coté AppTour. Nous avons donc deux portails d'authentification. 
+Nous avons sur le schéma l'application Solycee qui est lié au portail ARENA pour demander les délégations des personnes connectées. Nous avons voulu mettre en place OIDC pour l'authentification coté AppTour. Nous avons donc deux portails d'authentification. 
 
 
-Nous avons échangé, en organisant plusieurs réunions, avec le PO et le directeur technique de la DSII, Mr OLivier ADAM, pour prendre une décision de comment sécuriser les échanges entre  Solycee et AppTour. À la fin, nous avons décidé de couper Solycee de portail ARENA et le mettre sur OIDC. 
+Nous avons échangé, en organisant plusieurs réunions, avec le PO et le directeur technique de la DSII, M. Olivier ADAM, pour prendre une décision de sécuriser les échanges entre  Solycee et AppTour. À la fin, nous avons décidé de couper Solycee du portail ARENA et le mettre sur OIDC. 
 
-J'ai commencé le développement côté Solycee pour faire authentification par OIDC, j'ai utilisé Keycloak comme plateforme d'authentification. J'ai mis en place un Spring-Security pour diriger les utilisateurs sur Keycloak afin de se connecter et accéder ensuite sur Solycee soit en tant que ADSI soit en tant qu'un utilisateur normal. 
+J'ai commencé le développement côté Solycee pour faire l'authentification par OIDC, j'ai utilisé Keycloak comme plateforme d'authentification juste pour le développement, l'authentification via Keycloak n'est pas utilisé en production. J'ai mis en place un Spring-Security pour diriger les utilisateurs sur Keycloak afin de se connecter et accéder ensuite sur Solycee soit en tant que ADSI soit en tant qu'un utilisateur normal. 
 
-J'ai également mis en place du Spring-Security côté AppTour pour pouvoir récupérer les accesToken envoyer par le front-end( Solycee). 
+J'ai également mis en place du Spring-Security côté AppTour pour pouvoir récupérer les accesToken envoyés par le front-end( Solycee). 
 
 \begin{figure}[H]
 	\centering
  		\includegraphics[width=1\textwidth]{diagrammes/schemaOIDC2.png}
-  		\caption{Schéma pour décrire le problème rencontré}\end{figure}	
+  		\caption{Demande d'authentification de Solycee par OIDC}\end{figure}	
 
 
-En premier temps, j'ai commencé à faire des recherches sur la façons d'implémenter Oidc coté Front-end de Solycee, j'ai utilisé une librairie JavaScript Oidc-clientJS qui permettre aux ADSI de se diriger vers la plateforme d'authentification Keycloak.
+En premier temps, j'ai commencé à faire des recherches sur la façons d'implémenter Oidc coté Front-end de Solycee, j'ai utilisé une librairie JavaScript Oidc-clientJS qui permettra aux ADSI de se diriger vers la plateforme d'authentification Keycloak.
 
-Par la suite, avec l'équipe, nous avons décidé de mettre en place un Srping Security coté Back-end de Solycee afin de sécuriser le web service AppTour et permettre seul aux ADSI d'échanger avec ce dernier.  
+Par la suite, avec l'équipe, nous avons décidé de mettre en place un Srping Security coté Back-end de Solycee afin de sécuriser la communication entre Solycee et le web service AppTour et permettre seul aux ADSI d'échanger avec ce dernier.  
  
 \subsubsection{Aspect technique}
 
@@ -669,7 +672,7 @@ Nous avons utilisé plusieurs technologies pour implémenter l'authentification 
 
 Keycloak  est un logiciel open source permettant l'authentification unique avec la gestion des identités et des accès, destiné aux applications et services modernes. 
 
-Le fonctionnement de Keycloak nécessite une configuration. IL faut déclarer plusieurs données : 
+Le fonctionnement de Keycloak nécessite une configuration. Il faut déclarer plusieurs données : 
 \begin{itemize}
 \item Utilisateurs : Ils sont des entités pouvant se connecter à votre système
 \item Rôles : ils identifient un type ou une catégorie d’utilisateur ( Admin, user, …)
@@ -698,7 +701,7 @@ C'est clairement une solide expérience complète et valorisante. Les connaissan
 	
 
 \newpage
-\section{Annexes}
 
+\input{./annexes/annexes.tex}
 
 \end{document}

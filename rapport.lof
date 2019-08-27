@@ -13,4 +13,6 @@
 \contentsline {figure}{\numberline {12}{\ignorespaces Architecture Back-end d'une application web}}{22}
 \contentsline {figure}{\numberline {13}{\ignorespaces Cycle d'une interrogation au web service}}{23}
 \contentsline {figure}{\numberline {14}{\ignorespaces Sch\IeC {\'e}ma pour d\IeC {\'e}crire le probl\IeC {\`e}me rencontr\IeC {\'e}}}{28}
-\contentsline {figure}{\numberline {15}{\ignorespaces Sch\IeC {\'e}ma pour d\IeC {\'e}crire le probl\IeC {\`e}me rencontr\IeC {\'e}}}{29}
+\contentsline {figure}{\numberline {15}{\ignorespaces Demande d'authentification de Solycee par OIDC}}{29}
+\contentsline {figure}{\numberline {16}{\ignorespaces Exemple de Bootstrap Tour }}{36}
+\contentsline {figure}{\numberline {17}{\ignorespaces Architecture de la version 2 avec AppTour }}{37}
